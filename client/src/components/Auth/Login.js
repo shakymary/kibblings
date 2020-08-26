@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Modal, Button, Nav } from "react-bootstrap";
 
 function Login() {
   const [show, setShow] = useState(false);
@@ -9,7 +9,7 @@ function Login() {
 
   return (
     <>
-      <Button onClick={handleShow}>Login</Button>
+      <Nav.Link onClick={handleShow}>Login</Nav.Link>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

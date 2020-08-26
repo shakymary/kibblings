@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Modal, Button, Nav } from "react-bootstrap";
 
 function Register() {
   const [show, setShow] = useState(false);
@@ -9,7 +9,7 @@ function Register() {
 
   return (
     <>
-      <Button onClick={handleShow}>Register</Button>
+      <Nav.Link onClick={handleShow}>Register</Nav.Link>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
