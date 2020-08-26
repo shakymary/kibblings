@@ -12,8 +12,8 @@ function App() {
         <NavBar />
         <Switch>
           <Route exact path="/" component={Btn} />
-          <Route path="/register" component={Register} />
-          <Route path="/login" component={Login} />
+          {/* <Route path="/register" component={Register} /> */}
+          {/* <Route path="/login" component={Login} /> */}
         </Switch>
       </BrowserRouter>
     </div>
