@@ -14,6 +14,9 @@ const NavBar = () => {
             <Register />
           </Nav.Link>
           <Nav.Link>
+            <Nav.Link href="/mypets">MyPets</Nav.Link>
+          </Nav.Link>
+          <Nav.Link>
             <Login />
           </Nav.Link>
         </Nav>
