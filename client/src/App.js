@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "./components/NavBar";
-// import Btn from "./components/Button";
+import Btn from "./components/Button";
 import Home from "./Pages/Home";
 import MyPets from "./Pages/MyPets";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
@@ -18,10 +18,7 @@ function App() {
           {/* <Route path="/login" component={Login} /> */}
         </Switch>
       </BrowserRouter>
-      <NavBar
-        link1='#adopt' link1Title='Adopt'
-        link2='#login' link2Title='Login'
-        link3='#register' link3Title='Register' />
+      <NavBar />
 
       {/* JumboTron Section??? */}
 
