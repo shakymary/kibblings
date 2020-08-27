@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "./components/NavBar";
-// import Btn from "./components/Button";
+import Btn from "./components/Button";
 import Home from "./Pages/Home";
 import MyPets from "./Pages/MyPets";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
