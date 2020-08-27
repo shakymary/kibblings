@@ -24,5 +24,3 @@ const NavBar = () => {
     </Navbar>
   );
 };
-
-export default NavBar;
