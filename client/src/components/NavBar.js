@@ -1,5 +1,7 @@
-import React from 'react';
-import { Navbar, Button, Nav, NavDropdown, Form, FormControl } from 'react-bootstrap';
+import React from "react";
+import { Navbar, Nav } from "react-bootstrap";
+import Register from "../components/Auth/Register";
+import Login from "../components/Auth/Login";
 
 const NavBar = (props) => {
     return (
