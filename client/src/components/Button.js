@@ -1,5 +1,6 @@
-import React from 'react'
-import { Button } from "react-bootstrap"
+import React from "react";
+import { Button } from "react-bootstrap";
+
 
 const Btn = (props) => {
     return (
@@ -11,4 +12,8 @@ const Btn = (props) => {
 export default Btn
 
 
+const Btn = ({ variant, text }) => {
+  return <Button variant={variant}>{text}</Button>;
+};
 
+export default Btn;
