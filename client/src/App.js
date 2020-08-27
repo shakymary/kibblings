@@ -2,6 +2,7 @@ import React from 'react';
 import NavBar from './components/NavBar'
 import Btn from './components/Button'
 import Forms from './components/Form'
+import Card from './components/Card'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         btnSubmitText='Pet Search'
       />
 
+      <Card />
       <Btn text="Submit"
         variant="primary">
       </Btn>
