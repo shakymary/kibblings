@@ -26,7 +26,4 @@ const NavBar = () => {
 };
 
 export default NavBar;
-<<<<<<< HEAD
 
-=======
->>>>>>> d73186295cf4c5eadd75c27544c8b5a7627960f5
