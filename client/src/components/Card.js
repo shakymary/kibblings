@@ -1,19 +1,18 @@
 import React from 'react'
 import { Card } from 'react-bootstrap';
 
-const Cards = () => {
+const Cards = (props) => {
     return (
         <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
+            <Card.Img variant="top" src={props.image} />
             <Card.Body>
-                <Card.Title>Card Title</Card.Title>
+                <Card.Title>{props.petName}</Card.Title>
                 <Card.Text>
-                    Some quick example text to build on the card title and make up the bulk of
-                    the card's content.
+                    {props.petBreed}
                 </Card.Text>
             </Card.Body>
         </Card>
     )
 }
 
-export default Card
+export default Cards;
