@@ -1,5 +1,6 @@
 import React from "react";
 import NavBar from "./components/NavBar";
+
 // import Btn from "./components/Button"
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Forms from "./components/Form";
@@ -19,6 +20,7 @@ function App() {
           <Route path="/adoption" component={Adoption} />
         </Switch>
       </BrowserRouter>
+
     </div>
   );
 }
