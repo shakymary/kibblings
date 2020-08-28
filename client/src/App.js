@@ -46,8 +46,8 @@ function App() {
         <UserContext.Provider value={{ userData, setUserData }}>
           <NavBar />
           <Switch>
-            <Route path="/home" component={Home} />
             <Route exact path="/" component={Landing} />
+            <Route path="/home" component={Home} />
             <Route path="/mypets" component={MyPets} />
             <Route path="/adoption" component={Adoption} />
           </Switch>
