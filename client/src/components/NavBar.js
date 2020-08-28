@@ -7,6 +7,7 @@ import { useHistory } from "react-router-dom";
 const NavBar = () => {
   const history = useHistory();
   const adoption = () => history.push("/adoption");
+  const mypets = () => history.push("/mypets");
 
   return (
     <Navbar bg="light" expand="lg">
@@ -19,6 +20,9 @@ const NavBar = () => {
           </Nav.Link>
           <Nav.Link>
             <Nav.Link onClick={adoption}>Adoption</Nav.Link>
+          </Nav.Link>
+          <Nav.Link>
+            <Nav.Link onClick={mypets}>My Pets</Nav.Link>
           </Nav.Link>
           <Nav.Link>
             <Login />

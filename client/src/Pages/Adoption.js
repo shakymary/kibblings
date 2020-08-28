@@ -1,7 +1,7 @@
 import React from "react";
 import Jumbo from "../components/Jumbotron";
 import Forms from "../components/Form";
-import Cards from "../components/Card";
+import { Cards } from "../components/Card";
 
 const Adoption = () => {
   return (
@@ -13,6 +13,7 @@ const Adoption = () => {
         btnSubmitText="exampletext"
       />
       <Cards
+        width="18rem"
         image={`https://picsum.photos/id/237/200/300`}
         petName="bob"
         petBreed="golden"
