@@ -8,6 +8,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Adoption from "./Pages/Adoption";
 import MyPets from "./Pages/MyPets";
 import Home from "./Pages/Home";
+import Landing from "./Pages/Landing"
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/home" component={Home} />
+          <Route exact path="/" component={Landing} />
           <Route path="/mypets" component={MyPets} />
           <Route path="/adoption" component={Adoption} />
         </Switch>
