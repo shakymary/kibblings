@@ -9,6 +9,7 @@ import Adoption from "./Pages/Adoption";
 import MyPets from "./Pages/MyPets";
 import Home from "./Pages/Home";
 import UserContext from "./Context/UserContext";
+import Landing from "./Pages/Landing";
 
 function App() {
   const [userData, setUserData] = useState({
@@ -45,7 +46,8 @@ function App() {
         <UserContext.Provider value={{ userData, setUserData }}>
           <NavBar />
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/" component={Landing} />
             <Route path="/mypets" component={MyPets} />
             <Route path="/adoption" component={Adoption} />
           </Switch>
