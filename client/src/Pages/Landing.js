@@ -4,10 +4,11 @@ import { Col, Row, Container } from "react-bootstrap";
 
 const Landing = () => {
   return (
-    <Container fluid>
+    <Container fluid >
       <Row>
         <Col>
-          <Carousels>
+
+          <Carousels >
             <h1> Checking</h1>
             <CarouselItems />
           </Carousels>
