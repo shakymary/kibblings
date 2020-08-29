@@ -4,11 +4,9 @@ import Register from "../components/Auth/Register";
 import Login from "../components/Auth/Login";
 import { useHistory } from "react-router-dom";
 import UserContext from "../Context/UserContext";
-
 const NavBar = () => {
   const { userData, setUserData } = useContext(UserContext);
   const history = useHistory();
-
   const adoption = () => history.push("/adoption");
   const mypets = () => history.push("/mypets");
   const home = () => history.push("/home");
@@ -21,7 +19,6 @@ const NavBar = () => {
     history.push("/");
     localStorage.setItem("auth-token", "");
   };
-
   return (
     <Navbar bg="light" expand="lg">
       <Navbar.Brand onClick={landing}>Kibblings</Navbar.Brand>
@@ -58,5 +55,4 @@ const NavBar = () => {
     </Navbar>
   );
 };
-
 export default NavBar;
