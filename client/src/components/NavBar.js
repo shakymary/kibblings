@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import UserContext from "../Context/UserContext";
 
 const NavBar = () => {
+  const { userData, setUserData } = useContext(UserContext);
   const history = useHistory();
   const adoption = () => history.push("/adoption");
   const mypets = () => history.push("/mypets");

@@ -1,7 +1,6 @@
-import React from 'react'
-import { Carousels, CarouselItems } from "../components/Carousel"
-import { Col, Row, Container } from 'react-bootstrap'
-
+import React from "react";
+import { Carousels, CarouselItems } from "../components/Carousel";
+import { Col, Row, Container } from "react-bootstrap";
 
 const Landing = () => {
   return (
@@ -16,9 +15,7 @@ const Landing = () => {
         </Col>
       </Row>
     </Container>
+  );
+};
 
-
-  )
-}
-
-export default Landing
+export default Landing;
