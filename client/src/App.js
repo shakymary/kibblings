@@ -10,6 +10,7 @@ import MyPets from "./Pages/MyPets";
 import Home from "./Pages/Home";
 import UserContext from "./Context/UserContext";
 import Landing from "./Pages/Landing";
+require("dotenv").config();
 
 function App() {
   const [userData, setUserData] = useState({
@@ -38,7 +39,32 @@ function App() {
       }
     };
     checkLoggedIn();
+
+    //////////////////////////////////////////////////////////////////////////////
+    Axios.post("https://api.petfinder.com/v2/oauth2/token",
+
+      {
+        client_id: process.env.CLIENT_ID,
+        client_secret: process.env.CLIENT_SECRET,
+        grant_type: "client_credentials"
+      }
+
+    ).then((res) => {
+      console.log(res.data.token_type);
+      console.log(res.data.access_token);
+      return { tokenType: res.data.token_type, accessToken: res.data.access_token }
+    }).then((res) => {
+      Axios.get("https://api.petfinder.com/v2/animals?type=dog&page=2", {
+        headers: {
+          Authorization: res.tokenType + " " + res.accessToken
+        }
+      }).then((res) => {
+        console.log(res);
+      })
+    })
   }, []);
+
+  ////////////////////////////////////////////////////////////////////////////////
 
   return (
     <div className="App">
