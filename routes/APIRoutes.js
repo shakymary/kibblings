@@ -6,8 +6,8 @@ router.get("/apiToken", async (req, res) => {
         let token = {};
         await Axios.post("https://api.petfinder.com/v2/oauth2/token",
             {
-                client_id: "txUGcDgrbRsp2doKqVPp2Sepsj1SPDM0nhw9fSUF1chbfRQcar",
-                client_secret: "zwDXZ52l0IUqQQxcuzxdb7S3wtAdg6X0pQXvnogm",
+                client_id: " ",
+                client_secret: " ",
                 grant_type: "client_credentials"
             }
         ).then((res) => {
