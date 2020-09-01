@@ -1,9 +1,21 @@
 .footer-container {
-  background-color: rgb(152, 180, 171);
+  background-color: #fcf6e8 !important;
   display: flex;
   justify-content: space-between;
   padding: 15px 50px 5px 50px;
 }
 
 .footer-items {
+}
+
+h5 {
+  color: rgb(41, 36, 36) !important;
+}
+
+a {
+  color: rgb(19, 11, 11) !important;
+}
+
+.body {
+  background-color: rgb(245, 244, 224) !important;
 }

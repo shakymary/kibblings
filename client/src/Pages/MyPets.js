@@ -2,10 +2,11 @@ import React from "react";
 import {} from "react-bootstrap";
 import Forms from "../components/Form";
 import { PetCard } from "../components/Card";
+import Footer from "../components/Footer";
 
 const MyPets = () => {
   return (
-    <div>
+    <div className="body">
       <Forms
         placeholder="Find Pet"
         classNameName="mr-sm-2 secondary"
@@ -16,6 +17,8 @@ const MyPets = () => {
         petName="bob"
         petBreed="golden"
       />
+
+      <Footer />
     </div>
   );
 };

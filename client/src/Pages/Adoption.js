@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 
 const Adoption = () => {
   return (
-    <div>
+    <div className="body">
       <Jumbo jumbotronTitle="Hello" jumbotronText="lorem schoolboot" />
       <Forms
         placeholder="Search for a Pet"

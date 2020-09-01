@@ -1,10 +1,11 @@
 import React from "react";
 import { Jumbotron, Container } from "react-bootstrap";
+import "./Pages.css";
 
 function Jumbo(props) {
   return (
     <Jumbotron fluid>
-      <Container>
+      <Container className="jumbotron">
         <h1>{props.jumbotronTitle}</h1>
         <p>{props.jumbotronText}</p>
       </Container>
