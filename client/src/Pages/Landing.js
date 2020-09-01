@@ -8,7 +8,6 @@ const Landing = () => {
         <Container fluid >
             <Row>
                 <Col>
-
                     <Carousels >
                         <h1> Checking</h1>
                         <CarouselItems />
