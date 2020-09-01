@@ -1,14 +1,14 @@
 import React from "react";
 import { Carousels, CarouselItems } from "../components/Carousel";
 import { Col, Row, Container } from "react-bootstrap";
-import axios from "axios";
+// import axios from "axios";
 
 const Landing = () => {
     return (
-        <Container fluid >
+        <Container fluid>
             <Row>
                 <Col>
-                    <Carousels >
+                    <Carousels>
                         <h1> Checking</h1>
                         <CarouselItems />
                     </Carousels>
