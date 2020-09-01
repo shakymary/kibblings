@@ -1,6 +1,6 @@
 import React from "react";
 import {} from "react-bootstrap";
-import Forms from "../components/Form";
+import { Forms } from "../components/Form";
 import { PetCard } from "../components/Card";
 import Footer from "../components/Footer";
 

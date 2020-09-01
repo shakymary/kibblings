@@ -1,11 +1,14 @@
 import React from "react";
-import Footer from "../components/Footer";
+import { PetForm } from "../components/Form";
 
 const Home = () => {
   return (
     <>
-      <h1>Home</h1>
-      <Footer />
+      <PetForm
+        placeholder="placeholder"
+        className="text"
+        btnSubmitText="Submit"
+      />
     </>
   );
 };

@@ -1,6 +1,5 @@
 import React from "react";
-import { Card } from "react-bootstrap";
-import "./Pages.css";
+import { Card, Button, ListGroup, ListGroupItem } from "react-bootstrap";
 
 export const Cards = (props) => {
   return (
@@ -33,5 +32,28 @@ export const PetCard = (props) => {
         </div>
       </div>
     </div>
+  );
+};
+
+export const InfoCard = (props) => {
+  return (
+    <Card style={{ width: "18rem" }}>
+      <Card.Img variant="top" src={props.image} />
+      <Card.Body>
+        <Card.Title>{props.petName}</Card.Title>
+        <Card.Text>{props.description}</Card.Text>
+      </Card.Body>
+      <ListGroup className="list-group-flush">
+        <ListGroupItem>Breed: {props.breed}</ListGroupItem>
+        <ListGroupItem>Age: {props.age}</ListGroupItem>
+        <ListGroupItem>Weight: {props.weight}</ListGroupItem>
+        <ListGroupItem>Gender: {props.gender}</ListGroupItem>
+        <ListGroupItem>Color: {props.color}</ListGroupItem>
+      </ListGroup>
+      <Card.Body>
+        <Button variant="primary">Edit </Button>
+        <Button variant="danger">Remove </Button>
+      </Card.Body>
+    </Card>
   );
 };
