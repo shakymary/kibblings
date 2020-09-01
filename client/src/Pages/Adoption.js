@@ -1,6 +1,6 @@
 import React from "react";
 import Jumbo from "../components/Jumbotron";
-import Forms from "../components/Form";
+import { Forms } from "../components/Form";
 import { Cards } from "../components/Card";
 import Footer from "../components/Footer";
 
@@ -19,6 +19,7 @@ const Adoption = () => {
         petName="bob"
         petBreed="golden"
       />
+
       <Footer />
     </div>
   );
