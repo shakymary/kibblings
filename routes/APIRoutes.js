@@ -63,4 +63,19 @@ router.post("/addPet", auth, async (req, res) => {
   }
 });
 
+router.get("/all", auth, async (req, res) => {
+  const pets = await Pet.find({ userId: req.user });
+  res.json(pets);
+});
+
+router.delete("/remove/:id", auth, async (req, res) => {
+  const pet = await Pet.findOne({ userId: req.user, _id: req.params.id });
+  if (!pet)
+    return res
+      .status(400)
+      .json({ msg: "No pet found with this current user." });
+  const deletedPet = await Pet.findByIdAndDelete(req.params.id);
+  res.json(deletedPet);
+});
+
 module.exports = router;
