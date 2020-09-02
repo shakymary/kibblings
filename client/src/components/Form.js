@@ -15,9 +15,9 @@ export const Forms = (props) => {
 };
 
 export class PetForm extends Component {
-  state = { showForm: false }
+  state = { showForm: false };
 
-  showForm = (props) => {
+  showForm = () => {
     return (
       <Modal.Dialog>
         <Form>
@@ -74,21 +74,23 @@ export class PetForm extends Component {
           </div>
         </Form>
       </Modal.Dialog>
-    )
-  }
+    );
+  };
   render() {
     return (
       <div className="pet-form">
         <h1>Add a pet</h1>
-        <Button className="ml-3" onClick={() => this.setState({ showForm: true })}>Add A Pet</Button>
+        <Button
+          className="ml-3"
+          onClick={() => this.setState({ showForm: true })}
+        >
+          Add A Pet
+        </Button>
         {this.state.showForm ? this.showForm() : null}
-
       </div>
-    )
+    );
   }
-
 }
-
 
 // export const PetForm = (props) => {
 //   return (
