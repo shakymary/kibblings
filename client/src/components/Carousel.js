@@ -13,11 +13,12 @@ export const Carousels = ({ children }) => {
 export const CarouselItems = () => {
     return (
         <Carousel.Item>
-            {/* <img
+            <h1> Testing with Carousel Items</h1>
+            <img
                 className="d-block w-100"
-                src={"https://picsum.photos/id/237/200/300"}
+                src={"./Assets/KibblingsPotentialFaviconLogo.jpg"}
                 alt="First slide"
-            /> */}
+            />
             <Carousel.Caption>
                 <h3>First slide label</h3>
                 <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -25,4 +26,21 @@ export const CarouselItems = () => {
         </Carousel.Item>
     )
 }
+
+export const ChildTest = ({ children }) => {
+    return (
+        <div>
+            {children}
+        </div>
+    )
+}
+
+export const Child = () => {
+    return (
+        <h1>Child Here</h1>
+    )
+}
+
+
+
 

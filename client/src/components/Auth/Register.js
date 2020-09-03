@@ -65,7 +65,7 @@ function Register() {
                 onChange={(e) => setPassword(e.target.value)}
               />
               <Form.Text className="text-muted">
-                Never share your password to anyone.
+                Never share your password with anyone.
               </Form.Text>
             </Form.Group>
 

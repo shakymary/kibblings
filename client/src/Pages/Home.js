@@ -6,14 +6,15 @@ const Home = () => {
   const [name, setName] = useState();
   const [age, setAge] = useState();
   const [weight, setWeight] = useState();
-  const [breed, setBreed] = useState([]);
+  const [breed, setBreed] = useState();
   const [color, setColor] = useState();
   const [gender, setGender] = useState();
   const [birthday, setBirthday] = useState();
   const [microchip, setMicrochip] = useState();
-  const [vaccines, setVaccines] = useState([]);
-  const [allergies, setAllergies] = useState([]);
+  const [vaccines, setVaccines] = useState();
+  const [allergies, setAllergies] = useState();
   const [rabies, setRabies] = useState();
+
   const vaccineLabels = [
     "Rabies",
     "Distemper",
@@ -27,6 +28,7 @@ const Home = () => {
     "Giardia",
     "Canine Infuenza H3N8",
   ];
+
   const savePet = async (e) => {
     e.preventDefault();
     const newPet = {
@@ -42,14 +44,17 @@ const Home = () => {
       allergies,
       rabies,
     };
+
     await Axios.post("/user/addPet", newPet);
     setLgShow(false);
   };
+
   return (
     <>
       <Button className="ml-3 mt-3" onClick={() => setLgShow(true)}>
         Add Pet
       </Button>
+
       <Modal
         size="lg"
         show={lgShow}
@@ -72,6 +77,7 @@ const Home = () => {
                   onChange={(e) => setName(e.target.value)}
                 />
               </Form.Group>
+
               <Form.Group controlId="age">
                 <Form.Label>Age</Form.Label>
                 <Form.Control
@@ -88,6 +94,7 @@ const Home = () => {
                   onChange={(e) => setWeight(e.target.value)}
                 />
               </Form.Group>
+
               <Form.Group controlId="breed">
                 <Form.Label>Breed</Form.Label>
                 <Form.Control
@@ -166,6 +173,7 @@ const Home = () => {
                   onChange={(e) => setRabies(e.target.value)}
                 />
               </Form.Group>
+
               <Button
                 t
                 ype="submit"
