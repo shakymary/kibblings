@@ -35,7 +35,6 @@ function Register() {
   return (
     <>
       <Nav.Link onClick={handleShow}>Register</Nav.Link>
-
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Create an Account</Modal.Title>
@@ -67,7 +66,7 @@ function Register() {
                 onChange={(e) => setPassword(e.target.value)}
               />
               <Form.Text className="text-muted">
-                Never share your password to anyone.
+                Never share your password with anyone.
               </Form.Text>
             </Form.Group>
 
