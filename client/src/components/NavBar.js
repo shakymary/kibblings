@@ -23,7 +23,18 @@ const NavBar = () => {
 
   return (
     <Navbar bg="light" expand="lg">
-      <Navbar.Brand onClick={landing}>Kibblings</Navbar.Brand>
+      <Navbar.Brand onClick={landing}>
+        {/* NAPOLEONS LOGO TESTING AREA */}
+        <img
+          alt=""
+          src="./assets/KibblingsPotentialFaviconLogo.jpg"
+          width="30"
+          height="30"
+          className="d-inline-block align-top"
+        />{' '}
+        {/* END OF TESTING AREA */}
+      Kibblings
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
@@ -43,15 +54,15 @@ const NavBar = () => {
               </Nav.Link>
             </>
           ) : (
-            <>
-              <Nav.Link>
-                <Login />
-              </Nav.Link>
-              <Nav.Link>
-                <Register />
-              </Nav.Link>
-            </>
-          )}
+              <>
+                <Nav.Link>
+                  <Login />
+                </Nav.Link>
+                <Nav.Link>
+                  <Register />
+                </Nav.Link>
+              </>
+            )}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
