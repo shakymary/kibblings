@@ -11,7 +11,7 @@ const petSchema = new mongoose.Schema({
   microchip: { type: String },
   vaccines: [String],
   allergies: [String],
-  rabies: { type: Boolean, required: true },
+  rabies: { type: String, required: true },
   userId: { type: String, required: true },
 });
 
