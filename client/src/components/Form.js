@@ -15,9 +15,22 @@ export const Forms = (props) => {
 };
 
 export class PetForm extends Component {
-  state = { showForm: false }
+  state = { showForm: false };
 
-  showForm = (props) => {
+  showForm = () => {
+    const vaccineLabels = [
+      "Rabies",
+      "Distemper",
+      "Hepatitis/Adenovirus",
+      "Parvovirus",
+      "Parainfluenza",
+      "Bordetella",
+      "Leptospirosis",
+      "Lyme Disease",
+      " Coronavirus",
+      "Giardia",
+      "Canine Infuenza H3N8",
+    ];
     return (
       <Modal.Dialog>
         <Form>
@@ -55,13 +68,31 @@ export class PetForm extends Component {
               <Form.Label>Birthday</Form.Label>
               <Form.Control type="text" placeholder="eg. 9/18/2020" />
             </Form.Group>
-            <Form.Group controlId="allergies">
-              <Form.Label>Allergies</Form.Label>
-              <Form.Control type="text" placeholder="eg. Penicillin" />
-            </Form.Group>
             <Form.Group controlId="microchip">
               <Form.Label>Microchip</Form.Label>
               <Form.Control type="text" placeholder="eg. 111-00-111" />
+            </Form.Group>
+            <Form.Group controlId="vaccines">
+              <Form.Label>Vaccines</Form.Label>
+
+              {vaccineLabels.map((vacc) => {
+                return (
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      value=""
+                    />
+                    <label className="form-check-label" htmlFor="defaultCheck1">
+                      {vacc}
+                    </label>
+                  </div>
+                );
+              })}
+            </Form.Group>
+            <Form.Group controlId="allergies">
+              <Form.Label>Allergies</Form.Label>
+              <Form.Control type="text" placeholder="eg. Penicillin" />
             </Form.Group>
             <Form.Group controlId="rabies">
               <Form.Label>Rabies</Form.Label>
@@ -74,21 +105,23 @@ export class PetForm extends Component {
           </div>
         </Form>
       </Modal.Dialog>
-    )
-  }
+    );
+  };
   render() {
     return (
       <div className="pet-form">
         <h1>Add a pet</h1>
-        <Button className="ml-3" onClick={() => this.setState({ showForm: true })}>Add A Pet</Button>
+        <Button
+          className="ml-3"
+          onClick={() => this.setState({ showForm: true })}
+        >
+          Add A Pet
+        </Button>
         {this.state.showForm ? this.showForm() : null}
-
       </div>
-    )
+    );
   }
-
 }
-
 
 // export const PetForm = (props) => {
 //   return (
