@@ -1,6 +1,5 @@
 import React from "react";
 import { Jumbotron, Container } from "react-bootstrap";
-import "./Pages.css";
 
 function Jumbo(props) {
   return (

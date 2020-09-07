@@ -8,30 +8,41 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <div className="footer">
-      <MDBFooter color="blue" className="font-small pt-4 mt-4">
+      <MDBFooter color="blue" className="font-small pt-4 mt-4 content">
         <MDBContainer fluid className="text-center text-md-left">
           <MDBRow>
-            <MDBCol md="6">
-              <h5 className="title">Follow us on social media</h5>
-              <p>
-                Here you can use rows and columns here to organize your footer
-                content.
-              </p>
+            <MDBCol className="column" md="3">
+              <h5 className="title">Follow us</h5>
+              <i class="fab fa-twitter-square"></i>
+              <i class="fab fa-facebook-square"></i>
+              <i class="fab fa-youtube"></i>
+              <i class="fab fa-instagram"></i>
             </MDBCol>
-            <MDBCol md="6">
-              <h6 className="title">Links</h6>
+            <MDBCol className="column" md="3">
+              <h5 className="title">About Us</h5>
               <ul>
                 <li className="list-unstyled">
-                  <a href="#!">Link 1</a>
+                  <a href="#!">About Kibblings</a>
                 </li>
                 <li className="list-unstyled">
-                  <a href="#!">Link 2</a>
+                  <a href="#!">FAQs</a>
                 </li>
                 <li className="list-unstyled">
-                  <a href="#!">Link 3</a>
+                  <a href="#!">Contact Us</a>
+                </li>
+              </ul>
+            </MDBCol>
+            <MDBCol className="column" md="3">
+              <h5 className="title">Pet Care Topics</h5>
+              <ul>
+                <li className="list-unstyled ">
+                  <a href="#!">Dog Care</a>
                 </li>
                 <li className="list-unstyled">
-                  <a href="#!">Link 4</a>
+                  <a href="#!">Cat Care</a>
+                </li>
+                <li className="list-unstyled">
+                  <a href="#!">All Pets Care</a>
                 </li>
               </ul>
             </MDBCol>
@@ -40,7 +51,7 @@ const Footer = () => {
         <div className="footer-copyright text-center py-3">
           <MDBContainer fluid>
             &copy; {new Date().getFullYear()} Copyright:{" "}
-            <a href="https://www.mdbootstrap.com"> MDBootstrap.com </a>
+            <a href=""> Kibblings.com </a>
           </MDBContainer>
         </div>
       </MDBFooter>
