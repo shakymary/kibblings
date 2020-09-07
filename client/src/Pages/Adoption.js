@@ -4,13 +4,8 @@ import { Forms } from "../components/Form";
 import { PetCard } from "../components/Card";
 import Footer from "../components/Footer";
 import Axios from "axios";
-
 const Adoption = () => {
-<<<<<<< HEAD
-  const [pet, setPet] = useState([]);
-=======
   const [pets, setPet] = useState([]);
->>>>>>> 1a561ac8bb3d8e128d644fde56fb7e1e0edf6ea0
   const getPets = () => {
     let token = {};
     Axios.get("/users/apiToken")
@@ -31,21 +26,8 @@ const Adoption = () => {
   useEffect(() => {
     getPets();
   }, []);
-
   return (
     <div>
-<<<<<<< HEAD
-      {pet.map((item) => {
-        return (
-          <PetCard
-            image={item.photos[0].full}
-            petName={item.name}
-            petBreed={item.breeds.primary + " " + item.breeds.secondary}
-          />
-        );
-      })}
-=======
->>>>>>> 1a561ac8bb3d8e128d644fde56fb7e1e0edf6ea0
       <Jumbo jumbotronTitle="Hello" jumbotronText="lorem schoolboot" />
       <Forms
         placeholder="Search for a Pet"
@@ -61,10 +43,8 @@ const Adoption = () => {
           />
         );
       })}
-
       <Footer />
     </div>
   );
 };
-
 export default Adoption;
