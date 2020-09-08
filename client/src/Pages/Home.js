@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 import Axios from "axios";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const [lgShow, setLgShow] = useState(false);
@@ -32,19 +33,29 @@ const Home = () => {
 
   const savePet = async (e) => {
     e.preventDefault();
-    const newPet = { name, age, weight, breed, color, gender, birthday, microchip, vaccines, allergies, rabies };
+    const newPet = {
+      name,
+      age,
+      weight,
+      breed,
+      color,
+      gender,
+      birthday,
+      microchip,
+      vaccines,
+      allergies,
+      rabies,
+    };
 
     await Axios.post("/user/addPet", newPet);
     setLgShow(false);
-
-  }
-
+  };
 
   return (
     <>
-      <Button
-        className="ml-3 mt-3"
-        onClick={() => setLgShow(true)}>Add Pet</Button>
+      <Button className="ml-3 mt-3" onClick={() => setLgShow(true)}>
+        Add Pet
+      </Button>
 
       <Modal
         size="lg"
@@ -62,40 +73,50 @@ const Home = () => {
             <div className="ml-4 mr-4">
               <Form.Group controlId="name">
                 <Form.Label>Name</Form.Label>
-                <Form.Control type="text" placeholder="eg. Buddy"
+                <Form.Control
+                  type="text"
+                  placeholder="eg. Buddy"
                   onChange={(e) => setName(e.target.value)}
                 />
-
               </Form.Group>
 
               <Form.Group controlId="age">
                 <Form.Label>Age</Form.Label>
-                <Form.Control type="text" placeholder="eg. 5"
+                <Form.Control
+                  type="text"
+                  placeholder="eg. 5"
                   onChange={(e) => setAge(e.target.value)}
                 />
               </Form.Group>
               <Form.Group controlId="weight">
                 <Form.Label>Weight</Form.Label>
-                <Form.Control type="text" placeholder="eg. 10lbs"
+                <Form.Control
+                  type="text"
+                  placeholder="eg. 10lbs"
                   onChange={(e) => setWeight(e.target.value)}
                 />
               </Form.Group>
 
               <Form.Group controlId="breed">
                 <Form.Label>Breed</Form.Label>
-                <Form.Control type="text" placeholder="eg. Dachshund"
+                <Form.Control
+                  type="text"
+                  placeholder="eg. Dachshund"
                   onChange={(e) => setBreed(e.target.value)}
                 />
               </Form.Group>
               <Form.Group controlId="color">
                 <Form.Label>Color</Form.Label>
-                <Form.Control type="text" placeholder="eg. Black"
+                <Form.Control
+                  type="text"
+                  placeholder="eg. Black"
                   onChange={(e) => setColor(e.target.value)}
                 />
               </Form.Group>
               <Form.Group controlId="gender">
                 <Form.Label>Gender</Form.Label>
-                <Form.Control as="select"
+                <Form.Control
+                  as="select"
                   onChange={(e) => setGender(e.target.value)}
                 >
                   <option>Male</option>
@@ -104,13 +125,17 @@ const Home = () => {
               </Form.Group>
               <Form.Group controlId="birthday">
                 <Form.Label>Birthday</Form.Label>
-                <Form.Control type="text" placeholder="eg. 9/18/2020"
+                <Form.Control
+                  type="text"
+                  placeholder="eg. 9/18/2020"
                   onChange={(e) => setBirthday(e.target.value)}
                 />
               </Form.Group>
               <Form.Group controlId="microchip">
                 <Form.Label>Microchip</Form.Label>
-                <Form.Control type="text" placeholder="eg. 111-00-111"
+                <Form.Control
+                  type="text"
+                  placeholder="eg. 111-00-111"
                   onChange={(e) => setMicrochip(e.target.value)}
                 />
               </Form.Group>
@@ -125,7 +150,10 @@ const Home = () => {
                         type="checkbox"
                         onChange={(e) => setVaccines(e.target.value)}
                       />
-                      <label className="form-check-label" htmlFor="defaultCheck1">
+                      <label
+                        className="form-check-label"
+                        htmlFor="defaultCheck1"
+                      >
                         {vacc}
                       </label>
                     </div>
@@ -134,29 +162,34 @@ const Home = () => {
               </Form.Group>
               <Form.Group controlId="allergies">
                 <Form.Label>Allergies</Form.Label>
-                <Form.Control type="text" placeholder="eg. Penicillin"
+                <Form.Control
+                  type="text"
+                  placeholder="eg. Penicillin"
                   onChange={(e) => setAllergies(e.target.value)}
                 />
               </Form.Group>
               <Form.Group controlId="rabies">
                 <Form.Label>Rabies</Form.Label>
-                <Form.Control type="text" placeholder="eg. 111-00-11"
+                <Form.Control
+                  type="text"
+                  placeholder="eg. 111-00-11"
                   onChange={(e) => setRabies(e.target.value)}
                 />
               </Form.Group>
 
-              <Button t
+              <Button
+                t
                 ype="submit"
                 className="btn btn-primary mb-3"
-                onClick={savePet}>
+                onClick={savePet}
+              >
                 Submit
-      </Button>
+              </Button>
             </div>
           </Form>
         </Modal.Body>
       </Modal>
-
-
+      <Footer />
     </>
   );
 };
