@@ -25,15 +25,17 @@ const NavBar = () => {
     <Navbar bg="light" expand="lg">
       <Navbar.Brand onClick={landing}>
         {/* NAPOLEONS LOGO TESTING AREA */}
-        <img
+        {/* <img
           alt=""
           src="/KibblingsPotentialFaviconLogo.jpg"
           width="40"
           height="40"
           className="d-inline-block"
         />{' '}
-        {/* END OF TESTING AREA */}
-      Kibblings
+        
+        END OF TESTING AREA */}
+        <i class="fas fa-paw"></i>
+        Kibblings
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
