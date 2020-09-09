@@ -27,17 +27,25 @@ const NavBar = () => {
         {/* NAPOLEONS LOGO TESTING AREA */}
         <img
           alt=""
+<<<<<<< HEAD
           src="./assets/KibblingsPotentialFaviconLogo.jpg"
           width="30"
           height="30"
           className="d-inline-block align-top"
         />{" "}
+=======
+          src="/KibblingsPotentialFaviconLogo.jpg"
+          width="40"
+          height="40"
+          className="d-inline-block"
+        />{' '}
+>>>>>>> 260b62c3f95a1693586b307d5d1ca5ca01d42fc5
         {/* END OF TESTING AREA */}
         Kibblings
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
+        <Nav className="ml-auto">
           {userData.user ? (
             <>
               <Nav.Link>
