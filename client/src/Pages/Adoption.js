@@ -5,10 +5,12 @@ import { PetCard } from "../components/Card";
 import Footer from "../components/Footer";
 import Axios from "axios";
 
-const Adoption = () => {
+const Adoption = (e) => {
+  const [searchPet, setSearchPet] = useState();
   const [pets, setPet] = useState([]);
   const getPets = () => {
     let token = {};
+    e.preventDefault();
     Axios.get("/users/apiToken")
       .then((response) => {
         token = response.data;
@@ -24,9 +26,7 @@ const Adoption = () => {
         });
       });
   };
-  useEffect(() => {
-    getPets();
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <div>
@@ -35,6 +35,7 @@ const Adoption = () => {
         placeholder="Search for a Pet"
         className="mr-sm-2 secondary"
         btnSubmitText="exampletext"
+        onSubmit={getPets}
       />
       {pets.map((item) => {
         return (
@@ -45,10 +46,8 @@ const Adoption = () => {
           />
         );
       })}
-
       <Footer />
     </div>
   );
 };
-
 export default Adoption;
