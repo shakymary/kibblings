@@ -4,7 +4,6 @@ import { Forms } from "../components/Form";
 import { PetCard } from "../components/Card";
 import Footer from "../components/Footer";
 import Axios from "axios";
-
 const Adoption = () => {
   const [pets, setPet] = useState([]);
   const getPets = () => {
@@ -27,7 +26,6 @@ const Adoption = () => {
   useEffect(() => {
     getPets();
   }, []);
-
   return (
     <div>
       <Jumbo jumbotronTitle="Hello" jumbotronText="lorem schoolboot" />
@@ -45,10 +43,8 @@ const Adoption = () => {
           />
         );
       })}
-
       <Footer />
     </div>
   );
 };
-
 export default Adoption;

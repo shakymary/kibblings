@@ -1,15 +1,21 @@
 import React from "react";
-import { Carousels, CarouselItems, ChildTest, Child } from "../components/Carousel";
+import {
+    Carousels,
+    CarouselItems,
+    ChildTest,
+    Child,
+} from "../components/Carousel";
 import { Col, Row, Container, Carousel } from "react-bootstrap";
+import Footer from "../components/Footer";
 // import axios from "axios";
 
 const Landing = () => {
     return (
 
         <Container fluid>
-            <ChildTest>
+            {/* <ChildTest>
                 <Child></Child>
-            </ChildTest>
+            </ChildTest> */}
 
             <Row>
                 <Col lg={{ span: 6, offset: 3 }}>
@@ -17,10 +23,8 @@ const Landing = () => {
                         <CarouselItems />
                     </Carousels>
                 </Col>
-
             </Row>
-
-
+            <Footer />
         </Container>
     );
 };
