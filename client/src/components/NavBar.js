@@ -31,9 +31,9 @@ const NavBar = () => {
           width="30"
           height="30"
           className="d-inline-block align-top"
-        />{' '}
+        />{" "}
         {/* END OF TESTING AREA */}
-      Kibblings
+        Kibblings
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
@@ -54,15 +54,15 @@ const NavBar = () => {
               </Nav.Link>
             </>
           ) : (
-              <>
-                <Nav.Link>
-                  <Login />
-                </Nav.Link>
-                <Nav.Link>
-                  <Register />
-                </Nav.Link>
-              </>
-            )}
+            <>
+              <Nav.Link>
+                <Login />
+              </Nav.Link>
+              <Nav.Link>
+                <Register />
+              </Nav.Link>
+            </>
+          )}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
