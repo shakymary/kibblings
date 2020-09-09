@@ -10,14 +10,17 @@ const Landing = () => {
             <ChildTest>
                 <Child></Child>
             </ChildTest>
+
             <Row>
-
-
-                <Carousels>
-                    <CarouselItems />
-                </Carousels>
+                <Col lg={{ span: 6, offset: 3 }}>
+                    <Carousels>
+                        <CarouselItems />
+                    </Carousels>
+                </Col>
 
             </Row>
+
+
         </Container>
     );
 };
