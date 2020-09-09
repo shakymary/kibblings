@@ -4,7 +4,7 @@ import { Jumbotron, Container } from "react-bootstrap";
 function Jumbo(props) {
   return (
     <Jumbotron fluid>
-      <Container>
+      <Container className="jumbotron">
         <h1>{props.jumbotronTitle}</h1>
         <p>{props.jumbotronText}</p>
       </Container>
