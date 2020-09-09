@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 import Axios from "axios";
+<<<<<<< HEAD
+=======
+import Footer from "../components/Footer";
+
+>>>>>>> 418a623e1d608f231a0ac3616be70263095e3088
 const Home = () => {
   const [lgShow, setLgShow] = useState(false);
   const [name, setName] = useState();
@@ -186,6 +191,10 @@ const Home = () => {
           </Form>
         </Modal.Body>
       </Modal>
+<<<<<<< HEAD
+=======
+      <Footer />
+>>>>>>> 418a623e1d608f231a0ac3616be70263095e3088
     </>
   );
 };

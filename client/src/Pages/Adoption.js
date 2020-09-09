@@ -46,10 +46,8 @@ const Adoption = (e) => {
           />
         );
       })}
-
       <Footer />
     </div>
   );
 };
-
 export default Adoption;
