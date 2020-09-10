@@ -4,10 +4,10 @@ import Register from "../components/Auth/Register";
 import Login from "../components/Auth/Login";
 import { useHistory } from "react-router-dom";
 import UserContext from "../Context/UserContext";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 const NavBar = () => {
   const { userData, setUserData } = useContext(UserContext);
   const history = useHistory();
-
   const adoption = () => history.push("/adoption");
   const mypets = () => history.push("/mypets");
   const home = () => history.push("/home");
@@ -20,20 +20,20 @@ const NavBar = () => {
     history.push("/");
     localStorage.setItem("auth-token", "");
   };
-
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="primary" expand="lg">
       <Navbar.Brand onClick={landing}>
         {/* NAPOLEONS LOGO TESTING AREA */}
-        <img
+        {/* <img
           alt=""
           src="/KibblingsPotentialFaviconLogo.jpg"
           width="40"
           height="40"
           className="d-inline-block"
         />{' '}
-        {/* END OF TESTING AREA */}
-      Kibblings
+        END OF TESTING AREA */}
+        <i className="fas fa-paw"></i>
+        Kibblings
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
@@ -54,15 +54,15 @@ const NavBar = () => {
               </Nav.Link>
             </>
           ) : (
-              <>
-                <Nav.Link>
-                  <Login />
-                </Nav.Link>
-                <Nav.Link>
-                  <Register />
-                </Nav.Link>
-              </>
-            )}
+            <>
+              <Nav.Link>
+                <Login />
+              </Nav.Link>
+              <Nav.Link>
+                <Register />
+              </Nav.Link>
+            </>
+          )}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
