@@ -4,71 +4,42 @@ import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDB
     "mdbreact";
 
 
-//This testing has issues with multiple carousel items. this Test only works with one item, but MIGHT work with potential logic solutions
+//This testing has solved previous children issue, now using MDB
+//Remove MBD Container for HUGE Carousel
 export const Carousels = ({ children }) => {
     return (
-        <Carousel style={{ paddingTop: "30px" }}>
-            <Carousel.Item>
+        // <MDBContainer style={{ paddingTop: "30px" }}>
+        <MDBCarousel
+            activeItem={1}
+            length={3}
+            showControls={true}
+            showIndicators={true}
+            className="z-depth-1"
+        >
+            <MDBCarouselInner>
                 {children}
-            </Carousel.Item>
-        </Carousel>
+            </MDBCarouselInner>
+        </MDBCarousel>
+        // </MDBContainer>
     )
 }
 
 export const CarouselItems = () => {
     return (
         <>
-            <div>
-                <img
-                    className="d-block w-100"
-                    // src={"./Assets/KibblingsPotentialFaviconLogo.jpg"}
-                    src="https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg"
-                    alt="First slide"
-                />
-                <Carousel.Caption>
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </Carousel.Caption>
-            </div>
-        </>
-    )
-}
-
-//The child Testing Here may work using MDB. Double Check logic with Mykhas for Confirmation of logistics
-
-export const ChildTest = ({ children }) => {
-    return (
-        <MDBContainer style={{ paddingTop: "30px" }}>
-            <MDBCarousel
-                activeItem={1}
-                length={3}
-                showControls={true}
-                showIndicators={true}
-                className="z-depth-1"
-            >
-                <MDBCarouselInner>
-                    {children}
-                </MDBCarouselInner>
-            </MDBCarousel>
-        </MDBContainer>
-    )
-}
-
-export const Child = () => {
-    return (
-        <>
             <MDBCarouselItem itemId="1">
                 <MDBView>
                     <img
                         className="d-block w-100"
-                        src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
+                        src="https://www.wallpapers4u.org/wp-content/uploads/dog_cat_grass_german_shepherd_65061_1920x1080.jpg"
                         alt="First slide"
+                        style={{ height: "40", width: "40" }}
                     />
                     <MDBMask overlay="black-light" />
                 </MDBView>
                 <MDBCarouselCaption>
-                    <h3 className="h3-responsive">Light mask</h3>
-                    <p>First text</p>
+                    <h1 className="h1-responsive">🐶Welcome to Kibblings!🐱</h1>
+                    <p>Created by Mykhas Nallas, Napoleon Vuong, Alvaro Centeno, and Shakila Marando</p>
                 </MDBCarouselCaption>
             </MDBCarouselItem>
             <MDBCarouselItem itemId="2">
@@ -102,6 +73,21 @@ export const Child = () => {
         </>
     )
 }
+
+//The child Testing Here may work using MDB. Double Check logic with Mykhas for Confirmation of logistics
+//Or Rerun after potential post-confirmation Errors
+
+// export const ChildTest = ({ children }) => {
+//     return (
+
+//     )
+// }
+
+// export const Child = () => {
+//     return (
+
+//     )
+// }
 
 
 

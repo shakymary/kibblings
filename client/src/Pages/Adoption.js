@@ -16,7 +16,7 @@ const Adoption = (e) => {
         token = response.data;
       })
       .then((res) => {
-        Axios.get("https://api.petfinder.com/v2/animals?type=cat&page=2", {
+        Axios.get("https://api.petfinder.com/v2/animals?type=dog&page=2", {
           headers: {
             Authorization: token.tokenType + " " + token.accessToken,
           },
