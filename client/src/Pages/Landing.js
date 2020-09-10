@@ -6,26 +6,29 @@ import {
     Child,
 } from "../components/Carousel";
 import { Col, Row, Container, Carousel } from "react-bootstrap";
-import Footer from "../components/Footer";
-// import axios from "axios";
+import { Footer, FooterPage } from "../components/Footer";
+import { AboutCard } from "../components/Card";
 
 const Landing = () => {
     return (
+        <>
+            <Carousels>
+                <CarouselItems />
+            </Carousels>
+            <Container fluid style={{ minHeight: "100vh", width: "100%" }}>
 
-        <Container fluid>
-            {/* <ChildTest>
-                <Child></Child>
-            </ChildTest> */}
+                <Row>
+                    <Col>
+                        <AboutCard />
+                    </Col>
+                </Row>
 
-            <Row>
-                <Col lg={{ span: 6, offset: 3 }}>
-                    <Carousels>
-                        <CarouselItems />
-                    </Carousels>
-                </Col>
-            </Row>
-            <Footer />
-        </Container>
+                <Row>
+                    <Footer />
+                </Row>
+
+            </Container>
+        </>
     );
 };
 
