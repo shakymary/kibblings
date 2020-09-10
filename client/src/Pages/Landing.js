@@ -5,13 +5,12 @@ import {
     ChildTest,
     Child,
 } from "../components/Carousel";
-import { Col, Row, Container, Carousel } from "react-bootstrap";
+import { Col, Row, Container, Carousel, Card } from "react-bootstrap";
 import Footer from "../components/Footer";
 // import axios from "axios";
 
 const Landing = () => {
     return (
-
         <Container fluid>
             {/* <ChildTest>
                 <Child></Child>
@@ -23,9 +22,14 @@ const Landing = () => {
                         <CarouselItems />
                     </Carousels>
                 </Col>
+
+                <Footer />
+
             </Row>
-            <Footer />
-        </Container>
+
+        </Container >
+
+
     );
 };
 

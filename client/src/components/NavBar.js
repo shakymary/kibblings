@@ -34,7 +34,7 @@ const NavBar = () => {
         />{' '}
         
         END OF TESTING AREA */}
-        <i class="fas fa-paw"></i>
+        <i className="fas fa-paw"></i>
         Kibblings
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />

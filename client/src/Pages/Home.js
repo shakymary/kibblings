@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Modal, Form } from "react-bootstrap";
+import { Button, Modal, Form, Card, Row, Col } from "react-bootstrap";
 import Axios from "axios";
 import Footer from "../components/Footer";
 
@@ -53,9 +53,32 @@ const Home = () => {
 
   return (
     <>
-      <Button className="ml-3 mt-3" onClick={() => setLgShow(true)}>
-        Add Pet
+
+      <Row className="mt-3 ml-3">
+        <Card border="info" style={{ width: '18rem' }}>
+          <Card.Body>
+            <Card.Text>Hello User</Card.Text>
+          </Card.Body>
+        </Card>
+        <Button className="float-sm-rightt" style={{ align: 'right' }} onClick={() => setLgShow(true)}>
+          Add Pet
       </Button>
+      </Row>
+      <Row className="mt-3 ml-5">
+        <Card className="ml-5" style={{ width: '70rem' }}>
+          <Card.Img variant="top" style={{ width: '60rem', height: '20rem' }} src="https://s3fs.bestfriends.org/s3fs-public/pages/Adoptheader.jpg" />
+          <Card.Body>
+            <Card.Text>
+              Some quick example text to build on the card title and make up the bulk
+              of the card's content.
+      </Card.Text>
+          </Card.Body>
+        </Card>
+
+      </Row>
+
+
+
 
       <Modal
         size="lg"
@@ -177,6 +200,7 @@ const Home = () => {
                 />
               </Form.Group>
 
+
               <Button
                 t
                 ype="submit"
@@ -189,6 +213,9 @@ const Home = () => {
           </Form>
         </Modal.Body>
       </Modal>
+
+
+
       <Footer />
     </>
   );

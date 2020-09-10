@@ -6,8 +6,8 @@ import { Carousel } from 'react-bootstrap'
 //This testing has issues with multiple carousel items. this Test only works with one item, but MIGHT work with potential logic solutions
 export const Carousels = ({ children }) => {
     return (
-        <Carousel>
-            <Carousel.Item>
+        <Carousel className="mt-5">
+            <Carousel.Item >
                 {children}
             </Carousel.Item>
         </Carousel>
