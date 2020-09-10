@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 import Axios from "axios";
 import Footer from "../components/Footer";
@@ -13,8 +13,8 @@ const Home = () => {
   const [gender, setGender] = useState();
   const [birthday, setBirthday] = useState();
   const [microchip, setMicrochip] = useState();
-  const [vaccines, setVaccines] = useState();
-  const [allergies, setAllergies] = useState();
+  const [vaccines, setVaccines] = useState([]);
+  const [allergies, setAllergies] = useState([]);
   const [rabies, setRabies] = useState();
 
   const vaccineLabels = [
@@ -31,7 +31,7 @@ const Home = () => {
     "Canine Infuenza H3N8",
   ];
 
-  const savePet = async (e) => {
+  const submit = async (e) => {
     e.preventDefault();
     const newPet = {
       name,
@@ -43,11 +43,12 @@ const Home = () => {
       birthday,
       microchip,
       vaccines,
-      allergies,
       rabies,
     };
 
-    await Axios.post("/user/addPet", newPet);
+    await Axios.post("/users/addPet", newPet, {
+      headers: { "x-auth-token": localStorage.getItem("auth-token") },
+    });
     setLgShow(false);
   };
 
@@ -116,11 +117,12 @@ const Home = () => {
               <Form.Group controlId="gender">
                 <Form.Label>Gender</Form.Label>
                 <Form.Control
-                  as="select"
+                  type="text"
+                  placeholder="eg. Male"
                   onChange={(e) => setGender(e.target.value)}
                 >
-                  <option>Male</option>
-                  <option>Female</option>
+                  {/* <option>Male</option>
+                  <option>Female</option> */}
                 </Form.Control>
               </Form.Group>
               <Form.Group controlId="birthday">
@@ -147,7 +149,11 @@ const Home = () => {
                       <input
                         className="form-check-input"
                         type="checkbox"
-                        onChange={(e) => setVaccines(e.target.value)}
+                        value={vacc}
+                        // onCheck={(e) => {
+                        //   setVaccines([...vaccines, e.target.value]);
+                        //   console.log(vaccines);
+                        // }}
                       />
                       <label
                         className="form-check-label"
@@ -159,14 +165,14 @@ const Home = () => {
                   );
                 })}
               </Form.Group>
-              <Form.Group controlId="allergies">
+              {/* <Form.Group controlId="allergies">
                 <Form.Label>Allergies</Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="eg. Penicillin"
                   onChange={(e) => setAllergies(e.target.value)}
                 />
-              </Form.Group>
+              </Form.Group> */}
               <Form.Group controlId="rabies">
                 <Form.Label>Rabies</Form.Label>
                 <Form.Control
@@ -180,7 +186,7 @@ const Home = () => {
                 t
                 ype="submit"
                 className="btn btn-primary mb-3"
-                onClick={savePet}
+                onClick={submit}
               >
                 Submit
               </Button>
