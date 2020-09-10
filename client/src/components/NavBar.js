@@ -4,6 +4,9 @@ import Register from "../components/Auth/Register";
 import Login from "../components/Auth/Login";
 import { useHistory } from "react-router-dom";
 import UserContext from "../Context/UserContext";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
+
 const NavBar = () => {
   const { userData, setUserData } = useContext(UserContext);
   const history = useHistory();
@@ -22,7 +25,7 @@ const NavBar = () => {
   };
 
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="primary" expand="lg">
       <Navbar.Brand onClick={landing}>
         {/* NAPOLEONS LOGO TESTING AREA */}
         {/* <img

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Modal, Form, Card, Row, Col } from "react-bootstrap";
 import Axios from "axios";
-import Footer from "../components/Footer";
+import { Footer } from "../components/Footer";
 
 const Home = () => {
   const [lgShow, setLgShow] = useState(false);
