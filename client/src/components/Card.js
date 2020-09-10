@@ -60,27 +60,11 @@ export const InfoCard = (props) => {
 
 export const AboutCard = () => {
   return (
-    // <Card style={{ width: '18rem' }}>
-    //   <Card.Body>
-    //     <Card.Title>About Kibblings</Card.Title>
-    //     <Card.Subtitle className="mb-2 text-muted">Created by Mykhas Nallas, Napoleon Vuong, Alvaro Centeno, and Shakila Marando</Card.Subtitle>
-    //     <Card.Text>
-    //       With how busy our day to day lives can be, we sometimes need a little help with balancing our responsibilities and keeping track
-    //       of those things that are most important to us, and as pet owners, we have the added responsibility of taking care of our best friends.
-    //       With the Kibblings app, we have developed a platform that helps users keep track and update their pets’ health portfolio. Users can track
-    //       and also get reminders for their pets’ last vet visit, vaccine shots, weight, grooming visits, and more!  Don’t have a pet? Our app can
-    //       help you with this as well by visiting our adoption page. Here, users will be able to find pets that are ready to find loving homes near them.
-
-    // </Card.Text>
-    //     <Card.Link href="#">Card Link</Card.Link>
-    //     <Card.Link href="#">Another Link</Card.Link>
-    //   </Card.Body>
-    // </Card>
 
     <>
       <Container style={{ paddingTop: "30px" }}>
-        <h1 style={{ fontSize: "80px" }}>Welcome to Kibblings!</h1>
-        <h5 className="mb-2 text-muted">Created by Mykhas Nallas, Napoleon Vuong, Alvaro Centeno, and Shakila Marando </h5>
+        <h1 style={{ fontSize: "85px", textAlign: "center" }}>🐶Welcome to Kibblings!🐱</h1>
+        <h5 className="mb-2 text-muted" style={{ textAlign: "center" }}>Created by Mykhas Nallas, Napoleon Vuong, Alvaro Centeno, and Shakila Marando </h5>
         <h3 style={{ paddingTop: "30px" }}>With how busy our day to day lives can be, we sometimes need a little help with balancing our responsibilities and keeping track
         of those things that are most important to us, and as pet owners, we have the added responsibility of taking care of our best friends.
         With the Kibblings app, we have developed a platform that helps users keep track and update their pets’ health portfolio. Users can track

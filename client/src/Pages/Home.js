@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Modal, Form } from "react-bootstrap";
+import { Button, Modal, Form, Row, Card } from "react-bootstrap";
 import Axios from "axios";
 import { Footer } from "../components/Footer";
 
