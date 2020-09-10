@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Button, Modal, Form, Row, Card, Col, Container, Carousel } from "react-bootstrap";
 import Axios from "axios";
-import {
-
-} from "../components/Carousel";
 import { Footer } from "../components/Footer";
 
 const Home = () => {
