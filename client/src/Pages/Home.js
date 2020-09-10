@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Modal, Form, Row, Card, Col, Container, Carousel } from "react-bootstrap";
+import { Button, Modal, Form, Row, Card } from "react-bootstrap";
 import Axios from "axios";
 import { Footer } from "../components/Footer";
 
@@ -206,49 +206,95 @@ const Home = () => {
                   >
                     {/* <option>Male</option>
                   <option>Female</option> */}
+<<<<<<< HEAD
                   </Form.Control>
                 </Form.Group>
-                <Form.Group controlId="birthday">
-                  <Form.Label>Birthday</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="eg. 9/18/2020"
-                    onChange={(e) => setBirthday(e.target.value)}
-                  />
-                </Form.Group>
-                <Form.Group controlId="microchip">
-                  <Form.Label>Microchip</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="eg. 111-00-111"
-                    onChange={(e) => setMicrochip(e.target.value)}
-                  />
-                </Form.Group>
-                <Form.Group controlId="vaccines">
-                  <Form.Label>Vaccines</Form.Label>
-                  {vaccineLabels.map((vacc) => {
-                    return (
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          value={vacc}
-                        // onCheck={(e) => {
-                        //   setVaccines([...vaccines, e.target.value]);
-                        //   console.log(vaccines);
-                        // }}
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="defaultCheck1"
-                        >
-                          {vacc}
-                        </label>
-                      </div>
-                    );
-                  })}
-                </Form.Group>
-                {/* <Form.Group controlId="allergies">
+              <Form.Group controlId="birthday">
+                <Form.Label>Birthday</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="eg. 9/18/2020"
+                  onChange={(e) => setBirthday(e.target.value)}
+                />
+              </Form.Group>
+              <Form.Group controlId="microchip">
+                <Form.Label>Microchip</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="eg. 111-00-111"
+                  onChange={(e) => setMicrochip(e.target.value)}
+                />
+              </Form.Group>
+              <Form.Group controlId="vaccines">
+                <Form.Label>Vaccines</Form.Label>
+                {vaccineLabels.map((vacc) => {
+                  return (
+                    <div className="form-check">
+                      <input
+                        className="form-check-input"
+                        type="checkbox"
+                        value={vacc}
+                      // onCheck={(e) => {
+                      //   setVaccines([...vaccines, e.target.value]);
+                      //   console.log(vaccines);
+                      // }}
+                      />
+                      <label
+                        className="form-check-label"
+                        htmlFor="defaultCheck1"
+                      >
+                        {vacc}
+                      </label>
+                    </div>
+                  );
+                })}
+              </Form.Group>
+              {/* <Form.Group controlId="allergies">
+=======
+                </Form.Control>
+              </Form.Group>
+              <Form.Group controlId="birthday">
+                <Form.Label>Birthday</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="eg. 9/18/2020"
+                  onChange={(e) => setBirthday(e.target.value)}
+                />
+              </Form.Group>
+              <Form.Group controlId="microchip">
+                <Form.Label>Microchip</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="eg. 111-00-111"
+                  onChange={(e) => setMicrochip(e.target.value)}
+                />
+              </Form.Group>
+              <Form.Group controlId="vaccines">
+                <Form.Label>Vaccines</Form.Label>
+                {vaccineLabels.map((vacc) => {
+                  return (
+                    <div className="form-check">
+                      <input
+                        className="form-check-input"
+                        type="checkbox"
+                        value={vacc}
+                      // onCheck={(e) => {
+                      //   setVaccines([...vaccines, e.target.value]);
+                      //   console.log(vaccines);
+                      // }}
+                      />
+                      <label
+                        className="form-check-label"
+                        htmlFor="defaultCheck1"
+                      >
+                        {vacc}
+                      </label>
+                    </div>
+                  );
+                })}
+              </Form.Group>
+              {/* <Form.Group controlId="allergies">
+>>>>>>> 9aaaf33e191be091b63d89e66cec89d778d92e96
                 <Form.Label>Allergies</Form.Label>
                 <Form.Control
                   type="text"
@@ -256,32 +302,32 @@ const Home = () => {
                   onChange={(e) => setAllergies(e.target.value)}
                 />
               </Form.Group> */}
-                <Form.Group controlId="rabies">
-                  <Form.Label>Rabies</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="eg. 111-00-11"
-                    onChange={(e) => setRabies(e.target.value)}
-                  />
-                </Form.Group>
+              <Form.Group controlId="rabies">
+                <Form.Label>Rabies</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="eg. 111-00-11"
+                  onChange={(e) => setRabies(e.target.value)}
+                />
+              </Form.Group>
 
 
-                <Button
-                  type="submit"
-                  className="btn btn-primary mb-3"
-                  onClick={submit}
-                >
-                  Submit
+              <Button
+                type="submit"
+                className="btn btn-primary mb-3"
+                onClick={submit}
+              >
+                Submit
               </Button>
               </div>
             </Form>
           </Modal.Body>
         </Modal>
-        {/* 
+      {/* 
         <Row>
           <Footer />
         </Row> */}
-      </Container>
+    </Container>
     </>
 
 

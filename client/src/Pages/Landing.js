@@ -12,36 +12,22 @@ import { AboutCard } from "../components/Card";
 const Landing = () => {
     return (
         <>
-            <Container fluid style={{ minHeight: "100vh" }}>
-                {/* <ChildTest>
-                <Child></Child>
-            </ChildTest> */}
+            <Carousels>
+                <CarouselItems />
+            </Carousels>
+            <Container fluid style={{ minHeight: "100vh", width: "100%" }}>
 
-                <Row>
-                    <Col>
-                        {/* <Carousels>
-                            <CarouselItems />
-                        </Carousels> */}
-
-                        <ChildTest>
-                            <Child />
-                        </ChildTest>
-                    </Col>
-
-                </Row>
                 <Row>
                     <Col>
                         <AboutCard />
                     </Col>
                 </Row>
+
                 <Row>
                     <Footer />
                 </Row>
 
             </Container>
-
-
-
         </>
     );
 };
