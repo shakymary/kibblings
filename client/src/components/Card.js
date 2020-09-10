@@ -1,5 +1,13 @@
 import React from "react";
-import { Card, Button, ListGroup, ListGroupItem, Container, Row, Col } from "react-bootstrap";
+import {
+  Card,
+  Button,
+  ListGroup,
+  ListGroupItem,
+  Container,
+  Row,
+  Col,
+} from "react-bootstrap";
 
 export const Cards = (props) => {
   return (
@@ -29,6 +37,7 @@ export const PetCard = (props) => {
             <h3 className="card-title">{props.petName}</h3>
             <h5 className="card-text">{props.petBreed}</h5>
           </div>
+          {props.children}
         </div>
       </div>
     </div>
@@ -72,6 +81,5 @@ export const AboutCard = () => {
       help you with this as well by visiting our adoption page. Here, users will be able to find pets that are ready to find loving homes near them.</h3>
       </Container>
     </>
-  )
-}
-
+  );
+};
