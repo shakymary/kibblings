@@ -25,7 +25,7 @@ const NavBar = () => {
   };
 
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="primary" expand="lg">
       <Navbar.Brand onClick={landing}>
         {/* NAPOLEONS LOGO TESTING AREA */}
         {/* <img

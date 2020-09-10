@@ -6,13 +6,13 @@ import {
     Child,
 } from "../components/Carousel";
 import { Col, Row, Container, Carousel } from "react-bootstrap";
-import Footer from "../components/Footer";
+import { Footer, FooterPage } from "../components/Footer";
 import { AboutCard } from "../components/Card";
 
 const Landing = () => {
     return (
         <>
-            <Container fluid>
+            <Container fluid style={{ minHeight: "100vh" }}>
                 {/* <ChildTest>
                 <Child></Child>
             </ChildTest> */}
@@ -27,11 +27,21 @@ const Landing = () => {
                             <Child />
                         </ChildTest>
                     </Col>
+
                 </Row>
+                <Row>
+                    <Col>
+                        <AboutCard />
+                    </Col>
+                </Row>
+                <Row>
+                    <Footer />
+                </Row>
+
             </Container>
 
-            <AboutCard />
-            <Footer />
+
+
         </>
     );
 };
