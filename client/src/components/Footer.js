@@ -4,7 +4,6 @@ import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import "./Footer.css";
-
 export const Footer = () => {
   return (
     <div className="footer" style={{ width: "100%", bottom: "0" }}>
@@ -58,12 +57,14 @@ export const Footer = () => {
     </div>
   );
 };
-
 // export default Footer;
-
 export const FooterPage = () => {
   return (
-    <MDBFooter color="blue" className="font-small pt-4 mt-4" style={{ width: "100%" }}>
+    <MDBFooter
+      color="blue"
+      className="font-small pt-4 mt-4"
+      style={{ width: "100%" }}
+    >
       <MDBContainer fluid className="text-center text-md-left">
         <MDBRow>
           <MDBCol md="6">
@@ -94,9 +95,10 @@ export const FooterPage = () => {
       </MDBContainer>
       <div className="footer-copyright text-center py-3">
         <MDBContainer fluid>
-          &copy; {new Date().getFullYear()} Copyright: <a href="https://www.mdbootstrap.com"> MDBootstrap.com </a>
+          &copy; {new Date().getFullYear()} Copyright:{" "}
+          <a href="https://www.mdbootstrap.com"> MDBootstrap.com </a>
         </MDBContainer>
       </div>
     </MDBFooter>
   );
-}
+};
