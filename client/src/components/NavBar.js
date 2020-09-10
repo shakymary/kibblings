@@ -5,12 +5,9 @@ import Login from "../components/Auth/Login";
 import { useHistory } from "react-router-dom";
 import UserContext from "../Context/UserContext";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-
-
 const NavBar = () => {
   const { userData, setUserData } = useContext(UserContext);
   const history = useHistory();
-
   const adoption = () => history.push("/adoption");
   const mypets = () => history.push("/mypets");
   const home = () => history.push("/home");
@@ -23,7 +20,6 @@ const NavBar = () => {
     history.push("/");
     localStorage.setItem("auth-token", "");
   };
-
   return (
     <Navbar bg="primary" expand="lg">
       <Navbar.Brand onClick={landing}>
@@ -35,7 +31,6 @@ const NavBar = () => {
           height="40"
           className="d-inline-block"
         />{' '}
-        
         END OF TESTING AREA */}
         <i class="fas fa-paw"></i>
         Kibblings
@@ -59,15 +54,15 @@ const NavBar = () => {
               </Nav.Link>
             </>
           ) : (
-              <>
-                <Nav.Link>
-                  <Login />
-                </Nav.Link>
-                <Nav.Link>
-                  <Register />
-                </Nav.Link>
-              </>
-            )}
+            <>
+              <Nav.Link>
+                <Login />
+              </Nav.Link>
+              <Nav.Link>
+                <Register />
+              </Nav.Link>
+            </>
+          )}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
