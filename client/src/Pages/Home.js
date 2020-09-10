@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 import Axios from "axios";
-
 import { Footer } from "../components/Footer";
 
 const Home = () => {
