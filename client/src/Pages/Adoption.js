@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Jumbo from "../components/Jumbotron";
 import { Forms } from "../components/Form";
 import { PetCard } from "../components/Card";
-import Footer from "../components/Footer";
+import { Footer } from "../components/Footer";
 import Axios from "axios";
 
 const Adoption = (e) => {

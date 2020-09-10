@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 import Axios from "axios";
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 import Footer from "../components/Footer";
+=======
+import { Footer } from "../components/Footer";
+>>>>>>> 7c4ceb44c0f12eee7805c6f0a1a6c126b021747b
 
 >>>>>>> 418a623e1d608f231a0ac3616be70263095e3088
 const Home = () => {
