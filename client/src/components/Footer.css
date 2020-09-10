@@ -18,7 +18,7 @@ a {
 }
 
 .footer {
-  position: absolute !important;
+  position: fixed !important;
   text-align: center !important;
   bottom: 0 !important;
   width: 100% !important;
