@@ -1,7 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 import Axios from "axios";
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> alvaro-centeno-master
 import Footer from "../components/Footer";
+=======
+import { Footer } from "../components/Footer";
+>>>>>>> 7c4ceb44c0f12eee7805c6f0a1a6c126b021747b
 
 const Home = () => {
   const [lgShow, setLgShow] = useState(false);
