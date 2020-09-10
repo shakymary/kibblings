@@ -13,35 +13,26 @@ const Landing = () => {
     return (
         <>
             <Container fluid style={{ minHeight: "100vh" }}>
-                {/* <ChildTest>
-                <Child></Child>
-            </ChildTest> */}
 
                 <Row>
                     <Col>
-                        {/* <Carousels>
+                        <Carousels>
                             <CarouselItems />
-                        </Carousels> */}
-
-                        <ChildTest>
-                            <Child />
-                        </ChildTest>
+                        </Carousels>
                     </Col>
-
                 </Row>
+
                 <Row>
                     <Col>
                         <AboutCard />
                     </Col>
                 </Row>
+
                 <Row>
                     <Footer />
                 </Row>
 
             </Container>
-
-
-
         </>
     );
 };

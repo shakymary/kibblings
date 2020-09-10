@@ -4,39 +4,8 @@ import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDB
     "mdbreact";
 
 
-//This testing has issues with multiple carousel items. this Test only works with one item, but MIGHT work with potential logic solutions
+//This testing has solved previous children issue, now using MDB
 export const Carousels = ({ children }) => {
-    return (
-        <Carousel style={{ paddingTop: "30px" }}>
-            <Carousel.Item>
-                {children}
-            </Carousel.Item>
-        </Carousel>
-    )
-}
-
-export const CarouselItems = () => {
-    return (
-        <>
-            <div>
-                <img
-                    className="d-block w-100"
-                    // src={"./Assets/KibblingsPotentialFaviconLogo.jpg"}
-                    src="https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg"
-                    alt="First slide"
-                />
-                <Carousel.Caption>
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </Carousel.Caption>
-            </div>
-        </>
-    )
-}
-
-//The child Testing Here may work using MDB. Double Check logic with Mykhas for Confirmation of logistics
-
-export const ChildTest = ({ children }) => {
     return (
         <MDBContainer style={{ paddingTop: "30px" }}>
             <MDBCarousel
@@ -54,7 +23,7 @@ export const ChildTest = ({ children }) => {
     )
 }
 
-export const Child = () => {
+export const CarouselItems = () => {
     return (
         <>
             <MDBCarouselItem itemId="1">
@@ -102,6 +71,21 @@ export const Child = () => {
         </>
     )
 }
+
+//The child Testing Here may work using MDB. Double Check logic with Mykhas for Confirmation of logistics
+//Or Rerun after potential post-confirmation Errors
+
+// export const ChildTest = ({ children }) => {
+//     return (
+
+//     )
+// }
+
+// export const Child = () => {
+//     return (
+
+//     )
+// }
 
 
 
