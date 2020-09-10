@@ -7,13 +7,8 @@ import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDB
 //This testing has issues with multiple carousel items. this Test only works with one item, but MIGHT work with potential logic solutions
 export const Carousels = ({ children }) => {
     return (
-<<<<<<< HEAD
-        <Carousel className="mt-5">
-            <Carousel.Item >
-=======
         <Carousel style={{ paddingTop: "30px" }}>
             <Carousel.Item>
->>>>>>> 7c4ceb44c0f12eee7805c6f0a1a6c126b021747b
                 {children}
             </Carousel.Item>
         </Carousel>
