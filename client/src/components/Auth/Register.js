@@ -29,7 +29,6 @@ function Register() {
     });
     localStorage.setItem("auth-token", loginRes.data.token);
     history.push("/home");
-    console.log();
   };
 
   return (

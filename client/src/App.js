@@ -11,13 +11,11 @@ import Home from "./Pages/Home";
 import UserContext from "./Context/UserContext";
 import Landing from "./Pages/Landing";
 require("dotenv").config();
-
 function App() {
   const [userData, setUserData] = useState({
     token: undefined,
     user: undefined,
   });
-
   useEffect(() => {
     const checkLoggedIn = async () => {
       let token = localStorage.getItem("auth-token");
@@ -40,7 +38,6 @@ function App() {
     };
     checkLoggedIn();
   }, []);
-
   return (
     <div className="App">
       <BrowserRouter>
@@ -57,5 +54,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
