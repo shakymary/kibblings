@@ -36,18 +36,9 @@ i {
   margin-top: 120px;
 }
 
-.homePage-container {
-  background-color: #e0f0e3;
-  padding-top: 20px;
-}
 .body {
   background-color: #e0f0e3;
   /* background-color: #eafae8; */
-}
-
-.about-body {
-  background-color: #2a343d;
-  margin-bottom: 100px;
 }
 
 .aboutPage-title {
@@ -67,14 +58,10 @@ i {
   background-color: #cfd8d4;
 }
 
-.contact-body {
-  background-color: #f2efea;
-}
+.body {
+  min-height: 5000px;
 
-.jumbo-color {
-  background-color: #f2efea;
-}
+  display: block;
 
-/* .card-body {
-  background-color: #f2efea;
-} */
+  position: relative;
+}

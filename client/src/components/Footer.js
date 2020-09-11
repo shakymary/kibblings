@@ -4,11 +4,11 @@ import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import About from "../Pages/About";
-import "./Footer.css";
+import "./Style.css";
 
 export const Footer = () => {
   return (
-    <div className="footer">
+    <div className="footer fixed-bottom">
       <MDBFooter className="font-small pt-4 mt-4 content footer-color">
         <MDBContainer fluid className="text-center text-md-left">
           <MDBRow>
