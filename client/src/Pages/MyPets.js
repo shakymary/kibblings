@@ -5,6 +5,7 @@ import { Forms } from "../components/Form";
 import { PetCard } from "../components/Card";
 import { Footer } from "../components/Footer";
 import TabsDefault from "../components/Tabs";
+import "../components/Footer.css";
 import Axios from "axios";
 
 const MyPets = () => {
@@ -55,6 +56,7 @@ const MyPets = () => {
           </PetCard>
         );
       })}
+      <Footer />
     </div>
   );
 };

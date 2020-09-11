@@ -63,7 +63,11 @@ const Home = () => {
 
   return (
     <>
-      <Container fluid style={{ minHeight: "100vh" }}>
+      <Container
+        className="homePage-container"
+        fluid
+        style={{ minHeight: "100vh" }}
+      >
         <Row className="mt-3 ml-3">
           <Card border="info" style={{ width: "18rem" }}>
             <Card.Body>

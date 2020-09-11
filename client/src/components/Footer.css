@@ -2,8 +2,13 @@ h5 {
   color: rgb(248, 244, 244) !important;
 }
 
+h6 {
+  color: rgb(29, 16, 16) !important;
+}
+
 a {
-  color: rgb(247, 241, 241) !important;
+  color: rgb(29, 16, 16) !important;
+  font-size: 17px;
 }
 
 /* .body {
@@ -25,3 +30,51 @@ i {
   padding-right: 20px;
   font-size: 40px;
 }
+
+.card-container {
+  background-color: rgb(245, 245, 250);
+  margin-top: 120px;
+}
+
+.homePage-container {
+  background-color: #e0f0e3;
+  padding-top: 20px;
+}
+.body {
+  background-color: #e0f0e3;
+  /* background-color: #eafae8; */
+}
+
+.about-body {
+  background-color: #2a343d;
+  margin-bottom: 100px;
+}
+
+.aboutPage-title {
+  color: black !important;
+  font-size: 30px;
+  text-align: center;
+}
+.color-navBar {
+  background-color: #efeed7;
+}
+
+.nav-links {
+  color: rgb(29, 16, 16) !important;
+}
+
+.footer-color {
+  background-color: #cfd8d4;
+}
+
+.contact-body {
+  background-color: #f2efea;
+}
+
+.jumbo-color {
+  background-color: #f2efea;
+}
+
+/* .card-body {
+  background-color: #f2efea;
+} */

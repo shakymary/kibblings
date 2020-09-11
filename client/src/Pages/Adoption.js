@@ -38,7 +38,7 @@ const Adoption = (e) => {
   useEffect(() => {}, []);
 
   return (
-    <div>
+    <div className="jumbo-color">
       <Jumbo jumbotronTitle="Hello" jumbotronText="lorem schoolboot" />
       <Forms
         placeholder="Search animals"

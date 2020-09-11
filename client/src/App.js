@@ -11,6 +11,7 @@ import Home from "./Pages/Home";
 import Contact from "./Pages/Contact";
 import UserContext from "./Context/UserContext";
 import Landing from "./Pages/Landing";
+import About from "./Pages/About";
 require("dotenv").config();
 function App() {
   const [userData, setUserData] = useState({
@@ -50,6 +51,7 @@ function App() {
             <Route path="/mypets" component={MyPets} />
             <Route path="/adoption" component={Adoption} />
             <Route path="/contact" component={Contact} />
+            <Route path="/about" component={About} />
           </Switch>
         </UserContext.Provider>
       </BrowserRouter>

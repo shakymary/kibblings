@@ -4,8 +4,8 @@ import { Footer } from "../components/Footer";
 
 const Contact = () => {
   return (
-    <div>
-      <MDBContainer>
+    <div className="card card-body">
+      <MDBContainer className="contact-body">
         <MDBRow>
           <MDBCol md="6">
             <form>
