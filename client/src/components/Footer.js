@@ -4,6 +4,8 @@ import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import "./Footer.css";
+
+
 export const Footer = () => {
   return (
     <div className="footer" style={{ width: "100%", bottom: "0" }}>
@@ -57,7 +59,10 @@ export const Footer = () => {
     </div>
   );
 };
+
 // export default Footer;
+
+
 export const FooterPage = () => {
   return (
     <MDBFooter

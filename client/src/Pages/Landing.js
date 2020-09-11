@@ -12,12 +12,12 @@ import { AboutCard } from "../components/Card";
 
 const Landing = () => {
     return (
-        <div className="page">
+        <>
+
             <Carousels>
                 <CarouselItems />
             </Carousels>
-            <Container fluid >
-
+            <Container fluid style={{ minHeight: "100vh", width: "100%" }}>
                 <Row>
                     <Col>
                         <AboutCard />
@@ -25,8 +25,8 @@ const Landing = () => {
                 </Row>
             </Container>
             <Footer />
-        </div>
-    );
+        </>
+    )
 };
 
 export default Landing;

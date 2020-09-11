@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
-import { Footer } from "../components/Footer";
+import Footer from "../components/Footer";
 import {
   Button,
   Modal,
@@ -64,7 +64,7 @@ const Home = () => {
   return (
     <>
       <Container fluid style={{ minHeight: "100vh" }}>
-        <Row className="mt-3 ml-3">
+        <Row className="mt-3 ml-5">
           <Card border="info" style={{ width: "18rem" }}>
             <Card.Body>
               <Card.Text>Hello User</Card.Text>
@@ -79,7 +79,7 @@ const Home = () => {
           </Button>
         </Row>
         <Row className="mt-3 ml-5">
-          <Card className="ml-5" style={{ width: "70rem" }}>
+          <Card className="ml-5" style={{ width: "90rem", left: "6rem" }}>
             <Card.Img
               variant="top"
               style={{ width: "60rem", height: "20rem" }}
@@ -87,20 +87,20 @@ const Home = () => {
             />
             <Card.Body>
               <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                My Dashboard
               </Card.Text>
             </Card.Body>
           </Card>
         </Row>
         <Row className="mt-3 ml-5">
           <Col>
-            <Carousel
+            <Carousel className="ml-5"
               style={{
                 width: "30rem",
                 height: "30rem",
-                margin: "auto",
+                marginB: 'auto',
                 position: "absolute",
+                left: "1rem"
               }}
             >
               <Carousel.Item>
@@ -152,7 +152,7 @@ const Home = () => {
               width: "30rem",
               height: "auto",
               position: "absolute",
-              right: "10rem",
+              right: "30rem",
             }}
           >
             <Card.Body>
@@ -306,11 +306,11 @@ const Home = () => {
             </Form>
           </Modal.Body>
         </Modal>
-        {/* 
-        <Row>
-          <Footer />
-        </Row> */}
+
+
       </Container>
+
+
     </>
   );
 };
