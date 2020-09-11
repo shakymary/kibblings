@@ -8,8 +8,11 @@ export const Forms = (props) => {
         type="text"
         placeholder={props.placeholder}
         className={props.className}
+        onChange={props.onChange}
       />
-      <Button type="submit">{props.btnSubmitText}</Button>
+      <Button type="submit" onClick={props.onClick}>
+        {props.btnSubmitText}
+      </Button>
     </Form>
   );
 };
@@ -74,11 +77,7 @@ export const PetForm = () => {
           {vaccineLabels.map((vacc) => {
             return (
               <div className="form-check">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  value=""
-                />
+                <input className="form-check-input" type="checkbox" value="" />
                 <label className="form-check-label" htmlFor="defaultCheck1">
                   {vacc}
                 </label>
@@ -97,12 +96,11 @@ export const PetForm = () => {
 
         <Button type="submit" className="btn btn-primary mb-3">
           Submit
-      </Button>
+        </Button>
       </div>
     </Form>
   );
 };
-
 
 // export const PetForm = (props) => {
 //   return (
