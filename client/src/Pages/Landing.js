@@ -8,27 +8,24 @@ import {
 import { Col, Row, Container, Carousel } from "react-bootstrap";
 import { Footer, FooterPage } from "../components/Footer";
 import { AboutCard } from "../components/Card";
+// import "./Pages.css"
 
 const Landing = () => {
     return (
-        <>
+        <div className="page">
             <Carousels>
                 <CarouselItems />
             </Carousels>
-            <Container fluid style={{ minHeight: "100vh", width: "100%" }}>
+            <Container fluid >
 
                 <Row>
                     <Col>
                         <AboutCard />
                     </Col>
                 </Row>
-
-                <Row>
-                    <Footer />
-                </Row>
-
             </Container>
-        </>
+            <Footer />
+        </div>
     );
 };
 
