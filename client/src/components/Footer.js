@@ -4,9 +4,10 @@ import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import "./Footer.css";
+
 export const Footer = () => {
   return (
-    <div className="footer" style={{ width: "100%", bottom: "0" }}>
+    <div className="footer">
       <MDBFooter color="blue" className="font-small pt-4 mt-4 content">
         <MDBContainer fluid className="text-center text-md-left">
           <MDBRow>
@@ -27,7 +28,7 @@ export const Footer = () => {
                   <a href="#!">FAQs</a>
                 </li>
                 <li className="list-unstyled">
-                  <a href="#!">Contact Us</a>
+                  <a href="/contact">Contact Us</a>
                 </li>
               </ul>
             </MDBCol>

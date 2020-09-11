@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Jumbo from "../components/Jumbotron";
 import { Forms } from "../components/Form";
-import { PetCard } from "../components/Card";
 import { Footer } from "../components/Footer";
+import { PetCard } from "../components/Card";
 import Btn from "../components/Button";
 import Axios from "axios";
 

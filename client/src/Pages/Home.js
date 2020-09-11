@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
-import { Footer } from "../components/Footer";
+import Footer from "../components/Footer";
 import {
   Button,
   Modal,

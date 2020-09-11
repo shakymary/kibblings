@@ -16,16 +16,13 @@ const Landing = () => {
                 <CarouselItems />
             </Carousels>
             <Container fluid style={{ minHeight: "100vh", width: "100%" }}>
-
                 <Row>
                     <Col>
                         <AboutCard />
                     </Col>
                 </Row>
-
-
-
             </Container>
+            <Footer />
         </>
     );
 };
