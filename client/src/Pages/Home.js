@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Axios from "axios";
+import Footer from "../components/Footer";
 import {
   Button,
   Modal,
@@ -9,8 +11,6 @@ import {
   Col,
   Carousel,
 } from "react-bootstrap";
-import Axios from "axios";
-import { Footer } from "../components/Footer";
 
 const Home = () => {
   const [lgShow, setLgShow] = useState(false);
@@ -306,8 +306,11 @@ const Home = () => {
             </Form>
           </Modal.Body>
         </Modal>
+        {/* 
+        <Row>
+          <Footer />
+        </Row> */}
       </Container>
-      <Footer />
     </>
   );
 };
