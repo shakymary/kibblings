@@ -10,6 +10,7 @@ import MyPets from "./Pages/MyPets";
 import Home from "./Pages/Home";
 import UserContext from "./Context/UserContext";
 import Landing from "./Pages/Landing";
+import { Footer } from "./components/Footer"
 require("dotenv").config();
 function App() {
   const [userData, setUserData] = useState({
@@ -49,6 +50,7 @@ function App() {
             <Route path="/mypets" component={MyPets} />
             <Route path="/adoption" component={Adoption} />
           </Switch>
+          <Footer />
         </UserContext.Provider>
       </BrowserRouter>
     </div>

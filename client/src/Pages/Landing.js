@@ -23,9 +23,7 @@ const Landing = () => {
                     </Col>
                 </Row>
 
-                <Row>
-                    <Footer />
-                </Row>
+
 
             </Container>
         </>

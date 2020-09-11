@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {} from "react-bootstrap";
+import { } from "react-bootstrap";
 import Btn from "../components/Button.js";
 import { Forms } from "../components/Form";
 import { PetCard } from "../components/Card";
@@ -54,7 +54,6 @@ const MyPets = () => {
         );
       })}
 
-      <Footer />
     </div>
   );
 };
