@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import {} from "react-bootstrap";
+import { } from "react-bootstrap";
 import Btn from "../components/Button.js";
 import { Forms } from "../components/Form";
 import { PetCard } from "../components/Card";
 import { Footer } from "../components/Footer";
+import TabsDefault from "../components/Tabs";
 import Axios from "axios";
 
 const MyPets = () => {
@@ -50,11 +51,10 @@ const MyPets = () => {
                 window.location.reload(true);
               }}
             />
+            <TabsDefault />;
           </PetCard>
         );
       })}
-
-      <Footer />
     </div>
   );
 };
