@@ -1,5 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Button, Modal, Form, Row, Card } from "react-bootstrap";
+import {
+  Button,
+  Modal,
+  Form,
+  Row,
+  Card,
+  Container,
+  Col,
+  Carousel,
+} from "react-bootstrap";
 import Axios from "axios";
 import { Footer } from "../components/Footer";
 
@@ -54,38 +63,46 @@ const Home = () => {
 
   return (
     <>
-      <Container fluid style={{ minHeight: '100vh' }}>
+      <Container fluid style={{ minHeight: "100vh" }}>
         <Row className="mt-3 ml-3">
-          <Card border="info" style={{ width: '18rem' }}>
+          <Card border="info" style={{ width: "18rem" }}>
             <Card.Body>
               <Card.Text>Hello User</Card.Text>
             </Card.Body>
           </Card>
-          <Button className="float-sm-rightt" style={{ position: 'absolute', right: '15rem' }} onClick={() => setLgShow(true)}>
+          <Button
+            className="float-sm-rightt"
+            style={{ position: "absolute", right: "15rem" }}
+            onClick={() => setLgShow(true)}
+          >
             Add Pet
-      </Button>
+          </Button>
         </Row>
         <Row className="mt-3 ml-5">
-          <Card className="ml-5" style={{ width: '70rem' }}>
-            <Card.Img variant="top" style={{ width: '60rem', height: '20rem' }} src="https://s3fs.bestfriends.org/s3fs-public/pages/Adoptheader.jpg" />
+          <Card className="ml-5" style={{ width: "70rem" }}>
+            <Card.Img
+              variant="top"
+              style={{ width: "60rem", height: "20rem" }}
+              src="https://s3fs.bestfriends.org/s3fs-public/pages/Adoptheader.jpg"
+            />
             <Card.Body>
               <Card.Text>
-                Some quick example text to build on the card title and make up the bulk
-                of the card's content.
-      </Card.Text>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </Card.Text>
             </Card.Body>
           </Card>
-
         </Row>
         <Row className="mt-3 ml-5">
-
-          <Col >
-            <Carousel style={{
-              width: '30rem',
-              height: '30rem',
-              margin: 'auto',
-              position: 'absolute'
-            }}>
+          <Col>
+            <Carousel
+              style={{
+                width: "30rem",
+                height: "30rem",
+                margin: "auto",
+                position: "absolute",
+              }}
+            >
               <Carousel.Item>
                 <img
                   className="d-block w-100"
@@ -94,7 +111,9 @@ const Home = () => {
                 />
                 <Carousel.Caption>
                   <h3>First slide label</h3>
-                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                  <p>
+                    Nulla vitae elit libero, a pharetra augue mollis interdum.
+                  </p>
                 </Carousel.Caption>
               </Carousel.Item>
               <Carousel.Item>
@@ -105,7 +124,9 @@ const Home = () => {
                 />
                 <Carousel.Caption>
                   <h3>Second slide label</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
                 </Carousel.Caption>
               </Carousel.Item>
               <Carousel.Item>
@@ -116,30 +137,39 @@ const Home = () => {
                 />
                 <Carousel.Caption>
                   <h3>Third slide label</h3>
-                  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                  <p>
+                    Praesent commodo cursus magna, vel scelerisque nisl
+                    consectetur.
+                  </p>
                 </Carousel.Caption>
               </Carousel.Item>
             </Carousel>
           </Col>
 
-          <Card className="mr-5" style={{ width: '30rem', height: 'auto', position: 'absolute', right: '10rem' }}>
+          <Card
+            className="mr-5"
+            style={{
+              width: "30rem",
+              height: "auto",
+              position: "absolute",
+              right: "10rem",
+            }}
+          >
             <Card.Body>
               <Card.Text>
-                Some quick example text to build on the card title and make up the bulk
-                of the card's content. Some quick example text to build on the card title and make up the bulk
-                of the card's content. Some quick example text to build on the card title and make up the bulk
-                of the card's content. Some quick example text to build on the card title and make up the bulk
-                of the card's content. Some quick example text to build on the card title and make up the bulk
-                of the card's content. Some quick example text to build on the card title and make up the bulk
-                of the card's content.
-      </Card.Text>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content. Some quick example text to build
+                on the card title and make up the bulk of the card's content.
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content. Some quick example text to build
+                on the card title and make up the bulk of the card's content.
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content. Some quick example text to build
+                on the card title and make up the bulk of the card's content.
+              </Card.Text>
             </Card.Body>
           </Card>
-
         </Row>
-
-
-
 
         <Modal
           size="lg"
@@ -150,7 +180,7 @@ const Home = () => {
           <Modal.Header closeButton>
             <Modal.Title id="example-modal-sizes-title-lg">
               Fill out the form below to add your pet
-          </Modal.Title>
+            </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form>
@@ -206,95 +236,49 @@ const Home = () => {
                   >
                     {/* <option>Male</option>
                   <option>Female</option> */}
-<<<<<<< HEAD
                   </Form.Control>
                 </Form.Group>
-              <Form.Group controlId="birthday">
-                <Form.Label>Birthday</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="eg. 9/18/2020"
-                  onChange={(e) => setBirthday(e.target.value)}
-                />
-              </Form.Group>
-              <Form.Group controlId="microchip">
-                <Form.Label>Microchip</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="eg. 111-00-111"
-                  onChange={(e) => setMicrochip(e.target.value)}
-                />
-              </Form.Group>
-              <Form.Group controlId="vaccines">
-                <Form.Label>Vaccines</Form.Label>
-                {vaccineLabels.map((vacc) => {
-                  return (
-                    <div className="form-check">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        value={vacc}
-                      // onCheck={(e) => {
-                      //   setVaccines([...vaccines, e.target.value]);
-                      //   console.log(vaccines);
-                      // }}
-                      />
-                      <label
-                        className="form-check-label"
-                        htmlFor="defaultCheck1"
-                      >
-                        {vacc}
-                      </label>
-                    </div>
-                  );
-                })}
-              </Form.Group>
-              {/* <Form.Group controlId="allergies">
-=======
-                </Form.Control>
-              </Form.Group>
-              <Form.Group controlId="birthday">
-                <Form.Label>Birthday</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="eg. 9/18/2020"
-                  onChange={(e) => setBirthday(e.target.value)}
-                />
-              </Form.Group>
-              <Form.Group controlId="microchip">
-                <Form.Label>Microchip</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="eg. 111-00-111"
-                  onChange={(e) => setMicrochip(e.target.value)}
-                />
-              </Form.Group>
-              <Form.Group controlId="vaccines">
-                <Form.Label>Vaccines</Form.Label>
-                {vaccineLabels.map((vacc) => {
-                  return (
-                    <div className="form-check">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        value={vacc}
-                      // onCheck={(e) => {
-                      //   setVaccines([...vaccines, e.target.value]);
-                      //   console.log(vaccines);
-                      // }}
-                      />
-                      <label
-                        className="form-check-label"
-                        htmlFor="defaultCheck1"
-                      >
-                        {vacc}
-                      </label>
-                    </div>
-                  );
-                })}
-              </Form.Group>
-              {/* <Form.Group controlId="allergies">
->>>>>>> 9aaaf33e191be091b63d89e66cec89d778d92e96
+                <Form.Group controlId="birthday">
+                  <Form.Label>Birthday</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="eg. 9/18/2020"
+                    onChange={(e) => setBirthday(e.target.value)}
+                  />
+                </Form.Group>
+                <Form.Group controlId="microchip">
+                  <Form.Label>Microchip</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="eg. 111-00-111"
+                    onChange={(e) => setMicrochip(e.target.value)}
+                  />
+                </Form.Group>
+                <Form.Group controlId="vaccines">
+                  <Form.Label>Vaccines</Form.Label>
+                  {vaccineLabels.map((vacc) => {
+                    return (
+                      <div className="form-check">
+                        <input
+                          className="form-check-input"
+                          type="checkbox"
+                          value={vacc}
+                          // onCheck={(e) => {
+                          //   setVaccines([...vaccines, e.target.value]);
+                          //   console.log(vaccines);
+                          // }}
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="defaultCheck1"
+                        >
+                          {vacc}
+                        </label>
+                      </div>
+                    );
+                  })}
+                </Form.Group>
+                {/* <Form.Group controlId="allergies">
                 <Form.Label>Allergies</Form.Label>
                 <Form.Control
                   type="text"
@@ -302,35 +286,29 @@ const Home = () => {
                   onChange={(e) => setAllergies(e.target.value)}
                 />
               </Form.Group> */}
-              <Form.Group controlId="rabies">
-                <Form.Label>Rabies</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="eg. 111-00-11"
-                  onChange={(e) => setRabies(e.target.value)}
-                />
-              </Form.Group>
+                <Form.Group controlId="rabies">
+                  <Form.Label>Rabies</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="eg. 111-00-11"
+                    onChange={(e) => setRabies(e.target.value)}
+                  />
+                </Form.Group>
 
-
-              <Button
-                type="submit"
-                className="btn btn-primary mb-3"
-                onClick={submit}
-              >
-                Submit
-              </Button>
+                <Button
+                  type="submit"
+                  className="btn btn-primary mb-3"
+                  onClick={submit}
+                >
+                  Submit
+                </Button>
               </div>
             </Form>
           </Modal.Body>
         </Modal>
-      {/* 
-        <Row>
-          <Footer />
-        </Row> */}
-    </Container>
+      </Container>
+      <Footer />
     </>
-
-
   );
 };
 export default Home;
