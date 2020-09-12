@@ -207,7 +207,9 @@ const Home = () => {
               </Card.Body>
             </Card>
           </Col>
+
         </Row>
+
         <Modal
           size="lg"
           show={lgShow}
@@ -300,10 +302,10 @@ const Home = () => {
                           className="form-check-input"
                           type="checkbox"
                           value={vacc}
-                          // onCheck={(e) => {
-                          //   setVaccines([...vaccines, e.target.value]);
-                          //   console.log(vaccines);
-                          // }}
+                        // onCheck={(e) => {
+                        //   setVaccines([...vaccines, e.target.value]);
+                        //   console.log(vaccines);
+                        // }}
                         />
                         <label
                           className="form-check-label"
