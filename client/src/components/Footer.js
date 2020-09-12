@@ -8,19 +8,11 @@ import "./Footer.css";
 
 export const Footer = () => {
   return (
-<<<<<<< HEAD
     <div className="footer" style={{ maxHeight: "10vh" }}>
       <MDBFooter color="blue" className="font-small pt-4 mt-4 content" >
         <MDBContainer fluid className="text-center text-md-left" >
           <MDBRow >
             <MDBCol className="column" md="3" >
-=======
-    <div className="footer" style={{ width: "100%", bottom: "0" }}>
-      <MDBFooter color="blue" className="font-small pt-4 mt-4 content">
-        <MDBContainer fluid className="text-center text-md-left">
-          <MDBRow>
-            <MDBCol className="column" md="3">
->>>>>>> 32811f72508345abcdb8ea97274abd5bf08d08cf
               <h5 className="title">Follow us</h5>
               <i class="fab fa-twitter-square"></i>
               <i class="fab fa-facebook-square"></i>
