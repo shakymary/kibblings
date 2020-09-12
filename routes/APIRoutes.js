@@ -70,6 +70,14 @@ router.get("/all", auth, async (req, res) => {
   res.json(pets);
 });
 
+router.patch("/edit/:id", auth, async (req, res) => {
+  const pet = await Pet.findOne({ userId: req.user, _id: req.params.id });
+
+  if (!pet) return res.status(400).json({ msg: "No pet to edit." });
+  const editedPet = await Pet.findByIdAndUpdate(req.params.id, req.body);
+  res.json(editedPet);
+});
+
 router.delete("/remove/:id", auth, async (req, res) => {
   const pet = await Pet.findOne({ userId: req.user, _id: req.params.id });
   if (!pet)
