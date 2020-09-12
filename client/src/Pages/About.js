@@ -1,5 +1,5 @@
 import React from "react";
-import "../components/Style.css";
+import "../components/Footer.css";
 import { Footer } from "../components/Footer";
 import {
   MDBCard,

@@ -4,7 +4,6 @@ import { Forms } from "../components/Form";
 import { Footer } from "../components/Footer";
 import { PetCard } from "../components/Card";
 import Btn from "../components/Button";
-import "../components/Style.css";
 import Axios from "axios";
 
 const Adoption = (e) => {
@@ -36,10 +35,10 @@ const Adoption = (e) => {
         });
       });
   };
-  useEffect(() => { }, []);
+  useEffect(() => {}, []);
 
   return (
-    <div className="body">
+    <div>
       <Jumbo jumbotronTitle="Hello" jumbotronText="lorem schoolboot" />
       <Forms
         placeholder="Search animals"

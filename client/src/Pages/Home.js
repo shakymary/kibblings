@@ -11,6 +11,7 @@ import {
   Col,
   Carousel,
 } from "react-bootstrap";
+
 const Home = () => {
   const [lgShow, setLgShow] = useState(false);
   const [name, setName] = useState();
@@ -24,6 +25,7 @@ const Home = () => {
   const [vaccines, setVaccines] = useState([]);
   const [allergies, setAllergies] = useState([]);
   const [rabies, setRabies] = useState();
+
   const vaccineLabels = [
     "Rabies",
     "Distemper",
@@ -37,6 +39,7 @@ const Home = () => {
     "Giardia",
     "Canine Infuenza H3N8",
   ];
+
   const submit = async (e) => {
     e.preventDefault();
     const newPet = {
@@ -51,11 +54,13 @@ const Home = () => {
       vaccines,
       rabies,
     };
+
     await Axios.post("/users/addPet", newPet, {
       headers: { "x-auth-token": localStorage.getItem("auth-token") },
     });
     setLgShow(false);
   };
+
   return (
     <>
       <Container fluid style={{ minHeight: "80vh" }}>
@@ -95,6 +100,7 @@ const Home = () => {
                       <p>Birthday:</p>
                       <p>Age:</p>
                     </Col>
+
                     <Col>
                       <p>Last Vet Visit:</p>
                       <p>Last Grooming:</p>
@@ -164,6 +170,7 @@ const Home = () => {
             </Carousel>
           </Col>
         </Row>
+
         <Row>
           <Col>
             <Card
@@ -211,6 +218,7 @@ const Home = () => {
                     onChange={(e) => setName(e.target.value)}
                   />
                 </Form.Group>
+
                 <Form.Group controlId="age">
                   <Form.Label>Age</Form.Label>
                   <Form.Control
@@ -227,6 +235,7 @@ const Home = () => {
                     onChange={(e) => setWeight(e.target.value)}
                   />
                 </Form.Group>
+
                 <Form.Group controlId="breed">
                   <Form.Label>Breed</Form.Label>
                   <Form.Control
@@ -310,6 +319,7 @@ const Home = () => {
                     onChange={(e) => setRabies(e.target.value)}
                   />
                 </Form.Group>
+
                 <Button
                   type="submit"
                   className="btn btn-primary mb-3"

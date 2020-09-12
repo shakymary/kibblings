@@ -33,7 +33,7 @@ export class TabsDefault extends Component {
               onClick={this.toggle("1")}
               role="tab"
             >
-              Description
+              <div style={{ color: "black" }}> Description</div>
             </MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
@@ -44,7 +44,7 @@ export class TabsDefault extends Component {
               onClick={this.toggle("2")}
               role="tab"
             >
-              Vaccines
+              <div style={{ color: "black" }}>Vaccines</div>
             </MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
@@ -55,7 +55,7 @@ export class TabsDefault extends Component {
               onClick={this.toggle("3")}
               role="tab"
             >
-              Diet
+              <div style={{ color: "black" }}>Diet</div>
             </MDBNavLink>
           </MDBNavItem>
         </MDBNav>

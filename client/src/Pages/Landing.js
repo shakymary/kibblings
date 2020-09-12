@@ -8,7 +8,7 @@ import {
 import { Col, Row, Container, Carousel } from "react-bootstrap";
 import { Footer, FooterPage } from "../components/Footer";
 import { AboutCard } from "../components/Card";
-import "../components/Style.css";
+// import "./Pages.css"
 
 const Landing = () => {
   return (
@@ -16,14 +16,14 @@ const Landing = () => {
       <Carousels>
         <CarouselItems />
       </Carousels>
-      <Container fluid style={{ minHeight: "100vh", width: "100%" }}>
+      <Container fluid style={{ width: "100%" }}>
         <Row>
           <Col>
             <AboutCard />
           </Col>
         </Row>
       </Container>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

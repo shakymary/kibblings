@@ -5,7 +5,8 @@ import Login from "../components/Auth/Login";
 import { useHistory } from "react-router-dom";
 import UserContext from "../Context/UserContext";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import "./Style.css";
+import "./NavBar.css";
+
 const NavBar = () => {
   const { userData, setUserData } = useContext(UserContext);
   const history = useHistory();
@@ -22,19 +23,13 @@ const NavBar = () => {
     localStorage.setItem("auth-token", "");
   };
   return (
-    <Navbar className="color-navBar" expand="lg">
-      <Navbar.Brand onClick={landing}>
-        {/* NAPOLEONS LOGO TESTING AREA */}
-        {/* <img
-          alt=""
-          src="/KibblingsPotentialFaviconLogo.jpg"
-          width="40"
-          height="40"
-          className="d-inline-block"
-        />{' '}
-        END OF TESTING AREA */}
-        <i className="fas fa-paw"></i>
-        Kibblings
+    <Navbar className="NavBar" bg="primary" expand="lg">
+      <Navbar.Brand
+        onClick={landing}
+        style={{ color: "white", fontWeight: "bold" }}
+      >
+        {/* <i className="fas fa-paw"></i> */}
+        🐾 Kibblings
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
@@ -42,24 +37,16 @@ const NavBar = () => {
           {userData.user ? (
             <>
               <Nav.Link>
-                <Nav.Link className="nav-links" onClick={home}>
-                  Home
-                </Nav.Link>
+                <Nav.Link onClick={home}>Home</Nav.Link>
               </Nav.Link>
               <Nav.Link>
-                <Nav.Link className="nav-links" onClick={adoption}>
-                  Adoption
-                </Nav.Link>
+                <Nav.Link onClick={adoption}>Adoption</Nav.Link>
               </Nav.Link>
               <Nav.Link>
-                <Nav.Link className="nav-links" onClick={mypets}>
-                  My Pets
-                </Nav.Link>
+                <Nav.Link onClick={mypets}>My Pets</Nav.Link>
               </Nav.Link>
               <Nav.Link>
-                <Nav.Link className="nav-links" onClick={logout}>
-                  Logout
-                </Nav.Link>
+                <Nav.Link onClick={logout}>Logout</Nav.Link>
               </Nav.Link>
             </>
           ) : (

@@ -10,7 +10,7 @@ import {
   MDBContainer,
 } from "mdbreact";
 import { Footer } from "../components/Footer";
-import "../components/Style.css";
+import "../components/Footer.css";
 
 const ContactPage = () => {
   return (
@@ -106,18 +106,22 @@ const ContactPage = () => {
                   <hr className="hr-light my-4" />
                   <ul className="list-inline text-center list-unstyled">
                     <li className="list-inline-item">
-                      <a href="#!" className="p-2 fa-lg w-ic">
-                        <MDBIcon fab icon="twitter" />
+                      <a href="#!" className="p-2 fa-lg w-ic ">
+                        <MDBIcon className="social-link" fab icon="twitter" />
                       </a>
                     </li>
                     <li className="list-inline-item">
-                      <a href="#!" className="p-2 fa-lg w-ic">
-                        <MDBIcon fab icon="linkedin-in" />
+                      <a href="#!" className="p-2 fa-lg w-ic ">
+                        <MDBIcon
+                          className="social-link"
+                          fab
+                          icon="linkedin-in"
+                        />
                       </a>
                     </li>
                     <li className="list-inline-item">
-                      <a href="#!" className="p-2 fa-lg w-ic">
-                        <MDBIcon fab icon="instagram" />
+                      <a href="#!" className="p-2 fa-lg w-ic ">
+                        <MDBIcon className="social-link" fab icon="instagram" />
                       </a>
                     </li>
                   </ul>
