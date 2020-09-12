@@ -13,19 +13,17 @@ import "../components/Style.css";
 const Landing = () => {
   return (
     <>
-      <div className="body">
-        <Carousels>
-          <CarouselItems />
-        </Carousels>
-        <Container fluid style={{ minHeight: "100vh", width: "100%" }}>
-          <Row>
-            <Col>
-              <AboutCard />
-            </Col>
-          </Row>
-        </Container>
-        <Footer />
-      </div>
+      <Carousels>
+        <CarouselItems />
+      </Carousels>
+      <Container fluid style={{ minHeight: "100vh", width: "100%" }}>
+        <Row>
+          <Col>
+            <AboutCard />
+          </Col>
+        </Row>
+      </Container>
+      <Footer />
     </>
   );
 };

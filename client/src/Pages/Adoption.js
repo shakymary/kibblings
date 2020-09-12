@@ -36,7 +36,7 @@ const Adoption = (e) => {
         });
       });
   };
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
 
   return (
     <div className="body">
@@ -68,7 +68,6 @@ const Adoption = (e) => {
           </PetCard>
         );
       })}
-      <Footer />
     </div>
   );
 };

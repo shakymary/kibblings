@@ -11,6 +11,7 @@ import Home from "./Pages/Home";
 import Contact from "./Pages/Contact";
 import UserContext from "./Context/UserContext";
 import Landing from "./Pages/Landing";
+import { Footer } from "./components/Footer";
 import About from "./Pages/About";
 require("dotenv").config();
 function App() {
@@ -53,6 +54,7 @@ function App() {
             <Route path="/contact" component={Contact} />
             <Route path="/about" component={About} />
           </Switch>
+          <Footer />
         </UserContext.Provider>
       </BrowserRouter>
     </div>
