@@ -4,6 +4,7 @@ import { Forms } from "../components/Form";
 import { Footer } from "../components/Footer";
 import { PetCard } from "../components/Card";
 import Btn from "../components/Button";
+import "../components/Footer.css";
 import Axios from "axios";
 
 const Adoption = (e) => {
@@ -39,7 +40,11 @@ const Adoption = (e) => {
 
   return (
     <div>
-      <Jumbo jumbotronTitle="Hello" jumbotronText="lorem schoolboot" />
+      <Jumbo
+        jumbotronTitle="Human best friends"
+        jumbotronText=""
+        className="jumbotron"
+      />
       <Forms
         placeholder="Search animals"
         className="mr-sm-2 secondary"
