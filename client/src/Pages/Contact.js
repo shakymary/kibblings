@@ -14,13 +14,13 @@ import "../components/Style.css";
 
 const ContactPage = () => {
   return (
-    <div className="body">
+    <div className="body ">
       <MDBContainer>
         <section className="contact-section my-5">
           <MDBCard>
             <MDBRow>
               <MDBCol lg="8">
-                <MDBCardBody className="form">
+                <MDBCardBody className="form form-body ">
                   <h3 className="mt-4">
                     <MDBIcon icon="envelope" className="pr-2" />
                     Write to us:

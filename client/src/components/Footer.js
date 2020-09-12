@@ -13,13 +13,6 @@ export const Footer = () => {
         <MDBContainer fluid className="text-center text-md-left">
           <MDBRow>
             <MDBCol className="column" md="3">
-              <h6 className="title">FOLLOW US</h6>
-              <i class="fab fa-twitter-square"></i>
-              <i class="fab fa-facebook-square"></i>
-              <i class="fab fa-youtube"></i>
-              <i class="fab fa-instagram"></i>
-            </MDBCol>
-            <MDBCol className="column" md="3">
               <h6 className="">ABOUT US</h6>
               <ul>
                 <li className="list-unstyled ">
@@ -49,6 +42,31 @@ export const Footer = () => {
                 <li className="list-unstyled">
                   <a href="https://www.youtube.com/watch?v=Yzv0gXqoCkc">
                     All Pets Care
+                  </a>
+                </li>
+              </ul>
+            </MDBCol>
+            <MDBCol className="column" md="3">
+              <h6 className="title">CONTACT DEVELOPERS</h6>
+              <ul>
+                <li className="list-unstyled ">
+                  <a href="https://www.youtube.com/watch?v=Tn3lZE0rRBs">
+                    Shakila Marando
+                  </a>
+                </li>
+                <li className="list-unstyled">
+                  <a href="https://www.youtube.com/watch?v=IKR6FPerXes">
+                    Alvaro Centeno
+                  </a>
+                </li>
+                <li className="list-unstyled">
+                  <a href="https://www.youtube.com/watch?v=Yzv0gXqoCkc">
+                    Myhkas Nallas
+                  </a>
+                </li>
+                <li className="list-unstyled">
+                  <a href="https://www.youtube.com/watch?v=Yzv0gXqoCkc">
+                    Napoleon Simmaly
                   </a>
                 </li>
               </ul>
