@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 import {
   Button,
   Modal,
@@ -63,7 +63,7 @@ const Home = () => {
 
   return (
     <>
-      <Container fluid style={{ minHeight: "100vh" }}>
+      <Container fluid style={{ minHeight: "80vh" }}>
         <Row className="mt-3 ml-5">
           <Col>
             <Card border="info" style={{ width: "18rem" }}>
@@ -117,9 +117,9 @@ const Home = () => {
             <Carousel
               className="ml-5"
               style={{
-                width: "40%",
+                width: "25%",
                 height: "auto",
-                marginB: 'auto',
+                // marginB: 'auto',
                 position: "absolute",
                 left: "5%",
 
@@ -146,7 +146,7 @@ const Home = () => {
                   style={{ borderRadius: '5%' }}
 
                   src="https://images.theconversation.com/files/319375/original/file-20200309-118956-1cqvm6j.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=900.0&fit=crop"
-                  alt="Third slide"
+                  alt="second slide"
                 />
                 <Carousel.Caption>
                   <h3>Second slide label</h3>
