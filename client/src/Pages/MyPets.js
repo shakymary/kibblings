@@ -203,6 +203,7 @@ const MyPets = () => {
             />
             <TabsDefault
               age={"Age: " + item.age}
+              birthday={"Birthday: " + item.birthday}
               weight={"Weight: " + item.weight}
               breed={"Breed: " + item.breed}
               gender={"Gender: " + item.gender}
