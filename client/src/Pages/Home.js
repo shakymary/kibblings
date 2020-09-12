@@ -27,6 +27,7 @@ const Home = () => {
   const [rabies, setRabies] = useState();
 
   const [displayName, setDisplayName] = useState();
+  const [petCollection, setPetCollection] = useState([]);
 
   const vaccineLabels = [
     "Rabies",
@@ -41,6 +42,14 @@ const Home = () => {
     "Giardia",
     "Canine Infuenza H3N8",
   ];
+
+  const renderPets = async () => {
+    await Axios.get("/users/all", {
+      headers: { "x-auth-token": localStorage.getItem("auth-token") },
+    }).then((res) => {
+      setPetCollection(res.data);
+    });
+  };
 
   const submit = async (e) => {
     e.preventDefault();
@@ -72,6 +81,7 @@ const Home = () => {
 
   useEffect(() => {
     getName();
+    renderPets();
   }, []);
   return (
     <>
@@ -136,49 +146,22 @@ const Home = () => {
                 left: "5%",
               }}
             >
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  style={{ borderRadius: "5%" }}
-                  src="https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg"
-                  alt="First slide"
-                />
-                <Carousel.Caption>
-                  <h3>First slide label</h3>
-                  <p>
-                    Nulla vitae elit libero, a pharetra augue mollis interdum.
-                  </p>
-                </Carousel.Caption>
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  style={{ borderRadius: "5%" }}
-                  src="https://images.theconversation.com/files/319375/original/file-20200309-118956-1cqvm6j.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=900.0&fit=crop"
-                  alt="second slide"
-                />
-                <Carousel.Caption>
-                  <h3>Second slide label</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </p>
-                </Carousel.Caption>
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  style={{ borderRadius: "5%" }}
-                  src="https://i.insider.com/5efe3d7faee6a8324a656478?width=1100&format=jpeg&auto=webp"
-                  alt="Third slide"
-                />
-                <Carousel.Caption>
-                  <h3>Third slide label</h3>
-                  <p>
-                    Praesent commodo cursus magna, vel scelerisque nisl
-                    consectetur.
-                  </p>
-                </Carousel.Caption>
-              </Carousel.Item>
+              {petCollection.map((item) => {
+                return (
+                  <Carousel.Item>
+                    <img
+                      className="d-block w-100"
+                      style={{ borderRadius: "5%" }}
+                      src="https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg"
+                      alt="First slide"
+                    />
+                    <Carousel.Caption>
+                      <h3>{item.name}</h3>
+                      <p>{item.breed}</p>
+                    </Carousel.Caption>
+                  </Carousel.Item>
+                );
+              })}
             </Carousel>
           </Col>
         </Row>
