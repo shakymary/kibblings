@@ -65,11 +65,7 @@ export const Footer = () => {
 
 export const FooterPage = () => {
   return (
-    <MDBFooter
-      color="blue"
-      className="font-small pt-4 mt-4"
-      style={{ width: "100%" }}
-    >
+    <MDBFooter color="blue" className="font-small pt-4 mt-4">
       <MDBContainer fluid className="text-center text-md-left">
         <MDBRow>
           <MDBCol md="6">
@@ -100,10 +96,9 @@ export const FooterPage = () => {
       </MDBContainer>
       <div className="footer-copyright text-center py-3">
         <MDBContainer fluid>
-          &copy; {new Date().getFullYear()} Copyright:{" "}
-          <a href="https://www.mdbootstrap.com"> MDBootstrap.com </a>
+          &copy; {new Date().getFullYear()} Copyright: <a href="https://www.mdbootstrap.com"> MDBootstrap.com </a>
         </MDBContainer>
       </div>
     </MDBFooter>
   );
-};
+}
