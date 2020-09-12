@@ -9,6 +9,7 @@ import Adoption from "./Pages/Adoption";
 import MyPets from "./Pages/MyPets";
 import Home from "./Pages/Home";
 import Contact from "./Pages/Contact";
+import About from "./Pages/About";
 import UserContext from "./Context/UserContext";
 import Landing from "./Pages/Landing";
 import { Footer } from "./components/Footer";
@@ -50,6 +51,7 @@ function App() {
             <Route path="/mypets" component={MyPets} />
             <Route path="/adoption" component={Adoption} />
             <Route path="/contact" component={Contact} />
+            <Route path="/about" component={About} />
           </Switch>
           <Footer />
         </UserContext.Provider>

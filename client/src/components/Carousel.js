@@ -1,7 +1,17 @@
-import React from 'react'
-import { Carousel } from 'react-bootstrap'
-import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
-    "mdbreact";
+import React from "react";
+import { Carousel } from "react-bootstrap";
+import {
+    MDBCarousel,
+    MDBCarouselCaption,
+    MDBCarouselInner,
+    MDBCarouselItem,
+    MDBView,
+    MDBMask,
+    MDBContainer,
+} from "mdbreact";
+import TestPicture from "./Images/DogAndCat1920x1080.jpg"
+import LandingVideo from "./Images/FrenchBulldogLanding2.mp4"
+import LandingVideo2 from "./Images/PlaceHolder1920x1080.mp4"
 
 
 //This testing has solved previous children issue, now using MDB
@@ -16,13 +26,11 @@ export const Carousels = ({ children }) => {
             showIndicators={true}
             className="z-depth-1"
         >
-            <MDBCarouselInner>
-                {children}
-            </MDBCarouselInner>
+            <MDBCarouselInner>{children}</MDBCarouselInner>
         </MDBCarousel>
         // </MDBContainer>
-    )
-}
+    );
+};
 
 export const CarouselItems = () => {
     return (
@@ -44,31 +52,19 @@ export const CarouselItems = () => {
             </MDBCarouselItem>
             <MDBCarouselItem itemId="2">
                 <MDBView>
-                    <img
-                        className="d-block w-100"
-                        src="../components/Images/DogAndCat1920x1080.jpg"
-                        alt="Second slide"
-                    />
-                    <MDBMask overlay="black-strong" />
+                    <video autoPlay loop muted className="d-block w-100">
+                        <source src={LandingVideo} type="video/mp4"></source>
+                    </video>
+                    {/* <MDBMask overlay="black-light" /> */}
                 </MDBView>
-                <MDBCarouselCaption>
-                    <h3 className="h3-responsive">Strong mask</h3>
-                    <p>Second text</p>
-                </MDBCarouselCaption>
             </MDBCarouselItem>
             <MDBCarouselItem itemId="3">
                 <MDBView>
-                    <img
-                        className="d-block w-100"
-                        src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg"
-                        alt="Third slide"
-                    />
+                    <video autoPlay loop muted className="d-block w-100">
+                        <source src={LandingVideo2} type="video/mp4"></source>
+                    </video>
                     <MDBMask overlay="black-slight" />
                 </MDBView>
-                <MDBCarouselCaption>
-                    <h3 className="h3-responsive">Slight Mast</h3>
-                    <p>Third text</p>
-                </MDBCarouselCaption>
             </MDBCarouselItem>
         </>
     )
@@ -88,7 +84,3 @@ export const CarouselItems = () => {
 
 //     )
 // }
-
-
-
-
