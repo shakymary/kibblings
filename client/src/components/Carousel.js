@@ -46,7 +46,7 @@ export const CarouselItems = () => {
                 <MDBView>
                     <img
                         className="d-block w-100"
-                        src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg"
+                        src="../components/Images/DogAndCat1920x1080.jpg"
                         alt="Second slide"
                     />
                     <MDBMask overlay="black-strong" />
