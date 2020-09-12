@@ -34,7 +34,7 @@ const MyPets = () => {
         return (
           <NewPetCard
             key={index}
-            image={`https://picsum.photos/id/237/200/300`}
+            image={`https://picsum.photos/id/237/525/250`}
             petName={item.name}
             petBreed={item.breed}
           >
