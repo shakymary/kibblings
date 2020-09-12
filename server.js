@@ -1,21 +1,23 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const app = express();
 const cors = require("cors");
+const path = require("path");
 require("dotenv").config();
+const PORT = process.env.PORT || 5000;
 
 // setup express
-const app = express();
-app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(cors());
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Listening at: http://localhost:${PORT}`));
+// setup routes
+app.use("/users", require("./routes/userRoutes"));
+app.use("/users", require("./routes/APIRoutes"));
 
 // setup mongoose
-
 mongoose.connect(
-  process.env.MONGODB_CONNECTION_STRING,
+  process.env.MONGODB_URI,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -31,3 +33,5 @@ mongoose.connect(
 
 app.use("/users", require("./routes/userRoutes"));
 app.use("/users", require("./routes/APIRoutes"));
+
+app.listen(PORT, () => console.log(`Listening at: http://localhost:${PORT}`));
