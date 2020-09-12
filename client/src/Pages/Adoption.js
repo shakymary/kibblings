@@ -5,6 +5,7 @@ import { Footer } from "../components/Footer";
 import { PetCard } from "../components/Card";
 import Btn from "../components/Button";
 import Axios from "axios";
+import { Container } from "react-bootstrap";
 
 const Adoption = (e) => {
   const [searchPet, setSearchPet] = useState();
@@ -49,22 +50,24 @@ const Adoption = (e) => {
       />
       {pets.map((item) => {
         return (
-          <PetCard
-            image={
-              item.primary_photo_cropped === null
-                ? `https://picsum.photos/id/237/200/300`
-                : `${item.primary_photo_cropped.medium}`
-            }
-            petName={item.name}
-            petBreed={item.breeds.primary + " " + item.breeds.secondary}
-          >
-            <Btn
-              variant="primary"
-              text="View"
-              // better if opens a new tab
-              onClick={() => window.location.replace(`${item.url}`)}
-            />
-          </PetCard>
+          <Container>
+            <PetCard
+              image={
+                item.primary_photo_cropped === null
+                  ? `https://angelinacountyhumanesociety.org/files/2019/03/1553127681886_feature2.png`
+                  : `${item.primary_photo_cropped.medium}`
+              }
+              petName={item.name}
+              petBreed={item.breeds.primary + " " + item.breeds.secondary}
+            >
+              <Btn
+                variant="primary"
+                text="View"
+                // better if opens a new tab
+                onClick={() => window.location.replace(`${item.url}`)}
+              />
+            </PetCard>
+          </Container>
         );
       })}
     </div>

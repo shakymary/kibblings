@@ -54,24 +54,28 @@ export const NewPetCard = ({
 
 export const PetCard = ({ image, petName, petBreed, children }) => {
   return (
-    <div className="container">
-      <div className="row">
-        <div className="card mb-3" style={{ maxWidth: "540px" }}>
-          <div className="row no-gutters">
-            <div className="col-md-4">
-              <img src={image} className="card-img rounded-circle" alt="..." />
+    // <div className="container">
+    <div className="row">
+      <div className="card mb-3" style={{ maxWidth: "540px" }}>
+        <div className="row no-gutters">
+          <div className="col-md-4">
+            <img src={image} className="card-img rounded-circle" alt="..." />
+          </div>
+          <div className="col-md-8">
+            <div className="card-body">
+              <h3 className="card-title">{petName}</h3>
+              <h5 className="card-text dark">{petBreed}</h5>
             </div>
-            <div className="col-md-8">
-              <div className="card-body">
-                <h3 className="card-title">{petName}</h3>
-                <h5 className="card-text dark">{petBreed}</h5>
-              </div>
+          </div>
+          <div className="row">
+            <div className="col">
+              {children}
             </div>
-            <div className="row">{children}</div>
           </div>
         </div>
       </div>
     </div>
+    // </div>
   );
 };
 
