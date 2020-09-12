@@ -8,6 +8,15 @@ import {
   Row,
   Col,
 } from "react-bootstrap";
+import {
+  MDBBtn,
+  MDBCard,
+  MDBCardBody,
+  MDBCardImage,
+  MDBCardTitle,
+  MDBCardText,
+  MDBCol,
+} from "mdbreact";
 
 export const Cards = (props) => {
   return (
@@ -21,19 +30,45 @@ export const Cards = (props) => {
   );
 };
 
+export const NewPetCard = ({
+  image,
+  petName,
+  description,
+  petBreed,
+  children,
+}) => {
+  return (
+    //center content
+    <MDBCol>
+      <MDBCard style={{ width: "45%" }}>
+        <MDBCardImage className="img-fluid" src={image} waves />
+        <MDBCardBody style={{ content: "center" }}>
+          <MDBCardTitle>{petName}</MDBCardTitle>
+          <MDBCardTitle>{petBreed}</MDBCardTitle>
+          {children}
+        </MDBCardBody>
+      </MDBCard>
+    </MDBCol>
+  );
+};
+
 export const PetCard = ({ image, petName, petBreed, children }) => {
   return (
-    <div className="card mb-3" style={{ maxWidth: "540px" }}>
-      <div className="row no-gutters">
-        <div className="col-md-4">
-          <img src={image} className="card-img rounded-circle" alt="..." />
-        </div>
-        <div className="col-md-8">
-          <div className="card-body">
-            <h3 className="card-title">{petName}</h3>
-            <h5 className="card-text dark">{petBreed}</h5>
+    <div className="container">
+      <div className="row">
+        <div className="card mb-3" style={{ maxWidth: "540px" }}>
+          <div className="row no-gutters">
+            <div className="col-md-4">
+              <img src={image} className="card-img rounded-circle" alt="..." />
+            </div>
+            <div className="col-md-8">
+              <div className="card-body">
+                <h3 className="card-title">{petName}</h3>
+                <h5 className="card-text dark">{petBreed}</h5>
+              </div>
+            </div>
+            <div className="row">{children}</div>
           </div>
-          {children}
         </div>
       </div>
     </div>
