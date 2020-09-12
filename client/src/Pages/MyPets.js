@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { } from "react-bootstrap";
+import {} from "react-bootstrap";
 import Btn from "../components/Button.js";
 import { Forms } from "../components/Form";
 import { PetCard, NewPetCard } from "../components/Card";
 import { Footer } from "../components/Footer";
 import { TabsDefault } from "../components/Tabs";
 import Axios from "axios";
-
+import { ModalCenter } from "../components/Modal";
 const MyPets = () => {
   const [petCollection, setPetCollection] = useState([]);
 
@@ -63,6 +63,7 @@ const MyPets = () => {
               vaccines={item.vaccines}
               diet={item.diet}
             />
+            <ModalCenter />
           </NewPetCard>
         );
       })}
