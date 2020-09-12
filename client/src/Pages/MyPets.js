@@ -50,7 +50,7 @@ const MyPets = () => {
   }, []);
 
   return (
-    <div className="body">
+    <div>
       <Forms
         placeholder="Find Pet"
         classNameName="mr-sm-2 secondary"

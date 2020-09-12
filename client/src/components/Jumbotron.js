@@ -28,16 +28,16 @@ import {
 
 const Jumbotron = (props) => {
   return (
-    <MDBContainer className="mt-5 text-center">
+    <MDBContainer className="mt-5 text-center ">
       <MDBRow>
         <MDBCol>
-          <MDBJumbotron className="text-center">
+          <MDBJumbotron className="text-center bodies">
             <MDBCardTitle className="card-title h4 pb-2">
               <strong>{props.jumbotronTitle}</strong>
             </MDBCardTitle>
 
             <MDBCardImage
-              src="https://www.wjbf.com/wp-content/uploads/sites/47/2018/06/pets2_36079153_ver1.0.jpg"
+              src="https://imgix.bustle.com/uploads/image/2018/8/14/4c4f9133-2101-42d8-9926-f582e8fca4db-fotolia_88427085_subscription_monthly_m.jpg?w=1200&h=630&q=70&fit=crop&crop=faces&fm=jpg"
               className="img-fluid"
             />
             <MDBCardBody>
@@ -47,32 +47,10 @@ const Jumbotron = (props) => {
               <MDBCardText>{props.jumbotronText}</MDBCardText>
 
               <MDBCol className="d-flex justify-content-center mt-4" md="12">
-                <MDBCol md="3" className="d-flex justify-content-around">
-                  <a href="#">
-                    <MDBIcon
-                      fab
-                      icon="linkedin-in"
-                      className="grey-text"
-                      size="lg"
-                    />
-                  </a>
-                  <a href="#">
-                    <MDBIcon
-                      fab
-                      icon="twitter"
-                      className="grey-text"
-                      size="lg"
-                    />
-                  </a>
-                  <a href="#">
-                    <MDBIcon
-                      fab
-                      icon="facebook-f"
-                      className="grey-text"
-                      size="lg"
-                    />
-                  </a>
-                </MDBCol>
+                <MDBCol
+                  md="3"
+                  className="d-flex justify-content-around"
+                ></MDBCol>
               </MDBCol>
             </MDBCardBody>
           </MDBJumbotron>
