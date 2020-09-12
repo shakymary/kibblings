@@ -15,7 +15,6 @@ import { Footer } from "./components/Footer";
 require("dotenv").config();
 function App() {
   const [userData, setUserData] = useState({
-    token: undefined,
     user: undefined,
   });
   useEffect(() => {

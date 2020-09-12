@@ -7,6 +7,7 @@ import {
   MDBNavItem,
   MDBNavLink,
 } from "mdbreact";
+import { ModalCenter } from "../components/Modal";
 
 export class TabsDefault extends Component {
   state = {
@@ -33,7 +34,7 @@ export class TabsDefault extends Component {
               onClick={this.toggle("1")}
               role="tab"
             >
-              <div style={{ color: 'black' }}> Description</div>
+              <div style={{ color: "black" }}> Description</div>
             </MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
@@ -44,7 +45,7 @@ export class TabsDefault extends Component {
               onClick={this.toggle("2")}
               role="tab"
             >
-              <div style={{ color: 'black' }}>Vaccines</div>
+              <div style={{ color: "black" }}>Vaccines</div>
             </MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
@@ -55,13 +56,14 @@ export class TabsDefault extends Component {
               onClick={this.toggle("3")}
               role="tab"
             >
-              <div style={{ color: 'black' }}>Diet</div>
+              <div style={{ color: "black" }}>Diet</div>
             </MDBNavLink>
           </MDBNavItem>
         </MDBNav>
         <MDBTabContent activeItem={this.state.activeItem}>
           <MDBTabPane tabId="1" role="tabpanel">
             <p className="mt-2">{this.props.age}</p>
+            <p className="mt-2">{this.props.birthday}</p>
             <p className="mt-2">{this.props.weight}</p>
             <p className="mt-2">{this.props.breed}</p>
             <p className="mt-2">{this.props.gender}</p>
