@@ -8,7 +8,7 @@ import {
   MDBNavLink,
 } from "mdbreact";
 
-class TabsDefault extends Component {
+export class TabsDefault extends Component {
   state = {
     activeItem: "1",
   };
@@ -33,7 +33,7 @@ class TabsDefault extends Component {
               onClick={this.toggle("1")}
               role="tab"
             >
-              Home
+              Description
             </MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
@@ -44,7 +44,7 @@ class TabsDefault extends Component {
               onClick={this.toggle("2")}
               role="tab"
             >
-              Profile
+              Vaccines
             </MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
@@ -55,44 +55,28 @@ class TabsDefault extends Component {
               onClick={this.toggle("3")}
               role="tab"
             >
-              Profile
+              Diet
             </MDBNavLink>
           </MDBNavItem>
         </MDBNav>
         <MDBTabContent activeItem={this.state.activeItem}>
           <MDBTabPane tabId="1" role="tabpanel">
-            <p className="mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil
-              odit magnam minima, soluta doloribus reiciendis molestiae placeat
-              unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat
-              ratione porro voluptate odit minima.
-            </p>
+            <p className="mt-2">{this.props.age}</p>
+            <p className="mt-2">{this.props.weight}</p>
+            <p className="mt-2">{this.props.breed}</p>
+            <p className="mt-2">{this.props.gender}</p>
+            <p className="mt-2">{this.props.color}</p>
+            <p className="mt-2">{this.props.microchip}</p>
+            <p className="mt-2">{this.props.rabies}</p>
           </MDBTabPane>
           <MDBTabPane tabId="2" role="tabpanel">
-            <p className="mt-2">
-              Quisquam aperiam, pariatur. Tempora, placeat ratione porro
-              voluptate odit minima. Lorem ipsum dolor sit amet, consectetur
-              adipisicing elit. Nihil odit magnam minima, soluta doloribus
-              reiciendis molestiae placeat unde eos molestias.
-            </p>
-            <p>
-              Quisquam aperiam, pariatur. Tempora, placeat ratione porro
-              voluptate odit minima. Lorem ipsum dolor sit amet, consectetur
-              adipisicing elit. Nihil odit magnam minima, soluta doloribus
-              reiciendis molestiae placeat unde eos molestias.
-            </p>
+            <p className="mt-2">{this.props.vaccines}</p>
           </MDBTabPane>
           <MDBTabPane tabId="3" role="tabpanel">
-            <p className="mt-2">
-              Quisquam aperiam, pariatur. Tempora, placeat ratione porro
-              voluptate odit minima. Lorem ipsum dolor sit amet, consectetur
-              adipisicing elit. Nihil odit magnam minima, soluta doloribus
-              reiciendis molestiae placeat unde eos molestias.
-            </p>
+            <p className="mt-2">{this.props.diet}</p>
           </MDBTabPane>
         </MDBTabContent>
       </MDBContainer>
     );
   }
 }
-export default TabsDefault;
