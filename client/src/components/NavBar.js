@@ -5,6 +5,8 @@ import Login from "../components/Auth/Login";
 import { useHistory } from "react-router-dom";
 import UserContext from "../Context/UserContext";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import "./NavBar.css"
+
 const NavBar = () => {
   const { userData, setUserData } = useContext(UserContext);
   const history = useHistory();
@@ -21,22 +23,13 @@ const NavBar = () => {
     localStorage.setItem("auth-token", "");
   };
   return (
-    <Navbar bg="primary" expand="lg">
-      <Navbar.Brand onClick={landing}>
-        {/* NAPOLEONS LOGO TESTING AREA */}
-        {/* <img
-          alt=""
-          src="/KibblingsPotentialFaviconLogo.jpg"
-          width="40"
-          height="40"
-          className="d-inline-block"
-        />{' '}
-        END OF TESTING AREA */}
-        <i className="fas fa-paw"></i>
-        Kibblings
+    <Navbar className="NavBar" bg="primary" expand="lg">
+      <Navbar.Brand onClick={landing} style={{ color: "white", fontWeight: "bold" }}>
+        {/* <i className="fas fa-paw"></i> */}
+        🐾 Kibblings
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
+      <Navbar.Collapse id="basic-navbar-nav" >
         <Nav className="ml-auto">
           {userData.user ? (
             <>
@@ -54,15 +47,15 @@ const NavBar = () => {
               </Nav.Link>
             </>
           ) : (
-            <>
-              <Nav.Link>
-                <Login />
-              </Nav.Link>
-              <Nav.Link>
-                <Register />
-              </Nav.Link>
-            </>
-          )}
+              <>
+                <Nav.Link>
+                  <Login />
+                </Nav.Link>
+                <Nav.Link>
+                  <Register />
+                </Nav.Link>
+              </>
+            )}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
