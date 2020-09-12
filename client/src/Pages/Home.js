@@ -26,6 +26,8 @@ const Home = () => {
   const [allergies, setAllergies] = useState([]);
   const [rabies, setRabies] = useState();
 
+  const [displayName, setDisplayName] = useState();
+
   const vaccineLabels = [
     "Rabies",
     "Distemper",
@@ -61,6 +63,16 @@ const Home = () => {
     setLgShow(false);
   };
 
+  const getName = async () => {
+    const userRes = await Axios.get("/users/", {
+      headers: { "x-auth-token": localStorage.getItem("auth-token") },
+    });
+    setDisplayName(userRes.data.displayName);
+  };
+
+  useEffect(() => {
+    getName();
+  }, []);
   return (
     <>
       <Container fluid style={{ minHeight: "80vh" }}>
@@ -68,7 +80,7 @@ const Home = () => {
           <Col>
             <Card border="info" style={{ width: "18rem" }}>
               <Card.Body>
-                <Card.Text>Hello User</Card.Text>
+                <Card.Text>{`Hello ${displayName}!`}</Card.Text>
               </Card.Body>
             </Card>
           </Col>
@@ -79,19 +91,19 @@ const Home = () => {
               onClick={() => setLgShow(true)}
             >
               Add Pet
-          </Button>
+            </Button>
           </Col>
         </Row>
         <Row className="mt-3">
           <Col>
-            <Card bg={'info'}>
+            <Card bg={"info"}>
               {/* <Card.Img
                 variant="top"
                 style={{ width: "60rem", height: "20rem" }}
                 src="https://s3fs.bestfriends.org/s3fs-public/pages/Adoptheader.jpg"
               /> */}
               <Card.Body>
-                <Card.Text style={{ color: 'white' }}>
+                <Card.Text style={{ color: "white" }}>
                   <h3>Pet Dashboard</h3>
                   <Row>
                     <Col>
@@ -99,14 +111,14 @@ const Home = () => {
                       <p>Pet Weight: {weight}</p>
                       <p>Birthday:</p>
                       <p>Age:</p>
-
                     </Col>
 
                     <Col>
                       <p>Last Vet Visit:</p>
                       <p>Last Grooming:</p>
                       <p>Vaccines:</p>
-                    </Col></Row>
+                    </Col>
+                  </Row>
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -122,14 +134,12 @@ const Home = () => {
                 // marginB: 'auto',
                 position: "absolute",
                 left: "5%",
-
               }}
             >
-              <Carousel.Item
-              >
+              <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  style={{ borderRadius: '5%' }}
+                  style={{ borderRadius: "5%" }}
                   src="https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg"
                   alt="First slide"
                 />
@@ -143,8 +153,7 @@ const Home = () => {
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  style={{ borderRadius: '5%' }}
-
+                  style={{ borderRadius: "5%" }}
                   src="https://images.theconversation.com/files/319375/original/file-20200309-118956-1cqvm6j.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=900.0&fit=crop"
                   alt="second slide"
                 />
@@ -158,8 +167,7 @@ const Home = () => {
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  style={{ borderRadius: '5%' }}
-
+                  style={{ borderRadius: "5%" }}
                   src="https://i.insider.com/5efe3d7faee6a8324a656478?width=1100&format=jpeg&auto=webp"
                   alt="Third slide"
                 />
@@ -178,8 +186,7 @@ const Home = () => {
         <Row>
           <Col>
             <Card
-
-              bg={'dark'}
+              bg={"dark"}
               className="mr-5"
               style={{
                 width: "30%",
@@ -188,9 +195,8 @@ const Home = () => {
                 right: "5%",
               }}
             >
-
               <Card.Body>
-                <Card.Text style={{ color: 'white' }}>
+                <Card.Text style={{ color: "white" }}>
                   <h3>Reminders</h3>
                   <p>Medication:</p>
                   <p>Vet Appointment:</p>
@@ -294,10 +300,10 @@ const Home = () => {
                           className="form-check-input"
                           type="checkbox"
                           value={vacc}
-                        // onCheck={(e) => {
-                        //   setVaccines([...vaccines, e.target.value]);
-                        //   console.log(vaccines);
-                        // }}
+                          // onCheck={(e) => {
+                          //   setVaccines([...vaccines, e.target.value]);
+                          //   console.log(vaccines);
+                          // }}
                         />
                         <label
                           className="form-check-label"
@@ -337,11 +343,7 @@ const Home = () => {
             </Form>
           </Modal.Body>
         </Modal>
-
-
       </Container>
-
-
     </>
   );
 };
