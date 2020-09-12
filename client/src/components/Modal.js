@@ -26,21 +26,26 @@ export class ModalCenter extends Component {
         <MDBBtn color="primary" onClick={this.toggle(14)}>
           ✎
         </MDBBtn>
-        <MDBModal isOpen={this.state.modal14} toggle={this.toggle(14)} centered>
+        <MDBModal
+          isOpen={this.state.modal14}
+          toggle={this.toggle(14)}
+          centered
+          size="fluid"
+        >
           <MDBModalHeader toggle={this.toggle(14)}>
-            MDBModal title
+            Update Information
           </MDBModalHeader>
-          <MDBModalBody>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </MDBModalBody>
+          <MDBModalBody>{this.props.children}</MDBModalBody>
           <MDBModalFooter>
             <MDBBtn color="secondary" onClick={this.toggle(14)}>
               Close
             </MDBBtn>
-            <MDBBtn color="primary">Save changes</MDBBtn>
+            <MDBBtn
+              color="primary"
+              onClick={(this.props.onClick, this.toggle(14))}
+            >
+              Save
+            </MDBBtn>
           </MDBModalFooter>
         </MDBModal>
       </MDBContainer>
