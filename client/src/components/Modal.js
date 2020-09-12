@@ -40,10 +40,7 @@ export class ModalCenter extends Component {
             <MDBBtn color="secondary" onClick={this.toggle(14)}>
               Close
             </MDBBtn>
-            <MDBBtn
-              color="primary"
-              onClick={(this.props.onClick, this.toggle(14))}
-            >
+            <MDBBtn color="primary" onClick={this.props.onClick}>
               Save
             </MDBBtn>
           </MDBModalFooter>

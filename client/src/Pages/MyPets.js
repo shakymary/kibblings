@@ -85,6 +85,7 @@ const MyPets = () => {
                     "x-auth-token": localStorage.getItem("auth-token"),
                   },
                 });
+                renderPets();
               }}
             >
               <Container>
@@ -95,7 +96,7 @@ const MyPets = () => {
                         <Form.Label>Name</Form.Label>
                         <Form.Control
                           type="text"
-                          value={item.name}
+                          placeholder={item.name}
                           onChange={(e) => setName(e.target.value)}
                         />
                       </Form.Group>
@@ -104,7 +105,7 @@ const MyPets = () => {
                         <Form.Label>Age</Form.Label>
                         <Form.Control
                           type="text"
-                          value={item.age}
+                          placeholder={item.age}
                           onChange={(e) => setAge(e.target.value)}
                         />
                       </Form.Group>
@@ -112,7 +113,7 @@ const MyPets = () => {
                         <Form.Label>Weight</Form.Label>
                         <Form.Control
                           type="text"
-                          value={item.weight}
+                          placeholder={item.weight}
                           onChange={(e) => setWeight(e.target.value)}
                         />
                       </Form.Group>
@@ -121,7 +122,7 @@ const MyPets = () => {
                         <Form.Label>Breed</Form.Label>
                         <Form.Control
                           type="text"
-                          value={item.breed}
+                          placeholder={item.breed}
                           onChange={(e) => setBreed(e.target.value)}
                         />
                       </Form.Group>
@@ -129,7 +130,7 @@ const MyPets = () => {
                         <Form.Label>Color</Form.Label>
                         <Form.Control
                           type="text"
-                          value={item.color}
+                          placeholder={item.color}
                           onChange={(e) => setColor(e.target.value)}
                         />
                       </Form.Group>
@@ -137,7 +138,7 @@ const MyPets = () => {
                         <Form.Label>Gender</Form.Label>
                         <Form.Control
                           type="text"
-                          value={item.gender}
+                          placeholder={item.gender}
                           onChange={(e) => setGender(e.target.value)}
                         >
                           {/* <option>Male</option>
@@ -148,7 +149,7 @@ const MyPets = () => {
                         <Form.Label>Birthday</Form.Label>
                         <Form.Control
                           type="text"
-                          value={item.birthday}
+                          placeholder={item.birthday}
                           onChange={(e) => setBirthday(e.target.value)}
                         />
                       </Form.Group>
@@ -156,7 +157,7 @@ const MyPets = () => {
                         <Form.Label>Microchip</Form.Label>
                         <Form.Control
                           type="text"
-                          value={item.microchip}
+                          placeholder={item.microchip}
                           onChange={(e) => setMicrochip(e.target.value)}
                         />
                       </Form.Group>
