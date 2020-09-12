@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { } from "react-bootstrap";
+import {} from "react-bootstrap";
 import Btn from "../components/Button.js";
 import { Forms } from "../components/Form";
-import { PetCard } from "../components/Card";
+import { PetCard, NewPetCard } from "../components/Card";
 import { Footer } from "../components/Footer";
-import TabsDefault from "../components/Tabs";
+import { TabsDefault } from "../components/Tabs";
 import Axios from "axios";
 
 const MyPets = () => {
@@ -29,18 +29,19 @@ const MyPets = () => {
         classNameName="mr-sm-2 secondary"
         btnSubmitText="Search"
       />
+
       {petCollection.map((item, index) => {
         return (
-          <PetCard
+          <NewPetCard
             key={index}
             image={`https://picsum.photos/id/237/200/300`}
             petName={item.name}
             petBreed={item.breed}
           >
-            <Btn variant="primary" text="View" />
+            <Btn variant="primary" text="🔎" />
             <Btn
               variant="danger"
-              text="Remove"
+              text="🗑"
               onClick={() => {
                 Axios.delete(`/users/remove/${item._id}`, {
                   headers: {
@@ -51,8 +52,18 @@ const MyPets = () => {
                 window.location.reload(true);
               }}
             />
-            <TabsDefault />;
-          </PetCard>
+            <TabsDefault
+              age={"Age: " + item.age}
+              weight={"Weight: " + item.weight}
+              breed={"Breed: " + item.breed}
+              gender={"Gender: " + item.gender}
+              color={"Color: " + item.color}
+              microchip={"Microchip: " + item.microchip}
+              rabies={"Rabies: " + item.rabies}
+              vaccines={item.vaccines}
+              diet={item.diet}
+            />
+          </NewPetCard>
         );
       })}
     </div>

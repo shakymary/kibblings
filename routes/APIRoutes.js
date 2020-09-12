@@ -35,6 +35,7 @@ router.post("/addPet", auth, async (req, res) => {
       vaccines,
       allergies,
       rabies,
+      diet,
     } = req.body;
 
     //validate
@@ -54,6 +55,7 @@ router.post("/addPet", auth, async (req, res) => {
       vaccines,
       allergies,
       rabies,
+      diet,
       userId: req.user,
     });
     const savedPet = await newPet.save();
