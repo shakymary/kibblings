@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 import {
   Button,
   Modal,
@@ -63,50 +63,74 @@ const Home = () => {
 
   return (
     <>
-      <Container fluid style={{ minHeight: "100vh" }}>
+      <Container fluid style={{ minHeight: "80vh" }}>
         <Row className="mt-3 ml-5">
-          <Card border="info" style={{ width: "18rem" }}>
-            <Card.Body>
-              <Card.Text>Hello User</Card.Text>
-            </Card.Body>
-          </Card>
-          <Button
-            className="float-sm-rightt"
-            style={{ position: "absolute", right: "15rem" }}
-            onClick={() => setLgShow(true)}
-          >
-            Add Pet
+          <Col>
+            <Card border="info" style={{ width: "18rem" }}>
+              <Card.Body>
+                <Card.Text>Hello User</Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Button
+              className="float-sm-rightt"
+              // style={{ position: "absolute", right: "15rem" }}
+              onClick={() => setLgShow(true)}
+            >
+              Add Pet
           </Button>
+          </Col>
         </Row>
-        <Row className="mt-3 ml-5">
-          <Card className="ml-5" style={{ width: "90rem", left: "6rem" }}>
-            <Card.Img
-              variant="top"
-              style={{ width: "60rem", height: "20rem" }}
-              src="https://s3fs.bestfriends.org/s3fs-public/pages/Adoptheader.jpg"
-            />
-            <Card.Body>
-              <Card.Text>
-                My Dashboard
-              </Card.Text>
-            </Card.Body>
-          </Card>
+        <Row className="mt-3">
+          <Col>
+            <Card bg={'info'}>
+              {/* <Card.Img
+                variant="top"
+                style={{ width: "60rem", height: "20rem" }}
+                src="https://s3fs.bestfriends.org/s3fs-public/pages/Adoptheader.jpg"
+              /> */}
+              <Card.Body>
+                <Card.Text style={{ color: 'white' }}>
+                  <h3>Pet Dashboard</h3>
+                  <Row>
+                    <Col>
+                      <p>Pet:{name}</p>
+                      <p>Pet Weight: {weight}</p>
+                      <p>Birthday:</p>
+                      <p>Age:</p>
+
+                    </Col>
+
+                    <Col>
+                      <p>Last Vet Visit:</p>
+                      <p>Last Grooming:</p>
+                      <p>Vaccines:</p>
+                    </Col></Row>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
         </Row>
         <Row className="mt-3 ml-5">
           <Col>
-            <Carousel className="ml-5"
+            <Carousel
+              className="ml-5"
               style={{
-                width: "30rem",
-                height: "30rem",
-                marginB: 'auto',
+                width: "25%",
+                height: "auto",
+                // marginB: 'auto',
                 position: "absolute",
-                left: "1rem"
+                left: "5%",
+
               }}
             >
-              <Carousel.Item>
+              <Carousel.Item
+              >
                 <img
                   className="d-block w-100"
-                  src="https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg"
+                  style={{ borderRadius: '5%' }}
+                  src="https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg"
                   alt="First slide"
                 />
                 <Carousel.Caption>
@@ -119,8 +143,10 @@ const Home = () => {
               <Carousel.Item>
                 <img
                   className="d-block w-100"
+                  style={{ borderRadius: '5%' }}
+
                   src="https://images.theconversation.com/files/319375/original/file-20200309-118956-1cqvm6j.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=900.0&fit=crop"
-                  alt="Third slide"
+                  alt="second slide"
                 />
                 <Carousel.Caption>
                   <h3>Second slide label</h3>
@@ -132,6 +158,8 @@ const Home = () => {
               <Carousel.Item>
                 <img
                   className="d-block w-100"
+                  style={{ borderRadius: '5%' }}
+
                   src="https://i.insider.com/5efe3d7faee6a8324a656478?width=1100&format=jpeg&auto=webp"
                   alt="Third slide"
                 />
@@ -145,32 +173,35 @@ const Home = () => {
               </Carousel.Item>
             </Carousel>
           </Col>
-
-          <Card
-            className="mr-5"
-            style={{
-              width: "30rem",
-              height: "auto",
-              position: "absolute",
-              right: "30rem",
-            }}
-          >
-            <Card.Body>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content. Some quick example text to build
-                on the card title and make up the bulk of the card's content.
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content. Some quick example text to build
-                on the card title and make up the bulk of the card's content.
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content. Some quick example text to build
-                on the card title and make up the bulk of the card's content.
-              </Card.Text>
-            </Card.Body>
-          </Card>
         </Row>
 
+        <Row>
+          <Col>
+            <Card
+
+              bg={'dark'}
+              className="mr-5"
+              style={{
+                width: "30%",
+                height: "auto",
+                position: "absolute",
+                right: "5%",
+              }}
+            >
+
+              <Card.Body>
+                <Card.Text style={{ color: 'white' }}>
+                  <h3>Reminders</h3>
+                  <p>Medication:</p>
+                  <p>Vet Appointment:</p>
+                  <p>Dog Food:</p>
+                  <p>Grooming:</p>
+                  <p>Treats:</p>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
         <Modal
           size="lg"
           show={lgShow}

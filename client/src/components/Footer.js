@@ -5,13 +5,14 @@ import "mdbreact/dist/css/mdb.css";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import "./Footer.css";
 
+
 export const Footer = () => {
   return (
-    <div className="footer">
-      <MDBFooter color="blue" className="font-small pt-4 mt-4 content">
-        <MDBContainer fluid className="text-center text-md-left">
-          <MDBRow>
-            <MDBCol className="column" md="3">
+    <div className="footer" style={{ maxHeight: "10vh" }}>
+      <MDBFooter color="blue" className="font-small pt-4 mt-4 content" >
+        <MDBContainer fluid className="text-center text-md-left" >
+          <MDBRow >
+            <MDBCol className="column" md="3" >
               <h5 className="title">Follow us</h5>
               <i class="fab fa-twitter-square"></i>
               <i class="fab fa-facebook-square"></i>
@@ -28,7 +29,7 @@ export const Footer = () => {
                   <a href="#!">FAQs</a>
                 </li>
                 <li className="list-unstyled">
-                  <a href="/contact">Contact Us</a>
+                  <a href="#!">Contact Us</a>
                 </li>
               </ul>
             </MDBCol>
@@ -58,14 +59,13 @@ export const Footer = () => {
     </div>
   );
 };
+
 // export default Footer;
+
+
 export const FooterPage = () => {
   return (
-    <MDBFooter
-      color="blue"
-      className="font-small pt-4 mt-4"
-      style={{ width: "100%" }}
-    >
+    <MDBFooter color="blue" className="font-small pt-4 mt-4">
       <MDBContainer fluid className="text-center text-md-left">
         <MDBRow>
           <MDBCol md="6">
@@ -96,10 +96,9 @@ export const FooterPage = () => {
       </MDBContainer>
       <div className="footer-copyright text-center py-3">
         <MDBContainer fluid>
-          &copy; {new Date().getFullYear()} Copyright:{" "}
-          <a href="https://www.mdbootstrap.com"> MDBootstrap.com </a>
+          &copy; {new Date().getFullYear()} Copyright: <a href="https://www.mdbootstrap.com"> MDBootstrap.com </a>
         </MDBContainer>
       </div>
     </MDBFooter>
   );
-};
+}
