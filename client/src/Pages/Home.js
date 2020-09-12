@@ -26,6 +26,8 @@ const Home = () => {
   const [allergies, setAllergies] = useState([]);
   const [rabies, setRabies] = useState();
 
+  const [displayName, setDisplayName] = useState();
+
   const vaccineLabels = [
     "Rabies",
     "Distemper",
@@ -61,6 +63,16 @@ const Home = () => {
     setLgShow(false);
   };
 
+  const getName = async () => {
+    const userRes = await Axios.get("/users/", {
+      headers: { "x-auth-token": localStorage.getItem("auth-token") },
+    });
+    setDisplayName(userRes.data.displayName);
+  };
+
+  useEffect(() => {
+    getName();
+  }, []);
   return (
     <>
       <Container fluid style={{ minHeight: "80vh" }}>
@@ -68,7 +80,7 @@ const Home = () => {
           <Col>
             <Card border="info" style={{ width: "18rem" }}>
               <Card.Body>
-                <Card.Text>Hello User</Card.Text>
+                <Card.Text>{`Hello ${displayName}!`}</Card.Text>
               </Card.Body>
             </Card>
           </Col>

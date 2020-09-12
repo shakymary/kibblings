@@ -7,6 +7,7 @@ import {
   MDBNavItem,
   MDBNavLink,
 } from "mdbreact";
+import { ModalCenter } from "../components/Modal";
 
 export class TabsDefault extends Component {
   state = {
@@ -62,6 +63,7 @@ export class TabsDefault extends Component {
         <MDBTabContent activeItem={this.state.activeItem}>
           <MDBTabPane tabId="1" role="tabpanel">
             <p className="mt-2">{this.props.age}</p>
+            <p className="mt-2">{this.props.birthday}</p>
             <p className="mt-2">{this.props.weight}</p>
             <p className="mt-2">{this.props.breed}</p>
             <p className="mt-2">{this.props.gender}</p>

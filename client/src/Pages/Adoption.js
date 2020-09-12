@@ -1,5 +1,16 @@
 import React, { useEffect, useState } from "react";
-import Jumbo from "../components/Jumbotron";
+import {
+  MDBJumbotron,
+  MDBContainer,
+  MDBRow,
+  MDBCol,
+  MDBIcon,
+  MDBCardTitle,
+  MDBCardImage,
+  MDBCardBody,
+  MDBCardText,
+} from "mdbreact";
+import Jumbotron from "../components/Jumbotron";
 import { Forms } from "../components/Form";
 import { Footer } from "../components/Footer";
 import { PetCard } from "../components/Card";
@@ -40,11 +51,8 @@ const Adoption = (e) => {
 
   return (
     <div>
-      <Jumbo
-        jumbotronTitle="Human best friends"
-        jumbotronText=""
-        className="jumbotron"
-      />
+      <Jumbotron jumbotronTitle="Human's best friends" jumbotronText="lllll" />
+
       <Forms
         placeholder="Search animals"
         className="mr-sm-2 secondary"
