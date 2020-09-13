@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
+import { AdoptionCarousel } from "../components/Carousel";
 // import Footer from "../components/Footer";
 import {
   Button,
@@ -28,6 +29,7 @@ const Home = () => {
 
   const [displayName, setDisplayName] = useState();
   const [petCollection, setPetCollection] = useState([]);
+  const [pets, setPet] = useState();
 
   const vaccineLabels = [
     "Rabies",
@@ -50,6 +52,8 @@ const Home = () => {
       setPetCollection(res.data);
     });
   };
+
+  let token = {};
 
   const submit = async (e) => {
     e.preventDefault();
@@ -82,6 +86,20 @@ const Home = () => {
   useEffect(() => {
     getName();
     renderPets();
+    Axios.get("/users/apiToken")
+      .then((response) => {
+        token = response.data;
+      })
+      .then((res) => {
+        Axios.get(`https://api.petfinder.com/v2/animals?type=dog&page=2`, {
+          headers: {
+            Authorization: token.tokenType + " " + token.accessToken,
+          },
+        }).then((res) => {
+          setPet(res.data.animals[0]);
+          console.log(res.data.animals[0]);
+        });
+      });
   }, []);
   return (
     <>
@@ -133,6 +151,17 @@ const Home = () => {
               </Card.Body>
             </Card>
           </Col>
+        </Row>
+        <Row>
+          {/* <AdoptionCarousel
+            image={
+              pets.primary_photo_cropped === null
+                ? `https://picsum.photos/id/237/200/300`
+                : `${pets.primary_photo_cropped.full}`
+            }
+            petName={pets.name}
+            description={pets.description}
+          /> */}
         </Row>
         <Row className="mt-3 ml-5">
           <Col>

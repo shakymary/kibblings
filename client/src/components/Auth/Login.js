@@ -57,15 +57,14 @@ function Login() {
                 Never share your password to anyone.
               </Form.Text>
             </Form.Group>
-
-            <Button variant="primary" type="submit" onClick={submit}>
-              Login
-            </Button>
           </Form>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Cancel
+          </Button>
+          <Button variant="primary" type="submit" onClick={submit}>
+            Login
           </Button>
         </Modal.Footer>
       </Modal>
