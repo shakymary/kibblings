@@ -52,8 +52,8 @@ const Adoption = (e) => {
   useEffect(() => { }, []);
 
   return (
-    <div>
-      <Jumbotron jumbotronTitle="Human's best friends" jumbotronText="lllll" />
+    <div className="body">
+      <Jumbotron jumbotronTitle="Adopt A Pet " jumbotronText="lllll" />
 
       <Forms
         placeholder="Search animals"

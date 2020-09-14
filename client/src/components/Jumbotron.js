@@ -13,16 +13,16 @@ import {
 
 const Jumbotron = (props) => {
   return (
-    <MDBContainer className="mt-5 text-center">
+    <MDBContainer className="mt-5 text-center" fluid>
       <MDBRow>
         <MDBCol>
-          <MDBJumbotron className="text-center">
+          <MDBJumbotron className="text-center bodies">
             <MDBCardTitle className="card-title h4 pb-2">
               <strong>{props.jumbotronTitle}</strong>
             </MDBCardTitle>
 
             <MDBCardImage
-              src="https://www.wjbf.com/wp-content/uploads/sites/47/2018/06/pets2_36079153_ver1.0.jpg"
+              src="https://www.cesarsway.com/wp-content/uploads/2018/05/allergies_0.jpg"
               className="img-fluid"
             />
             <MDBCardBody>
@@ -32,32 +32,10 @@ const Jumbotron = (props) => {
               <MDBCardText>{props.jumbotronText}</MDBCardText>
 
               <MDBCol className="d-flex justify-content-center mt-4" md="12">
-                <MDBCol md="3" className="d-flex justify-content-around">
-                  <a href="#">
-                    <MDBIcon
-                      fab
-                      icon="linkedin-in"
-                      className="grey-text"
-                      size="lg"
-                    />
-                  </a>
-                  <a href="#">
-                    <MDBIcon
-                      fab
-                      icon="twitter"
-                      className="grey-text"
-                      size="lg"
-                    />
-                  </a>
-                  <a href="#">
-                    <MDBIcon
-                      fab
-                      icon="facebook-f"
-                      className="grey-text"
-                      size="lg"
-                    />
-                  </a>
-                </MDBCol>
+                <MDBCol
+                  md="3"
+                  className="d-flex justify-content-around"
+                ></MDBCol>
               </MDBCol>
             </MDBCardBody>
           </MDBJumbotron>
