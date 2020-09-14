@@ -14,10 +14,10 @@ import "../components/Footer.css";
 
 const ContactPage = () => {
   return (
-    <div className="body ">
+    <div>
       <MDBContainer>
         <section className="contact-section my-5">
-          <MDBCard>
+          <MDBCard className="contactPage-color ">
             <MDBRow>
               <MDBCol lg="8">
                 <MDBCardBody className="form form-body ">
@@ -83,12 +83,12 @@ const ContactPage = () => {
               </MDBCol>
               <MDBCol lg="4">
                 <MDBCardBody className="contact text-center h-100 white-text">
-                  <h3 className="my-4 pb-2">Contact information</h3>
-                  <ul className="text-lg-left list-unstyled ml-4">
+                  // <h3 className="my-4 pb-2"></h3>
+                  <ul className="text-lg-left list-unstyled ml-4 contactPage-icons">
                     <li>
                       <p>
                         <MDBIcon icon="map-marker-alt" className="pr-2" />
-                        New York, 94126 USA
+                        San Francisco, 94016 USA
                       </p>
                     </li>
                     <li>
@@ -112,11 +112,7 @@ const ContactPage = () => {
                     </li>
                     <li className="list-inline-item">
                       <a href="#!" className="p-2 fa-lg w-ic ">
-                        <MDBIcon
-                          className="social-link"
-                          fab
-                          icon="linkedin-in"
-                        />
+                        <MDBIcon className="social-link" fab icon="facebook" />
                       </a>
                     </li>
                     <li className="list-inline-item">
