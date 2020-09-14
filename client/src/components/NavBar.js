@@ -27,6 +27,7 @@ const NavBar = () => {
       <Navbar.Brand
         onClick={landing}
         style={{ color: "white", fontWeight: "bold" }}
+        className="NavBar"
       >
         {/* <i className="fas fa-paw"></i> */}
         🐾 Kibblings
@@ -50,15 +51,15 @@ const NavBar = () => {
               </Nav.Link>
             </>
           ) : (
-            <>
-              <Nav.Link>
-                <Login />
-              </Nav.Link>
-              <Nav.Link>
-                <Register />
-              </Nav.Link>
-            </>
-          )}
+              <>
+                <Nav.Link>
+                  <Login />
+                </Nav.Link>
+                <Nav.Link>
+                  <Register />
+                </Nav.Link>
+              </>
+            )}
         </Nav>
       </Navbar.Collapse>
     </Navbar>

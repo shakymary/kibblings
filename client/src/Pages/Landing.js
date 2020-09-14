@@ -10,9 +10,11 @@ import { Footer, FooterPage } from "../components/Footer";
 import { AboutCard } from "../components/Card";
 // import "./Pages.css"
 
+
 const Landing = () => {
   return (
     <>
+
       <Carousels>
         <CarouselItems />
       </Carousels>
