@@ -9,9 +9,9 @@ import {
     MDBMask,
     MDBContainer,
 } from "mdbreact";
-import TestPicture from "./Images/DogAndCat1920x1080.jpg"
 import LandingVideo from "./Images/FrenchBulldogLanding2.mp4"
 import LandingVideo2 from "./Images/PlaceHolder1920x1080.mp4"
+import LandingVideo3 from "./Images/CatLanding2.mp4"
 
 
 //This testing has solved previous children issue, now using MDB
@@ -37,25 +37,18 @@ export const CarouselItems = () => {
         <>
             <MDBCarouselItem itemId="1">
                 <MDBView>
-                    <img
-                        className="d-block w-100"
-                        src="https://www.wallpapers4u.org/wp-content/uploads/dog_cat_grass_german_shepherd_65061_1920x1080.jpg"
-                        alt="First slide"
-                        style={{ height: "40", width: "40" }}
-                    />
-                    <MDBMask overlay="black-light" />
+                    <video autoPlay loop muted className="d-block w-100">
+                        <source src={LandingVideo} type="video/mp4"></source>
+                    </video>
                 </MDBView>
                 <MDBCarouselCaption>
-                    <h1 className="h1-responsive">🐶Welcome to Kibblings!🐱</h1>
-                    <p>Created by Mykhas Nallas, Napoleon Vuong, Alvaro Centeno, and Shakila Marando</p>
                 </MDBCarouselCaption>
             </MDBCarouselItem>
             <MDBCarouselItem itemId="2">
                 <MDBView>
                     <video autoPlay loop muted className="d-block w-100">
-                        <source src={LandingVideo} type="video/mp4"></source>
+                        <source src={LandingVideo3} type="video/mp4"></source>
                     </video>
-                    {/* <MDBMask overlay="black-light" /> */}
                 </MDBView>
             </MDBCarouselItem>
             <MDBCarouselItem itemId="3">

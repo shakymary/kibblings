@@ -18,6 +18,7 @@ import Btn from "../components/Button";
 import "../components/Footer.css";
 import Axios from "axios";
 import { Container } from "react-bootstrap";
+import AdoptionImage from "../components/Images/AdoptionPageImage.mp4";
 
 const Adoption = (e) => {
   const [searchPet, setSearchPet] = useState();
@@ -48,7 +49,7 @@ const Adoption = (e) => {
         });
       });
   };
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
 
   return (
     <div>
