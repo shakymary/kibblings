@@ -28,7 +28,7 @@ import {
 
 const Jumbotron = (props) => {
   return (
-    <MDBContainer className="mt-5 text-center">
+    <MDBContainer className="mt-5 text-center" fluid>
       <MDBRow>
         <MDBCol>
           <MDBJumbotron className="text-center">
@@ -47,32 +47,10 @@ const Jumbotron = (props) => {
               <MDBCardText>{props.jumbotronText}</MDBCardText>
 
               <MDBCol className="d-flex justify-content-center mt-4" md="12">
-                <MDBCol md="3" className="d-flex justify-content-around">
-                  <a href="#">
-                    <MDBIcon
-                      fab
-                      icon="linkedin-in"
-                      className="grey-text"
-                      size="lg"
-                    />
-                  </a>
-                  <a href="#">
-                    <MDBIcon
-                      fab
-                      icon="twitter"
-                      className="grey-text"
-                      size="lg"
-                    />
-                  </a>
-                  <a href="#">
-                    <MDBIcon
-                      fab
-                      icon="facebook-f"
-                      className="grey-text"
-                      size="lg"
-                    />
-                  </a>
-                </MDBCol>
+                <MDBCol
+                  md="3"
+                  className="d-flex justify-content-around"
+                ></MDBCol>
               </MDBCol>
             </MDBCardBody>
           </MDBJumbotron>

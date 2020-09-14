@@ -30,17 +30,11 @@ export const Cards = (props) => {
   );
 };
 
-export const NewPetCard = ({
-  image,
-  petName,
-  description,
-  petBreed,
-  children,
-}) => {
+export const NewPetCard = ({ image, petName, petBreed, children }) => {
   return (
     //center content
-    <MDBCol>
-      <MDBCard style={{ width: "45%" }}>
+    <MDBCol className="mt-3">
+      <MDBCard style={{ width: "100%" }}>
         <MDBCardImage className="img-fluid" src={image} waves />
         <MDBCardBody style={{ content: "center" }}>
           <MDBCardTitle>{petName}</MDBCardTitle>
