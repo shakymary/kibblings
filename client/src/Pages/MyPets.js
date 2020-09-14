@@ -50,12 +50,27 @@ const MyPets = () => {
   }, []);
 
   return (
+
     <div className="body">
-      <Forms
-        placeholder="Find Pet"
-        classNameName="mr-sm-2 secondary"
-        btnSubmitText="Search"
-      />
+
+      <Row className="mt-3">
+        <Col>
+          <Card bg={"warning"}>
+            {/* <Card.Body> */}
+            <Card.Img style={{
+              width: '100%',
+              height: '15vw',
+              objectFit: 'cover'
+            }} src="https://www.wetnaps.com/wp-content/uploads/2016/05/puppies-guinea-pig-and-kittens-and-bunnies-together.jpg" alt="Card image" />
+            <Card.ImgOverlay>
+              <Card.Text style={{ color: "#2E4053" }}>
+                <h1>Browse Your Pets</h1>
+              </Card.Text>
+            </Card.ImgOverlay>
+            {/* </Card.Body> */}
+          </Card>
+        </Col>
+      </Row>
 
       {petCollection.map((item, index) => {
         return (

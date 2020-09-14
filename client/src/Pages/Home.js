@@ -88,9 +88,9 @@ const Home = () => {
       <Container fluid style={{ minHeight: "80vh" }}>
         <Row className="mt-3 ml-5">
           <Col>
-            <Card border="info" style={{ width: "18rem" }}>
+            <Card border="info" style={{ width: '50%' }}>
               <Card.Body>
-                <Card.Text>{`Hello ${displayName}!`}</Card.Text>
+                <Card.Text><h2>{`Hello ${displayName}!`}</h2></Card.Text>
               </Card.Body>
             </Card>
           </Col>
@@ -107,13 +107,15 @@ const Home = () => {
         <Row className="mt-3">
           <Col>
             <Card bg={"info"}>
-              {/* <Card.Img
-                variant="top"
-                style={{ width: "60rem", height: "20rem" }}
-                src="https://s3fs.bestfriends.org/s3fs-public/pages/Adoptheader.jpg"
-              /> */}
-              <Card.Body>
-                <Card.Text style={{ color: "white" }}>
+
+              {/* <Card.Body> */}
+              <Card.Img style={{
+                width: '100%',
+                height: '15vw',
+                objectFit: 'cover'
+              }} src="https://etimg.etb2bimg.com/photo/75463378.cms" alt="Card image" />
+              <Card.ImgOverlay>
+                <Card.Text style={{ color: "black" }}>
                   <h3>Pet Dashboard</h3>
                   <Row>
                     <Col>
@@ -130,7 +132,8 @@ const Home = () => {
                     </Col>
                   </Row>
                 </Card.Text>
-              </Card.Body>
+                {/* </Card.Body> */}
+              </Card.ImgOverlay>
             </Card>
           </Col>
         </Row>
@@ -179,6 +182,7 @@ const Home = () => {
               }}
             >
               <Card.Body>
+
                 <Card.Text style={{ color: "white" }}>
                   <h3>Reminders</h3>
                   <p>Medication:</p>
@@ -190,7 +194,9 @@ const Home = () => {
               </Card.Body>
             </Card>
           </Col>
+
         </Row>
+
         <Modal
           size="lg"
           show={lgShow}
@@ -283,10 +289,10 @@ const Home = () => {
                           className="form-check-input"
                           type="checkbox"
                           value={vacc}
-                          // onCheck={(e) => {
-                          //   setVaccines([...vaccines, e.target.value]);
-                          //   console.log(vaccines);
-                          // }}
+                        // onCheck={(e) => {
+                        //   setVaccines([...vaccines, e.target.value]);
+                        //   console.log(vaccines);
+                        // }}
                         />
                         <label
                           className="form-check-label"
