@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { Modal, Button, Nav, Form } from "react-bootstrap";
 import UserContext from "../../Context/UserContext";
+import Alert from "../Alert";
 import Axios from "axios";
 
 function Login() {
@@ -12,20 +13,25 @@ function Login() {
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [error, setError] = useState();
 
   const { setUserData } = useContext(UserContext);
   const history = useHistory();
 
   const submit = async (e) => {
     e.preventDefault();
-    const loginUser = { email, password };
-    const loginRes = await Axios.post("/users/login", loginUser);
-    setUserData({
-      token: loginRes.data.token,
-      user: loginRes.data.user,
-    });
-    localStorage.setItem("auth-token", loginRes.data.token);
-    history.push("/home");
+    try {
+      const loginUser = { email, password };
+      const loginRes = await Axios.post("/users/login", loginUser);
+      setUserData({
+        token: loginRes.data.token,
+        user: loginRes.data.user,
+      });
+      localStorage.setItem("auth-token", loginRes.data.token);
+      history.push("/home");
+    } catch (err) {
+      err.response.data.msg && setError(err.response.data.msg);
+    }
   };
   return (
     <>
@@ -36,6 +42,13 @@ function Login() {
           <Modal.Title>Log in to your Account</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          {error && (
+            <Alert
+              msg={error}
+              color="danger"
+              clearError={() => setError(undefined)}
+            />
+          )}
           <Form>
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
@@ -57,15 +70,14 @@ function Login() {
                 Never share your password to anyone.
               </Form.Text>
             </Form.Group>
-
-            <Button variant="primary" type="submit" onClick={submit}>
-              Login
-            </Button>
           </Form>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Cancel
+          </Button>
+          <Button variant="primary" type="submit" onClick={submit}>
+            Login
           </Button>
         </Modal.Footer>
       </Modal>

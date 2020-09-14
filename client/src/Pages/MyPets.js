@@ -50,18 +50,20 @@ const MyPets = () => {
   }, []);
 
   return (
-
     <div className="body">
-
       <Row className="mt-3">
         <Col>
           <Card bg={"warning"}>
             {/* <Card.Body> */}
-            <Card.Img style={{
-              width: '100%',
-              height: '15vw',
-              objectFit: 'cover'
-            }} src="https://www.wetnaps.com/wp-content/uploads/2016/05/puppies-guinea-pig-and-kittens-and-bunnies-together.jpg" alt="Card image" />
+            <Card.Img
+              style={{
+                width: "100%",
+                height: "15vw",
+                objectFit: "cover",
+              }}
+              src="https://www.wetnaps.com/wp-content/uploads/2016/05/puppies-guinea-pig-and-kittens-and-bunnies-together.jpg"
+              alt="Card image"
+            />
             <Card.ImgOverlay>
               <Card.Text style={{ color: "#2E4053" }}>
                 <h1>Browse Your Pets</h1>
