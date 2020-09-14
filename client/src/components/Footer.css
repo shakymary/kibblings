@@ -66,13 +66,37 @@ i {
 }
 
 .card-title {
-  color: rgb(11, 88, 88);
   font-size: 22px;
+  color: #005b9a !important;
+  font-weight: 300 !important;
 }
 
 .card-text {
   color: rgb(4, 71, 71);
 }
-.about-container {
+/* .about-container {
   padding-top: 70px;
+} */
+
+.about-text {
+  color: black !important;
+  font-size: 20px !important;
+}
+
+.about-title {
+  color: #005b9a;
+  font-weight: 500;
+  font-size: 30px;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 20px;
+}
+
+.about-container {
+  background-color: white;
+}
+
+.about-mainbody {
+  height: 100%;
+  width: 100%;
 }
