@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { Modal, Button, Nav, Form } from "react-bootstrap";
 import UserContext from "../../Context/UserContext";
 import Axios from "axios";
+import Alert from "../Alert";
 
 function Register() {
   const [show, setShow] = useState(false);
@@ -13,22 +14,27 @@ function Register() {
   const [password, setPassword] = useState();
   const [passwordCheck, setPasswordCheck] = useState();
   const [displayName, setDisplayName] = useState();
+  const [error, setError] = useState();
 
   const { setUserData } = useContext(UserContext);
   const history = useHistory();
 
   const submit = async (e) => {
     e.preventDefault();
-    const newUser = { email, password, passwordCheck, displayName };
+    try {
+      const newUser = { email, password, passwordCheck, displayName };
 
-    await Axios.post("/users/register", newUser);
-    const loginRes = await Axios.post("/users/login", { email, password });
-    setUserData({
-      token: loginRes.data.token,
-      user: loginRes.data.user,
-    });
-    localStorage.setItem("auth-token", loginRes.data.token);
-    history.push("/home");
+      await Axios.post("/users/register", newUser);
+      const loginRes = await Axios.post("/users/login", { email, password });
+      setUserData({
+        token: loginRes.data.token,
+        user: loginRes.data.user,
+      });
+      localStorage.setItem("auth-token", loginRes.data.token);
+      history.push("/home");
+    } catch (err) {
+      err.response.data.msg && setError(err.response.data.msg);
+    }
   };
 
   return (
@@ -39,6 +45,13 @@ function Register() {
           <Modal.Title>Create an Account</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          {error && (
+            <Alert
+              msg={error}
+              color="danger"
+              clearError={() => setError(undefined)}
+            />
+          )}
           <Form>
             <Form.Group controlId="formBasicDisplayName">
               <Form.Label>Display Name</Form.Label>
@@ -77,14 +90,14 @@ function Register() {
                 onChange={(e) => setPasswordCheck(e.target.value)}
               />
             </Form.Group>
-            <Button variant="primary" type="submit" onClick={submit}>
-              Register
-            </Button>
           </Form>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Cancel
+          </Button>
+          <Button variant="primary" type="submit" onClick={submit}>
+            Register
           </Button>
         </Modal.Footer>
       </Modal>

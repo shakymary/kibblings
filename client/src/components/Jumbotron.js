@@ -28,7 +28,7 @@ import {
 
 const Jumbotron = (props) => {
   return (
-    <MDBContainer className="mt-5 text-center ">
+    <MDBContainer className="mt-5 text-center" fluid>
       <MDBRow>
         <MDBCol>
           <MDBJumbotron className="text-center bodies">
