@@ -17,6 +17,7 @@ import {
   MDBCardText,
   MDBCol,
 } from "mdbreact";
+import "../components/Footer.css";
 
 export const Cards = (props) => {
   return (
@@ -49,27 +50,38 @@ export const NewPetCard = ({ image, petName, petBreed, children }) => {
 export const PetCard = ({ image, petName, petBreed, children }) => {
   return (
     // <div className="container">
-    <div className="row">
-      <div className="card mb-3" style={{ maxWidth: "540px" }}>
-        <div className="row no-gutters">
-          <div className="col-md-4">
-            <img src={image} className="card-img rounded-circle" alt="..." />
-          </div>
-          <div className="col-md-8">
-            <div className="card-body">
-              <h3 className="card-title">{petName}</h3>
-              <h5 className="card-text dark">{petBreed}</h5>
-            </div>
-          </div>
+
+    <Container fluid style={{ width: "100" }}>
+      <Row>
+        <Col>
           <div className="row">
-            <div className="col">
-              {children}
+            <div
+              className="card mb-3 pet-cardbox container "
+              style={{ maxWidth: "540px" }}
+            >
+              <div className="row no-gutters">
+                <div className="col-md-4">
+                  <img
+                    src={image}
+                    className="card-img rounded-circle"
+                    alt="..."
+                  />
+                </div>
+                <div className="col-md-8">
+                  <div className="card-body">
+                    <h3 className="card-title">{petName}</h3>
+                    <h5 className="card-text dark">{petBreed}</h5>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col">{children}</div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    // </div>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

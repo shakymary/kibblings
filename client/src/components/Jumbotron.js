@@ -4,7 +4,7 @@ import {
   MDBContainer,
   MDBRow,
   MDBCol,
-  MDBIcon,
+  // MDBIcon,
   MDBCardTitle,
   MDBCardImage,
   MDBCardBody,

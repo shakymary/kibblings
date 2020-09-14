@@ -31,11 +31,12 @@ i {
 }
 
 .contactPage-color {
-  background-color: #efefe8ff;
+  background-color: rgb(241, 246, 247) !important;
 }
 
 .contactPage-icons {
   color: #1976d2;
+  padding-top: 60px;
 }
 
 .aboutPage-color {
@@ -53,4 +54,25 @@ i {
   font-size: 20px !important;
   color: rgb(5, 21, 29) !important;
   font-family: sans-serif;
+}
+
+.pet-cardbox {
+  justify-content: center !important;
+  background-color: rgb(243, 247, 247) !important;
+}
+
+.card-form {
+  justify-content: center !important;
+}
+
+.card-title {
+  color: rgb(11, 88, 88);
+  font-size: 22px;
+}
+
+.card-text {
+  color: rgb(4, 71, 71);
+}
+.about-container {
+  padding-top: 70px;
 }

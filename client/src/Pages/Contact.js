@@ -83,7 +83,6 @@ const ContactPage = () => {
               </MDBCol>
               <MDBCol lg="4">
                 <MDBCardBody className="contact text-center h-100 white-text">
-                  // <h3 className="my-4 pb-2"></h3>
                   <ul className="text-lg-left list-unstyled ml-4 contactPage-icons">
                     <li>
                       <p>
@@ -104,23 +103,6 @@ const ContactPage = () => {
                     </li>
                   </ul>
                   <hr className="hr-light my-4" />
-                  <ul className="list-inline text-center list-unstyled">
-                    <li className="list-inline-item">
-                      <a href="#!" className="p-2 fa-lg w-ic ">
-                        <MDBIcon className="social-link" fab icon="twitter" />
-                      </a>
-                    </li>
-                    <li className="list-inline-item">
-                      <a href="#!" className="p-2 fa-lg w-ic ">
-                        <MDBIcon className="social-link" fab icon="facebook" />
-                      </a>
-                    </li>
-                    <li className="list-inline-item">
-                      <a href="#!" className="p-2 fa-lg w-ic ">
-                        <MDBIcon className="social-link" fab icon="instagram" />
-                      </a>
-                    </li>
-                  </ul>
                 </MDBCardBody>
               </MDBCol>
             </MDBRow>
