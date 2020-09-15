@@ -1,6 +1,7 @@
 import React from "react";
 import {
   Card,
+  CardDeck,
   Button,
   ListGroup,
   ListGroupItem,
@@ -46,33 +47,34 @@ export const NewPetCard = ({ image, petName, petBreed, children }) => {
   );
 };
 
+
+// Cards Created for Adoption Page
 export const PetCard = ({ image, petName, petBreed, children }) => {
   return (
-    // <div className="container">
-    <div className="row">
-      <div className="card mb-3" style={{ maxWidth: "540px" }}>
-        <div className="row no-gutters">
-          <div className="col-md-4">
-            <img src={image} className="card-img rounded-circle" alt="..." />
+    <div className="card mb-3" style={{ maxWidth: "540px", maxHeight: "300px" }}>
+      <div className="row no-gutters">
+        <div className="col-md-4">
+          <img src={image} className="card-img rounded-circle" alt="..." style={{ maxHeight: "160px", maxWidth: "160px", marginTop: "20px", marginLeft: "20px" }} />
+        </div>
+        <div className="col-md-8">
+          <div className="card-body">
+            <h3 className="card-title">{petName}</h3>
+            <h5 className="card-text dark">{petBreed}</h5>
           </div>
-          <div className="col-md-8">
-            <div className="card-body">
-              <h3 className="card-title">{petName}</h3>
-              <h5 className="card-text dark">{petBreed}</h5>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              {children}
-            </div>
+        </div>
+        <div className="row">
+          <div className="col">
+            {children}
           </div>
         </div>
       </div>
     </div>
-    // </div>
+
   );
 };
 
+
+//
 export const InfoCard = (props) => {
   return (
     <Card style={{ width: "18rem" }}>
@@ -100,13 +102,13 @@ export const AboutCard = () => {
   return (
     <>
       <Container style={{ paddingTop: "30px" }}>
-        <h1 style={{ fontSize: "85px", textAlign: "center" }}>
-          🐶Welcome to Kibblings!🐱
+        {/* <h1 style={{ fontSize: "85px", textAlign: "center" }}>
+          🐶About Kibblings!🐱
         </h1>
         <h5 className="mb-2 text-muted" style={{ textAlign: "center" }}>
           Created by Mykhas Nallas, Napoleon Vuong, Alvaro Centeno, and Shakila
           Marando{" "}
-        </h5>
+        </h5> */}
         <h3 style={{ paddingTop: "30px" }}>
           With how busy our day to day lives can be, we sometimes need a little
           help with balancing our responsibilities and keeping track of those
