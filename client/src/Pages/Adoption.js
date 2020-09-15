@@ -6,6 +6,7 @@ import {
   MDBCol,
   MDBIcon,
   MDBCardTitle,
+  MDBBtn,
   MDBCardImage,
   MDBCardBody,
   MDBCardText,
@@ -19,8 +20,8 @@ import { PetCard } from "../components/Card";
 import Btn from "../components/Button";
 import "../components/Footer.css";
 import Axios from "axios";
-import { Container } from "react-bootstrap";
-import AdoptionImage from "../components/Images/AdoptionPageImage.mp4";
+import { Container, Row, Col } from "react-bootstrap";
+import AdoptionImage from "../components/Images/LandingAdoption2.mp4";
 
 const Adoption = (e) => {
   const [searchPet, setSearchPet] = useState();
@@ -54,6 +55,7 @@ const Adoption = (e) => {
   useEffect(() => {}, []);
 
   return (
+<<<<<<< HEAD
     <div className="adoption-body">
       <Jumbotron jumbotronTitle="Adopt A Pet " jumbotronText="lllll" />
 
@@ -85,6 +87,69 @@ const Adoption = (e) => {
         );
       })}
     </div>
+=======
+    <>
+      {/* <MDBContainer fluid> */}
+      {/* <MDBRow> */}
+      {/* <MDBCol> */}
+      <MDBJumbotron style={{ padding: '0', width: '100%' }}>
+        <MDBCol className="text-white text-center py-1 px-4" style={{ backgroundImage: `url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg)` }}>
+          <MDBCardTitle className="h1-responsive m-5 font-bold" style={{ fontSize: "85px" }}>Adoption Page</MDBCardTitle>
+        </MDBCol>
+      </MDBJumbotron>
+      {/* </MDBCol> */}
+      {/* </MDBRow> */}
+      {/* </MDBContainer> */}
+
+      <MDBContainer>
+        <MDBRow>
+          <MDBCol>
+            <MDBJumbotron style={{ padding: 0, width: '100%' }}>
+              <MDBCol className="text-white text-center py-1 px-4 my-5" style={{ backgroundImage: `url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg)` }}>
+                <MDBCardTitle className="h1-responsive pt-3 m-5 font-bold">Find pets here!</MDBCardTitle>
+                <video autoPlay muted className="d-block w-100">
+                  <source src={AdoptionImage} type="video/mp4"></source>
+                </video>
+                <MDBCol className="py-5">
+
+                  <p className="mx-5 mb-5">Find adoptable pets here on our adoption page. Just type in a pet type such as cat, dog, or even horse in the search bar below and find a pet thats right for you!
+                </p>
+                  <Forms
+                    placeholder="Search animals"
+                    className="mr-sm-2 secondary"
+                    btnSubmitText="Search"
+                    onChange={inputChange}
+                    onClick={getPets}
+                  />
+                </MDBCol>
+              </MDBCol>
+            </MDBJumbotron>
+          </MDBCol>
+        </MDBRow>
+        {pets.map((item) => {
+          return (
+            <PetCard
+              image={
+                item.primary_photo_cropped === null
+                  ? `https://angelinacountyhumanesociety.org/files/2019/03/1553127681886_feature2.png`
+                  : `${item.primary_photo_cropped.medium}`
+              }
+              petName={item.name}
+              petBreed={item.breeds.primary + " " + item.breeds.secondary}
+            >
+              <Btn
+                variant="primary"
+                text="View"
+                // better if opens a new tab
+                onClick={() => window.location.replace(`${item.url}`)}
+              />
+            </PetCard>
+          );
+        })}
+      </MDBContainer>
+      <Footer />
+    </>
+>>>>>>> 8e5d383dd3c08ad5dd4d2a275cc225f8da211577
   );
 };
 export default Adoption;
