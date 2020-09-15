@@ -7,79 +7,81 @@ import "./Footer.css";
 
 export const Footer = () => {
   return (
-    <div className="footer" style={{ maxHeight: "10vh" }}>
-      <MDBFooter color="blue" className="font-small pt-4 mt-4 content">
-        <MDBContainer fluid className="text-center text-md-left">
-          <MDBRow>
-            <MDBCol className="column" md="3">
-              <h5 className="title">ABOUT US</h5>
-              <ul>
-                <li className="list-unstyled">
-                  <a href="/about">About Kibblings</a>
-                </li>
-                <li className="list-unstyled">
-                  <a href="#!">FAQs</a>
-                </li>
-                <li className="list-unstyled">
-                  <a href="/contact">Contact Us</a>
-                </li>
-              </ul>
-            </MDBCol>
-            <MDBCol className="column" md="3">
-              <h5 className="title">PET CARE TOPICS</h5>
-              <ul>
-                <li className="list-unstyled ">
-                  <a href="https://www.youtube.com/watch?v=Tn3lZE0rRBs&t=1s">
-                    Dog Care
-                  </a>
-                </li>
-                <li className="list-unstyled">
-                  <a href="https://www.youtube.com/watch?v=IKR6FPerXes">
-                    Cat Care
-                  </a>
-                </li>
-                <li className="list-unstyled">
-                  <a href="https://www.youtube.com/watch?v=Yzv0gXqoCkc&t=1s">
-                    All Pets Care
-                  </a>
-                </li>
-              </ul>
-            </MDBCol>
-            <MDBCol className="column" md="3">
-              <h5 className="title">CONTACT DEVELOPERS</h5>
-              <ul>
-                <li className="list-unstyled ">
-                  <a href="https://www.linkedin.com/in/shakila-marando-33432515/">
-                    Shakila Marando
-                  </a>
-                </li>
-                <li className="list-unstyled">
-                  <a href="https://www.linkedin.com/in/napoleon-vuong-08b189192/">
-                    Napoleon Simmaly
-                  </a>
-                </li>
-                <li className="list-unstyled">
-                  <a href="https://www.linkedin.com/in/myhkas-nallas-15980416a/">
-                    Myhkas Nallas
-                  </a>
-                </li>
-                <li className="list-unstyled">
-                  <a href="https://www.linkedin.com/in/alvaro-centeno/">
-                    Alvaro Centeno
-                  </a>
-                </li>
-              </ul>
-            </MDBCol>
-          </MDBRow>
+    // <div className="footer"
+    // style={{ maxHeight: "10vh" }}
+    // >
+    <MDBFooter color="blue" className="font-small pt-4 mt-4 content">
+      <MDBContainer fluid className="text-center text-md-left">
+        <MDBRow>
+          <MDBCol className="column" md="3">
+            <h5 className="title">ABOUT US</h5>
+            <ul>
+              <li className="list-unstyled">
+                <a href="/about">About Kibblings</a>
+              </li>
+              <li className="list-unstyled">
+                <a href="#!">FAQs</a>
+              </li>
+              <li className="list-unstyled">
+                <a href="/contact">Contact Us</a>
+              </li>
+            </ul>
+          </MDBCol>
+          <MDBCol className="column" md="3">
+            <h5 className="title">PET CARE TOPICS</h5>
+            <ul>
+              <li className="list-unstyled ">
+                <a href="https://www.youtube.com/watch?v=Tn3lZE0rRBs&t=1s">
+                  Dog Care
+                </a>
+              </li>
+              <li className="list-unstyled">
+                <a href="https://www.youtube.com/watch?v=IKR6FPerXes">
+                  Cat Care
+                </a>
+              </li>
+              <li className="list-unstyled">
+                <a href="https://www.youtube.com/watch?v=Yzv0gXqoCkc&t=1s">
+                  All Pets Care
+                </a>
+              </li>
+            </ul>
+          </MDBCol>
+          <MDBCol className="column" md="3">
+            <h5 className="title">CONTACT DEVELOPERS</h5>
+            <ul>
+              <li className="list-unstyled ">
+                <a href="https://www.linkedin.com/in/shakila-marando-33432515/">
+                  Shakila Marando
+                </a>
+              </li>
+              <li className="list-unstyled">
+                <a href="https://www.linkedin.com/in/napoleon-vuong-08b189192/">
+                  Napoleon Simmaly
+                </a>
+              </li>
+              <li className="list-unstyled">
+                <a href="https://www.linkedin.com/in/myhkas-nallas-15980416a/">
+                  Myhkas Nallas
+                </a>
+              </li>
+              <li className="list-unstyled">
+                <a href="https://www.linkedin.com/in/alvaro-centeno/">
+                  Alvaro Centeno
+                </a>
+              </li>
+            </ul>
+          </MDBCol>
+        </MDBRow>
+      </MDBContainer>
+      <div className="footer-copyright text-center py-3">
+        <MDBContainer fluid>
+          &copy; {new Date().getFullYear()} Copyright:{" "}
+          <a href=""> Kibblings.com </a>
         </MDBContainer>
-        <div className="footer-copyright text-center py-3">
-          <MDBContainer fluid>
-            &copy; {new Date().getFullYear()} Copyright:{" "}
-            <a href=""> Kibblings.com </a>
-          </MDBContainer>
-        </div>
-      </MDBFooter>
-    </div>
+      </div>
+    </MDBFooter>
+    // </div>
   );
 };
 

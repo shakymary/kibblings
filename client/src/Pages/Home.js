@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import { AdoptionCarousel } from "../components/Carousel";
-// import Footer from "../components/Footer";
+import { Footer } from "../components/Footer";
+// import Jumbotron from "../components/Jumbotron"
 import {
   Button,
   Modal,
@@ -14,6 +15,7 @@ import {
 } from "react-bootstrap";
 
 const Home = () => {
+
   const [lgShow, setLgShow] = useState(false);
   const [name, setName] = useState();
   const [age, setAge] = useState();
@@ -104,6 +106,7 @@ const Home = () => {
   return (
     <>
       <Container fluid style={{ minHeight: "80vh" }}>
+        {/* <Jumbotron /> */}
         <Row className="mt-3 ml-5">
           <Col>
             <Card border="info" style={{ width: '50%' }}>
@@ -133,11 +136,12 @@ const Home = () => {
                 objectFit: 'cover'
               }} src="https://etimg.etb2bimg.com/photo/75463378.cms" alt="Card image" />
               <Card.ImgOverlay>
+
                 <Card.Text style={{ color: "black" }}>
                   <h3>Pet Dashboard</h3>
                   <Row>
                     <Col>
-                      <p>Pet:{name}</p>
+                      <p>Pet: </p>
                       <p>Pet Weight: {weight}</p>
                       <p>Birthday:</p>
                       <p>Age:</p>
@@ -362,6 +366,7 @@ const Home = () => {
           </Modal.Body>
         </Modal>
       </Container>
+      <Footer />
     </>
   );
 };
