@@ -30,17 +30,8 @@ i {
   color: black;
 }
 
-.contactPage-color {
-  background-color: rgb(241, 246, 247) !important;
-}
-
-.contactPage-icons {
-  color: #1976d2;
-  padding-top: 60px;
-}
-
 .aboutPage-color {
-  background-color: #f0f8ff;
+  background-color: #eceef0;
   padding-top: 40px;
   margin-top: 100px;
 }
