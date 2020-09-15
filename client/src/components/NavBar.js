@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import Register from "../components/Auth/Register";
 import Login from "../components/Auth/Login";
@@ -6,10 +6,12 @@ import { useHistory } from "react-router-dom";
 import UserContext from "../Context/UserContext";
 import { NotifContainer } from "../components/Modal";
 import Notification from "../components/Notification";
+import Axios from "axios";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./NavBar.css";
 
 const NavBar = () => {
+  const [reminders, setReminders] = useState([]);
   const { userData, setUserData } = useContext(UserContext);
   const history = useHistory();
   const adoption = () => history.push("/adoption");
@@ -24,6 +26,19 @@ const NavBar = () => {
     history.push("/");
     localStorage.setItem("auth-token", "");
   };
+
+  const renderReminders = async () => {
+    await Axios.get("/users/viewReminder", {
+      headers: { "x-auth-token": localStorage.getItem("auth-token") },
+    }).then((res) => {
+      setReminders(res.data.reminders);
+    });
+  };
+
+  useEffect(() => {
+    renderReminders();
+  }, []);
+
   return (
     <Navbar className="NavBar" bg="primary" expand="lg">
       <Navbar.Brand
@@ -49,8 +64,17 @@ const NavBar = () => {
                 <Nav.Link onClick={mypets}>My Pets</Nav.Link>
               </Nav.Link>
               <Nav.Link>
-                <NotifContainer content="Test">
-                  <Notification title="Test" message="test test test test" />
+                <NotifContainer>
+                  {reminders.map((item, index) => {
+                    return (
+                      <Notification
+                        key={index}
+                        title={item.subject}
+                        message={item.note}
+                        text={item.time}
+                      />
+                    );
+                  })}
                 </NotifContainer>
               </Nav.Link>
               <Nav.Link>
