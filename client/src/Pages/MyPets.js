@@ -237,7 +237,9 @@ const MyPets = () => {
           </NewPetCard>
         );
       })}
+      <Footer />
     </div>
+
   );
 };
 

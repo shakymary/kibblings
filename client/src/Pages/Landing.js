@@ -18,7 +18,9 @@ const Landing = () => {
       <Carousels>
         <CarouselItems />
       </Carousels>
-      <Container fluid style={{ width: "100%" }}>
+      <Container
+        fluid style={{ width: "100%" }}
+      >
         <Row>
           <Col style={{ paddingTop: "60px" }}>
             <h1 style={{ fontSize: "105px", textAlign: "center" }}>About Kibblings!</h1>
@@ -31,9 +33,7 @@ const Landing = () => {
           </Col>
         </Row>
       </Container>
-      {/* <Footer /> */}
-
-
+      <Footer />
     </>
   );
 };

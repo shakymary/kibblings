@@ -112,6 +112,7 @@ const Adoption = (e) => {
           );
         })}
       </MDBContainer>
+      <Footer />
     </>
   );
 };
