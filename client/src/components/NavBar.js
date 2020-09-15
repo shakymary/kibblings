@@ -4,6 +4,8 @@ import Register from "../components/Auth/Register";
 import Login from "../components/Auth/Login";
 import { useHistory } from "react-router-dom";
 import UserContext from "../Context/UserContext";
+import { NotifContainer } from "../components/Modal";
+import Notification from "../components/Notification";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./NavBar.css";
 
@@ -47,19 +49,24 @@ const NavBar = () => {
                 <Nav.Link onClick={mypets}>My Pets</Nav.Link>
               </Nav.Link>
               <Nav.Link>
+                <NotifContainer content="Test">
+                  <Notification title="Test" message="test test test test" />
+                </NotifContainer>
+              </Nav.Link>
+              <Nav.Link>
                 <Nav.Link onClick={logout}>Logout</Nav.Link>
               </Nav.Link>
             </>
           ) : (
-              <>
-                <Nav.Link>
-                  <Login />
-                </Nav.Link>
-                <Nav.Link>
-                  <Register />
-                </Nav.Link>
-              </>
-            )}
+            <>
+              <Nav.Link>
+                <Login />
+              </Nav.Link>
+              <Nav.Link>
+                <Register />
+              </Nav.Link>
+            </>
+          )}
         </Nav>
       </Navbar.Collapse>
     </Navbar>

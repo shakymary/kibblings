@@ -114,13 +114,14 @@ router.get("/", auth, async (req, res) => {
 
 router.post("/reminder", auth, async (req, res) => {
   try {
-    const { note, time } = req.body;
+    const { subject, note, time } = req.body;
 
     //validation
-    if (!note || !time)
+    if (!note || !time || !subject)
       return res.status(400).json({ msg: "Not all fields have been entered." });
 
     const newNote = new Reminder({
+      subject,
       note,
       time,
     });
