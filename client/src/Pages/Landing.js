@@ -18,14 +18,16 @@ const Landing = () => {
       <Carousels>
         <CarouselItems />
       </Carousels>
-      <Container fluid style={{ width: "100%" }}>
+      <Container
+        fluid style={{ width: "100%" }}
+      >
         <Row>
           <Col>
             <AboutCard />
           </Col>
         </Row>
       </Container>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

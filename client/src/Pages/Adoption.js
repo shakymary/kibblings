@@ -84,6 +84,7 @@ const Adoption = (e) => {
           </Container>
         );
       })}
+      <Footer />
     </div>
   );
 };
