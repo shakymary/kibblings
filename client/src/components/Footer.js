@@ -7,7 +7,7 @@ import "./Footer.css";
 
 export const Footer = () => {
   return (
-    // <div className="footer" 
+    // <div className="footer"
     // style={{ maxHeight: "10vh" }}
     // >
     <MDBFooter color="blue" className="font-small pt-4 mt-4 content">
@@ -33,17 +33,17 @@ export const Footer = () => {
               <li className="list-unstyled ">
                 <a href="https://www.youtube.com/watch?v=Tn3lZE0rRBs&t=1s">
                   Dog Care
-                  </a>
+                </a>
               </li>
               <li className="list-unstyled">
                 <a href="https://www.youtube.com/watch?v=IKR6FPerXes">
                   Cat Care
-                  </a>
+                </a>
               </li>
               <li className="list-unstyled">
                 <a href="https://www.youtube.com/watch?v=Yzv0gXqoCkc&t=1s">
                   All Pets Care
-                  </a>
+                </a>
               </li>
             </ul>
           </MDBCol>
@@ -53,22 +53,22 @@ export const Footer = () => {
               <li className="list-unstyled ">
                 <a href="https://www.linkedin.com/in/shakila-marando-33432515/">
                   Shakila Marando
-                  </a>
+                </a>
               </li>
               <li className="list-unstyled">
                 <a href="https://www.linkedin.com/in/napoleon-vuong-08b189192/">
                   Napoleon Simmaly
-                  </a>
+                </a>
               </li>
               <li className="list-unstyled">
                 <a href="https://www.linkedin.com/in/myhkas-nallas-15980416a/">
                   Myhkas Nallas
-                  </a>
+                </a>
               </li>
               <li className="list-unstyled">
                 <a href="https://www.linkedin.com/in/alvaro-centeno/">
                   Alvaro Centeno
-                  </a>
+                </a>
               </li>
             </ul>
           </MDBCol>

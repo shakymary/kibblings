@@ -50,16 +50,26 @@ const Adoption = (e) => {
         });
       });
   };
-  useEffect(() => { }, []);
+  useEffect(() => {}, []);
 
   return (
     <>
       {/* <MDBContainer fluid> */}
       {/* <MDBRow> */}
       {/* <MDBCol> */}
-      <MDBJumbotron style={{ padding: '0', width: '100%' }}>
-        <MDBCol className="text-white text-center py-1 px-4" style={{ backgroundImage: `url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg)` }}>
-          <MDBCardTitle className="h1-responsive m-5 font-bold" style={{ fontSize: "85px" }}>Adoption Page</MDBCardTitle>
+      <MDBJumbotron style={{ padding: "0", width: "100%" }}>
+        <MDBCol
+          className="text-white text-center py-1 px-4"
+          style={{
+            backgroundImage: `url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg)`,
+          }}
+        >
+          <MDBCardTitle
+            className="h1-responsive m-5 font-bold"
+            style={{ fontSize: "85px" }}
+          >
+            Adoption Page
+          </MDBCardTitle>
         </MDBCol>
       </MDBJumbotron>
       {/* </MDBCol> */}
@@ -69,16 +79,25 @@ const Adoption = (e) => {
       <MDBContainer>
         <MDBRow>
           <MDBCol>
-            <MDBJumbotron style={{ padding: 0, width: '100%' }}>
-              <MDBCol className="text-white text-center py-1 px-4 my-5" style={{ backgroundImage: `url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg)` }}>
-                <MDBCardTitle className="h1-responsive pt-3 m-5 font-bold">Find pets here!</MDBCardTitle>
+            <MDBJumbotron style={{ padding: 0, width: "100%" }}>
+              <MDBCol
+                className="text-white text-center py-1 px-4 my-5"
+                style={{
+                  backgroundImage: `url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg)`,
+                }}
+              >
+                <MDBCardTitle className="h1-responsive pt-3 m-5 font-bold">
+                  Find pets here!
+                </MDBCardTitle>
                 <video autoPlay muted className="d-block w-100">
                   <source src={AdoptionImage} type="video/mp4"></source>
                 </video>
                 <MDBCol className="py-5">
-
-                  <p className="mx-5 mb-5">Find adoptable pets here on our adoption page. Just type in a pet type such as cat, dog, or even horse in the search bar below and find a pet thats right for you!
-                </p>
+                  <p className="mx-5 mb-5">
+                    Find adoptable pets here on our adoption page. Just type in
+                    a pet type such as cat, dog, or even horse in the search bar
+                    below and find a pet thats right for you!
+                  </p>
                   <Forms
                     placeholder="Search animals"
                     className="mr-sm-2 secondary"

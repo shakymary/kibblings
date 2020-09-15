@@ -18,6 +18,7 @@ import {
   MDBCardText,
   MDBCol,
 } from "mdbreact";
+import "../components/Footer.css";
 
 export const Cards = (props) => {
   return (
@@ -47,14 +48,26 @@ export const NewPetCard = ({ image, petName, petBreed, children }) => {
   );
 };
 
-
 // Cards Created for Adoption Page
 export const PetCard = ({ image, petName, petBreed, children }) => {
   return (
-    <div className="card mb-3" style={{ maxWidth: "540px", maxHeight: "300px" }}>
+    <div
+      className="card mb-3"
+      style={{ maxWidth: "540px", maxHeight: "300px" }}
+    >
       <div className="row no-gutters">
         <div className="col-md-4">
-          <img src={image} className="card-img rounded-circle" alt="..." style={{ maxHeight: "160px", maxWidth: "160px", marginTop: "20px", marginLeft: "20px" }} />
+          <img
+            src={image}
+            className="card-img rounded-circle"
+            alt="..."
+            style={{
+              maxHeight: "160px",
+              maxWidth: "160px",
+              marginTop: "20px",
+              marginLeft: "20px",
+            }}
+          />
         </div>
         <div className="col-md-8">
           <div className="card-body">
@@ -63,16 +76,12 @@ export const PetCard = ({ image, petName, petBreed, children }) => {
           </div>
         </div>
         <div className="row">
-          <div className="col">
-            {children}
-          </div>
+          <div className="col">{children}</div>
         </div>
       </div>
     </div>
-
   );
 };
-
 
 //
 export const InfoCard = (props) => {
