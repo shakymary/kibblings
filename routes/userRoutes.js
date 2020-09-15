@@ -141,13 +141,18 @@ router.get("/viewReminder", auth, async (req, res) => {
 });
 
 router.delete("/deleteReminder/:id", auth, async (req, res) => {
-  const reminder = await Reminder.findOne({
-    userId: req.user,
-    _id: req.params.id,
-  });
-  if (!reminder) return res.status(400).json({ msg: "No reminder found!" });
-  const deletedReminder = await Reminder.findByIdAndDelete(req.params.id);
-  res.json(deletedReminder);
+  try {
+    const user = await User.findById(req.user);
+    const indexToDelete = user.reminders.indexOf(req.body._id);
+
+    user.reminders.splice(indexToDelete, 1);
+
+    await user.save();
+
+    res.send(user);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
 module.exports = router;
