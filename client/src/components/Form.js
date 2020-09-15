@@ -1,19 +1,22 @@
 import React from "react";
 import { Button, Form, FormControl } from "react-bootstrap";
+import "../components/Footer.css";
 
 export const Forms = (props) => {
   return (
-    <Form inline>
-      <FormControl
-        type="text"
-        placeholder={props.placeholder}
-        className={props.className}
-        onChange={props.onChange}
-      />
-      <Button type="submit" onClick={props.onClick}>
-        {props.btnSubmitText}
-      </Button>
-    </Form>
+    <div className="card-form container">
+      <Form inline>
+        <FormControl
+          type="text"
+          placeholder={props.placeholder}
+          className={props.className}
+          onChange={props.onChange}
+        />
+        <Button type="submit" onClick={props.onClick}>
+          {props.btnSubmitText}
+        </Button>
+      </Form>
+    </div>
   );
 };
 
