@@ -49,3 +49,36 @@ export class ModalCenter extends Component {
     );
   }
 }
+
+export class NotifContainer extends Component {
+  state = {
+    modal6: false,
+  };
+
+  toggle = (nr) => () => {
+    let modalNumber = "modal" + nr;
+    this.setState({
+      [modalNumber]: !this.state[modalNumber],
+    });
+  };
+
+  render() {
+    return (
+      <MDBContainer>
+        <p onClick={this.toggle(6)}>🔔</p>
+        <MDBModal
+          isOpen={this.state.modal6}
+          toggle={this.toggle(6)}
+          side
+          position="top-right"
+        >
+          <MDBModalHeader style={{ color: "black" }} toggle={this.toggle(6)}>
+            Notifications
+          </MDBModalHeader>
+          <MDBModalBody>{this.props.children}</MDBModalBody>
+          <MDBModalFooter></MDBModalFooter>
+        </MDBModal>
+      </MDBContainer>
+    );
+  }
+}
