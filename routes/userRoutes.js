@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const User = require("../models/userModel");
+const Reminder = require("../models/reminderModel.js");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const auth = require("../middleware/auth");
@@ -109,6 +110,44 @@ router.get("/", auth, async (req, res) => {
     displayName: user.displayName,
     id: user._id,
   });
+});
+
+router.post("/reminder", auth, async (req, res) => {
+  try {
+    const { note, time } = req.body;
+
+    //validation
+    if (!note || !time)
+      return res.status(400).json({ msg: "Not all fields have been entered." });
+
+    const newNote = new Reminder({
+      note,
+      time,
+    });
+    const user = await User.findById(req.user);
+    user.reminders.push(newNote);
+    await user.save();
+    res.json(user.reminders);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+router.get("/viewReminder", auth, async (req, res) => {
+  const user = await User.findById(req.user);
+  res.json({
+    reminders: user.reminders,
+  });
+});
+
+router.delete("/deleteReminder/:id", auth, async (req, res) => {
+  const reminder = await Reminder.findOne({
+    userId: req.user,
+    _id: req.params.id,
+  });
+  if (!reminder) return res.status(400).json({ msg: "No reminder found!" });
+  const deletedReminder = await Reminder.findByIdAndDelete(req.params.id);
+  res.json(deletedReminder);
 });
 
 module.exports = router;
