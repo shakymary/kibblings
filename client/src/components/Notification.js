@@ -6,11 +6,6 @@ class Notification extends Component {
     return (
       <MDBNotification
         style={{
-          width: "auto",
-          position: "fixed",
-          top: "15px",
-          right: "15px",
-          zIndex: 9999,
           color: "black",
         }}
         show
