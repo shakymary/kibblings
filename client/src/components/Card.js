@@ -51,7 +51,7 @@ export const PetCard = ({ image, petName, petBreed, children }) => {
   return (
     // <div className="container">
 
-    <Container fluid style={{ width: "100" }}>
+    <Container fluid style={{ width: "50" }}>
       <Row>
         <Col>
           <div className="row">

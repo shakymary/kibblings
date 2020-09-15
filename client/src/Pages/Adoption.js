@@ -9,6 +9,8 @@ import {
   MDBCardImage,
   MDBCardBody,
   MDBCardText,
+  Row,
+  Col,
 } from "mdbreact";
 import Jumbotron from "../components/Jumbotron";
 import { Forms } from "../components/Form";
@@ -52,7 +54,7 @@ const Adoption = (e) => {
   useEffect(() => {}, []);
 
   return (
-    <div className="body">
+    <div className="adoption-body">
       <Jumbotron jumbotronTitle="Adopt A Pet " jumbotronText="lllll" />
 
       <Forms

@@ -89,9 +89,9 @@ const About = () => {
         <br />
         Kibblings also includes a pet-care resource directory and a library of
         free pet-care articles to help keep pets in their homes. Petfinder is
-        made up of animal-care // professionals and regular people volunteering
-        for their local animal // welfare organizations all working together to
-        maintain active and // accurate homeless pet lists.
+        made up of animal-care professionals and regular people volunteering for
+        their local animal welfare organizations all working together to
+        maintain active and accurate homeless pet lists.
       </p>
     </div>
   );
