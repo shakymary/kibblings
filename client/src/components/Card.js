@@ -18,7 +18,7 @@ import {
   MDBCardText,
   MDBCol,
 } from "mdbreact";
-import "../components/Footer.css";
+import "./Footer.css";
 
 export const Cards = (props) => {
   return (
@@ -58,7 +58,7 @@ export const PetCard = ({
 }) => {
   return (
     <div
-      className="card mb-3"
+      className="card pet-cardbox mb-3"
       style={{ maxWidth: "540px", maxHeight: "300px" }}
     >
       <div className="row no-gutters">

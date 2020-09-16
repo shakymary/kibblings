@@ -7,6 +7,18 @@ import { Footer } from "../components/Footer";
 import { TabsDefault } from "../components/Tabs";
 import Axios from "axios";
 import { ModalCenter } from "../components/Modal";
+import {
+  MDBJumbotron,
+  MDBContainer,
+  MDBRow,
+  MDBCol,
+  MDBIcon,
+  MDBCardTitle,
+  MDBBtn,
+  MDBCardImage,
+  MDBCardBody,
+  MDBCardText,
+} from "mdbreact";
 
 const MyPets = () => {
   const [petCollection, setPetCollection] = useState([]);
@@ -51,10 +63,24 @@ const MyPets = () => {
 
   return (
     <div className="body">
-      <Row className="mt-3">
+      <MDBJumbotron style={{ padding: "0", width: "100%" }}>
+        <MDBCol
+          className="text-white text-center py-1 px-4"
+          style={{
+            backgroundImage: `url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg)`,
+          }}
+        >
+          <MDBCardTitle
+            className="h1-responsive m-5 font-bold"
+            style={{ fontSize: "85px" }}
+          >
+            Browse Your Pets
+          </MDBCardTitle>
+        </MDBCol>
+      </MDBJumbotron>
+      {/* <Row className="mt-3">
         <Col>
           <Card bg={"warning"}>
-            {/* <Card.Body> */}
             <Card.Img
               style={{
                 width: "100%",
@@ -69,10 +95,9 @@ const MyPets = () => {
                 <h1>Browse Your Pets</h1>
               </Card.Text>
             </Card.ImgOverlay>
-            {/* </Card.Body> */}
           </Card>
         </Col>
-      </Row>
+      </Row> */}
 
       {petCollection.map((item, index) => {
         return (
