@@ -4,15 +4,8 @@ import { AdoptionCarousel } from "../components/Carousel";
 import { Footer } from "../components/Footer";
 import {
   MDBJumbotron,
-  MDBContainer,
-  MDBRow,
   MDBCol,
-  MDBIcon,
   MDBCardTitle,
-  MDBBtn,
-  MDBCardImage,
-  MDBCardBody,
-  MDBCardText,
 } from "mdbreact";
 // import Jumbotron from "../components/Jumbotron"
 import {

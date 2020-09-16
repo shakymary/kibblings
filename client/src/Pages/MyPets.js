@@ -9,15 +9,8 @@ import Axios from "axios";
 import { ModalCenter } from "../components/Modal";
 import {
   MDBJumbotron,
-  MDBContainer,
-  MDBRow,
   MDBCol,
-  MDBIcon,
   MDBCardTitle,
-  MDBBtn,
-  MDBCardImage,
-  MDBCardBody,
-  MDBCardText,
 } from "mdbreact";
 
 const MyPets = () => {
