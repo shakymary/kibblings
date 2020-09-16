@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
-import { AdoptionCarousel } from "../components/Carousel";
+import { ModalCenter } from "../components/Modal";
 import { Footer } from "../components/Footer";
 import { AccordParent, AccordChild } from "../components/Accordion";
 import {
@@ -40,6 +40,9 @@ const Home = () => {
   const [vaccines, setVaccines] = useState([]);
   const [allergies, setAllergies] = useState([]);
   const [rabies, setRabies] = useState();
+  const [date, setDate] = useState();
+  const [note, setNote] = useState();
+  const [subject, setSubject] = useState();
 
   const [displayName, setDisplayName] = useState();
   const [petCollection, setPetCollection] = useState([]);
@@ -246,6 +249,36 @@ const Home = () => {
         <Row className="mt-5 ">
           <Col>
             <Card>
+              <Card.Title>Reminders</Card.Title>
+              <ModalCenter size={"medium"}>
+                <Form>
+                  <Form.Group controlId="name">
+                    <Form.Label>Date</Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder={"09/19/2020"}
+                      onChange={(e) => setDate(e.target.value)}
+                    />
+                  </Form.Group>
+
+                  <Form.Group controlId="age">
+                    <Form.Label>Subject</Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder={"Monthly vet visit"}
+                      onChange={(e) => setSubject(e.target.value)}
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="weight">
+                    <Form.Label>Note</Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder={"Check dog vaccines"}
+                      onChange={(e) => setNote(e.target.value)}
+                    />
+                  </Form.Group>
+                </Form>
+              </ModalCenter>
               <AccordParent>
                 {reminders.map((item, index) => {
                   return (
