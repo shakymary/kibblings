@@ -102,6 +102,20 @@ const Home = () => {
     setLgShow(false);
   };
 
+  const addReminder = async (e) => {
+    e.preventDefault();
+    const newReminder = {
+      subject,
+      note,
+      date,
+    };
+
+    await Axios.post("/users/reminder", newReminder, {
+      headers: { "x-auth-token": localStorage.getItem("auth-token") },
+    });
+    setLgShow(false);
+  };
+
   const getName = async () => {
     const userRes = await Axios.get("/users/", {
       headers: { "x-auth-token": localStorage.getItem("auth-token") },
@@ -250,7 +264,7 @@ const Home = () => {
           <Col>
             <Card>
               <Card.Title>Reminders</Card.Title>
-              <ModalCenter size={"medium"}>
+              <ModalCenter size={"medium"} onClick={addReminder}>
                 <Form>
                   <Form.Group controlId="name">
                     <Form.Label>Date</Form.Label>
