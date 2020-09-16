@@ -7,6 +7,10 @@ class Notification extends Component {
       <MDBNotification
         style={{
           color: "black",
+          position: "fixed",
+          top: "10px",
+          right: "10px",
+          zIndex: 9999,
         }}
         show
         fade

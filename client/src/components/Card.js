@@ -49,7 +49,13 @@ export const NewPetCard = ({ image, petName, petBreed, children }) => {
 };
 
 // Cards Created for Adoption Page
-export const PetCard = ({ image, petName, petBreed, children }) => {
+export const PetCard = ({
+  image,
+  petName,
+  petBreed,
+  petDescription,
+  children,
+}) => {
   return (
     <div
       className="card mb-3"
@@ -71,8 +77,9 @@ export const PetCard = ({ image, petName, petBreed, children }) => {
         </div>
         <div className="col-md-8">
           <div className="card-body">
-            <h3 className="card-title">{petName}</h3>
-            <h5 className="card-text dark">{petBreed}</h5>
+            <h2 className="card-title">{petName}</h2>
+            <h4 className="card-text dark">{petBreed}</h4>
+            <p>{petDescription}</p>
           </div>
         </div>
         <div className="row">
