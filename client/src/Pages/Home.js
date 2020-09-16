@@ -2,6 +2,18 @@ import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import { AdoptionCarousel } from "../components/Carousel";
 import { Footer } from "../components/Footer";
+import {
+  MDBJumbotron,
+  MDBContainer,
+  MDBRow,
+  MDBCol,
+  MDBIcon,
+  MDBCardTitle,
+  MDBBtn,
+  MDBCardImage,
+  MDBCardBody,
+  MDBCardText,
+} from "mdbreact";
 // import Jumbotron from "../components/Jumbotron"
 import {
   Button,
@@ -105,6 +117,21 @@ const Home = () => {
   }, []);
   return (
     <>
+      <MDBJumbotron style={{ padding: "0", width: "100%" }}>
+        <MDBCol
+          className="text-white text-center py-1 px-4"
+          style={{
+            backgroundImage: `url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg)`,
+          }}
+        >
+          <MDBCardTitle
+            className="h1-responsive m-5 font-bold"
+            style={{ fontSize: "85px" }}
+          >
+            Welcome to your pet Dashboard
+          </MDBCardTitle>
+        </MDBCol>
+      </MDBJumbotron>
       <Container fluid style={{ minHeight: "80vh" }}>
         {/* <Jumbotron /> */}
         <Row className="mt-3 ml-5">

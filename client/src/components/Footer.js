@@ -10,10 +10,10 @@ export const Footer = () => {
     // <div className="footer"
     // style={{ maxHeight: "10vh" }}
     // >
-    <MDBFooter color="blue" className="font-small pt-4 mt-4 content">
-      <MDBContainer fluid className="text-center text-md-left">
+    <MDBFooter color="blue" className="font-small pt-4 mt-4 content ">
+      <MDBContainer fluid className="text-center ">
         <MDBRow>
-          <MDBCol className="column" md="3">
+          <MDBCol className="column" md="4">
             <h5 className="title">ABOUT US</h5>
             <ul>
               <li className="list-unstyled">

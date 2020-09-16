@@ -1,11 +1,17 @@
 import React, { Component } from "react";
-import { MDBNotification } from "mdbreact";
+import { MDBNotification, MDBContainer } from "mdbreact";
 
 class Notification extends Component {
   render() {
     return (
       <MDBNotification
-        style={{ color: "black" }}
+        style={{
+          color: "black",
+          position: "fixed",
+          top: "10px",
+          right: "10px",
+          zIndex: 9999,
+        }}
         show
         fade
         iconClassName="text-primary"
