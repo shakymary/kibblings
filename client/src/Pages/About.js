@@ -60,17 +60,20 @@
 
 // export default CardExample;
 import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import "../components/Footer.css";
 
 const About = () => {
   return (
-    <div className=" about-mainbody ">
-      <img
-        cascade
-        style={{ height: "35rem", width: "100%" }}
-        src="https://cdn.cdnparenting.com/articles/2018/04/96524833-H-1024x700.jpg"
-        alt=""
-      />
+    <div className="about-mainbody ">
+      <Container fluid style={{ width: "100%" }}>
+        <img
+          className="about-image"
+          style={{ height: "100%", width: "100%" }}
+          src={require("../components/Images/about_pageImage.jpg")}
+          alt="About"
+        />
+      </Container>
       <h3 className="about-title about-container">ABOUT KIBBLINGS</h3>
       <p className="container about-text">
         Kibblings is an online, searchable database of animals that need homes.

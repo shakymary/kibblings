@@ -110,26 +110,30 @@ const Adoption = (e) => {
             </MDBJumbotron>
           </MDBCol>
         </MDBRow>
-        {pets.map((item) => {
-          return (
-            <PetCard
-              image={
-                item.primary_photo_cropped === null
-                  ? `https://angelinacountyhumanesociety.org/files/2019/03/1553127681886_feature2.png`
-                  : `${item.primary_photo_cropped.medium}`
-              }
-              petName={item.name}
-              petBreed={item.breeds.primary + " " + item.breeds.secondary}
-            >
-              <Btn
-                variant="primary"
-                text="View"
-                // better if opens a new tab
-                onClick={() => window.location.replace(`${item.url}`)}
-              />
-            </PetCard>
-          );
-        })}
+        <MDBRow>
+          {pets.map((item) => {
+            return (
+              <MDBCol sm="6">
+                <PetCard
+                  image={
+                    item.primary_photo_cropped === null
+                      ? `https://angelinacountyhumanesociety.org/files/2019/03/1553127681886_feature2.png`
+                      : `${item.primary_photo_cropped.medium}`
+                  }
+                  petName={item.name}
+                  petBreed={item.breeds.primary + " " + item.breeds.secondary}
+                >
+                  <Btn
+                    variant="primary"
+                    text="View"
+                    // better if opens a new tab
+                    onClick={() => window.location.replace(`${item.url}`)}
+                  />
+                </PetCard>
+              </MDBCol>
+            );
+          })}
+        </MDBRow>
       </MDBContainer>
       <Footer />
     </>

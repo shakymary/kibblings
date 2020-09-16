@@ -87,6 +87,14 @@ i {
   height: 100%;
   width: 100%;
 }
+
+.about-image {
+  height: "10%" !important;
+  width: "10%";
+  object-fit: "cover";
+  object-position: "20% 10px";
+}
+
 .adoption-body {
   background-color: rgb(233, 240, 240) !important;
 }
