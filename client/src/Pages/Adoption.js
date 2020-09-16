@@ -119,7 +119,12 @@ const Adoption = (e) => {
                   : `${item.primary_photo_cropped.medium}`
               }
               petName={item.name}
-              petBreed={item.breeds.primary + " " + item.breeds.secondary}
+              petBreed={
+                item.breeds.secondary === null
+                  ? item.breeds.primary
+                  : item.breeds.primary + " " + item.breeds.secondary
+              }
+              petDescription={item.description}
             >
               <Btn
                 variant="primary"
