@@ -65,7 +65,7 @@ const NavBar = () => {
               </Nav.Link>
               <Nav.Link>
                 <NotifContainer>
-                  {reminders.map((item, index) => {
+                  {/* {reminders.map((item, index) => {
                     return (
                       <Notification
                         key={index}
@@ -74,7 +74,7 @@ const NavBar = () => {
                         text={item.time}
                       />
                     );
-                  })}
+                  })} */}
                 </NotifContainer>
               </Nav.Link>
               <Nav.Link>
