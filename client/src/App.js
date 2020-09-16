@@ -12,14 +12,26 @@ import Contact from "./Pages/Contact";
 import About from "./Pages/About";
 import UserContext from "./Context/UserContext";
 import Landing from "./Pages/Landing";
+import Notification from "./components/Notification";
 import { Footer } from "./components/Footer";
-
+import moment from "moment";
 
 require("dotenv").config();
 function App() {
   const [userData, setUserData] = useState({
     user: undefined,
   });
+  const [reminders, setReminders] = useState([]);
+
+  const renderReminders = async () => {
+    await Axios.get("/users/viewReminder", {
+      headers: { "x-auth-token": localStorage.getItem("auth-token") },
+    }).then((res) => {
+      setReminders(res.data.reminders);
+    });
+  };
+
+  let currentDate = moment().format("L");
   useEffect(() => {
     const checkLoggedIn = async () => {
       let token = localStorage.getItem("auth-token");
@@ -41,12 +53,24 @@ function App() {
       }
     };
     checkLoggedIn();
+    renderReminders();
   }, []);
   return (
     <div className="App">
       <BrowserRouter>
         <UserContext.Provider value={{ userData, setUserData }}>
           <NavBar />
+          {reminders.map((item) => {
+            if (currentDate === item.time) {
+              return (
+                <Notification
+                  title={item.subject}
+                  message={item.note}
+                  text={item.time}
+                />
+              );
+            }
+          })}
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route path="/home" component={Home} />
