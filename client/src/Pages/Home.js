@@ -158,36 +158,37 @@ const Home = () => {
         <Row className="mt-3">
           <Col>
             <Card>
-              {/* <Card.Body> */}
-              <Card.Img
-                style={{
-                  width: "100%",
-                  height: "15vw",
-                  objectFit: "cover",
-                }}
-                src="https://etimg.etb2bimg.com/photo/75463378.cms"
-                alt="Card image"
-              />
-              <Card.ImgOverlay>
-                <Card.Text style={{ color: "black" }}>
-                  <h3>Pet Dashboard</h3>
-                  <Row>
-                    <Col>
-                      <p>Pet: </p>
-                      <p>Pet Weight: {weight}</p>
-                      <p>Birthday:</p>
-                      <p>Age:</p>
-                    </Col>
+              <Card.Body>
+                <Card.Img
+                  style={{
+                    width: "100%",
+                    height: "15vw",
+                    objectFit: "cover",
+                  }}
+                  src="https://etimg.etb2bimg.com/photo/75463378.cms"
+                  alt="Card image"
+                />
+                <Card.ImgOverlay>
+                  <Card.Text style={{ color: "black" }}>
+                    <h3>Pet Dashboard</h3>
+                    <Row>
+                      <Col>
+                        <p>Pet: </p>
+                        <p>Pet Weight: {weight}</p>
+                        <p>Birthday:</p>
+                        <p>Age:</p>
+                      </Col>
 
-                    <Col>
-                      <p>Last Vet Visit:</p>
-                      <p>Last Grooming:</p>
-                      <p>Vaccines:</p>
-                    </Col>
-                  </Row>
-                </Card.Text>
-                {/* </Card.Body> */}
-              </Card.ImgOverlay>
+                      <Col>
+                        <p>Last Vet Visit:</p>
+                        <p>Last Grooming:</p>
+                        <p>Vaccines:</p>
+                      </Col>
+                    </Row>
+                  </Card.Text>
+                </Card.ImgOverlay>
+              </Card.Body>
+
             </Card>
           </Col>
         </Row>
