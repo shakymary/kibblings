@@ -40,7 +40,7 @@ const Home = () => {
   const [vaccines, setVaccines] = useState([]);
   const [allergies, setAllergies] = useState([]);
   const [rabies, setRabies] = useState();
-  const [date, setDate] = useState();
+  const [time, setDate] = useState();
   const [note, setNote] = useState();
   const [subject, setSubject] = useState();
 
@@ -107,13 +107,14 @@ const Home = () => {
     const newReminder = {
       subject,
       note,
-      date,
+      time,
     };
 
     await Axios.post("/users/reminder", newReminder, {
       headers: { "x-auth-token": localStorage.getItem("auth-token") },
     });
     setLgShow(false);
+    renderReminders();
   };
 
   const getName = async () => {
@@ -266,7 +267,7 @@ const Home = () => {
               <Card.Title>Reminders</Card.Title>
               <ModalCenter size={"medium"} onClick={addReminder}>
                 <Form>
-                  <Form.Group controlId="name">
+                  <Form.Group controlId="date">
                     <Form.Label>Date</Form.Label>
                     <Form.Control
                       type="text"
@@ -275,7 +276,7 @@ const Home = () => {
                     />
                   </Form.Group>
 
-                  <Form.Group controlId="age">
+                  <Form.Group controlId="subject">
                     <Form.Label>Subject</Form.Label>
                     <Form.Control
                       type="text"
@@ -283,7 +284,7 @@ const Home = () => {
                       onChange={(e) => setSubject(e.target.value)}
                     />
                   </Form.Group>
-                  <Form.Group controlId="weight">
+                  <Form.Group controlId="note">
                     <Form.Label>Note</Form.Label>
                     <Form.Control
                       type="text"
