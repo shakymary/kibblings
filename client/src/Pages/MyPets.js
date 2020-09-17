@@ -9,6 +9,8 @@ import Axios from "axios";
 import { ModalCenter } from "../components/Modal";
 import {
   MDBJumbotron,
+  MDBContainer,
+  MDBRow,
   MDBCol,
   MDBCardTitle,
 } from "mdbreact";
