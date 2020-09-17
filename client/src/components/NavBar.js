@@ -7,6 +7,7 @@ import UserContext from "../Context/UserContext";
 import { NotifContainer } from "../components/Modal";
 import { NotifCard } from "../components/Notification";
 import Axios from "axios";
+import moment from "moment";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./NavBar.css";
 
@@ -34,6 +35,8 @@ const NavBar = () => {
       setReminders(res.data.reminders);
     });
   };
+
+  let currentDate = moment().format("L");
 
   useEffect(() => {
     renderReminders();
@@ -66,14 +69,15 @@ const NavBar = () => {
               <Nav.Link>
                 <NotifContainer>
                   {reminders.map((item, index) => {
-                    return (
-                      <NotifCard
-                        key={index}
-                        subject={item.subject}
-                        note={item.note}
-                        time={item.time}
-                      />
-                    );
+                    if (currentDate === item.time) {
+                      return (
+                        <NotifCard
+                          subject={item.subject}
+                          note={item.note}
+                          time={item.time}
+                        />
+                      );
+                    }
                   })}
                 </NotifContainer>
               </Nav.Link>
@@ -82,15 +86,15 @@ const NavBar = () => {
               </Nav.Link>
             </>
           ) : (
-              <>
-                <Nav.Link>
-                  <Login />
-                </Nav.Link>
-                <Nav.Link>
-                  <Register />
-                </Nav.Link>
-              </>
-            )}
+            <>
+              <Nav.Link>
+                <Login />
+              </Nav.Link>
+              <Nav.Link>
+                <Register />
+              </Nav.Link>
+            </>
+          )}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
