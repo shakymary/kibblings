@@ -19,6 +19,7 @@ import {
   MDBCardBody,
   MDBCardText,
 } from "mdbreact";
+import { BannerTron } from "../components/Jumbotron";
 
 const MyPets = () => {
   const [petCollection, setPetCollection] = useState([]);
@@ -63,41 +64,7 @@ const MyPets = () => {
 
   return (
     <div className="body">
-      <MDBJumbotron style={{ padding: "0", width: "100%" }}>
-        <MDBCol
-          className="text-white text-center py-1 px-4"
-          style={{
-            backgroundImage: `url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg)`,
-          }}
-        >
-          <MDBCardTitle
-            className="h1-responsive m-5 font-bold"
-            style={{ fontSize: "85px" }}
-          >
-            Browse Your Pets
-          </MDBCardTitle>
-        </MDBCol>
-      </MDBJumbotron>
-      {/* <Row className="mt-3">
-        <Col>
-          <Card bg={"warning"}>
-            <Card.Img
-              style={{
-                width: "100%",
-                height: "15vw",
-                objectFit: "cover",
-              }}
-              src="https://www.wetnaps.com/wp-content/uploads/2016/05/puppies-guinea-pig-and-kittens-and-bunnies-together.jpg"
-              alt="Card image"
-            />
-            <Card.ImgOverlay>
-              <Card.Text style={{ color: "#2E4053" }}>
-                <h1>Browse Your Pets</h1>
-              </Card.Text>
-            </Card.ImgOverlay>
-          </Card>
-        </Col>
-      </Row> */}
+      <BannerTron Title="Browse Your Pets" />
 
       {petCollection.map((item, index) => {
         return (
@@ -108,6 +75,7 @@ const MyPets = () => {
             petBreed={item.breed}
           >
             <ModalCenter
+              size={"fluid"}
               onClick={async () => {
                 let editedPet = {
                   name,
@@ -264,7 +232,6 @@ const MyPets = () => {
       })}
       <Footer />
     </div>
-
   );
 };
 
