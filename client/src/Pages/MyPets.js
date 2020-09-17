@@ -264,7 +264,7 @@ const MyPets = () => {
                   },
                 });
                 // reloads the page to update list(find way to improve)
-                window.location.reload(true);
+                renderPets();
               }}
             />
             <TabsDefault
