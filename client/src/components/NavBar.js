@@ -8,7 +8,6 @@ import { NotifContainer } from "../components/Modal";
 import { NotifCard } from "../components/Notification";
 import Axios from "axios";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import "./NavBar.css";
 
 const NavBar = () => {
   const [reminders, setReminders] = useState([]);
