@@ -50,6 +50,15 @@ const MyPets = () => {
     "Giardia",
     "Canine Infuenza H3N8",
   ];
+
+  const handleChange = (e) => {
+    const item = e.target.value;
+    const isChecked = e.target.checked;
+    isChecked === true
+      ? setVaccines([...vaccines, item])
+      : setVaccines([vaccines]);
+  };
+
   const renderPets = async () => {
     await Axios.get("/users/all", {
       headers: { "x-auth-token": localStorage.getItem("auth-token") },
@@ -182,6 +191,7 @@ const MyPets = () => {
                             className="form-check-input"
                             type="checkbox"
                             value={vacc}
+                            onChange={handleChange}
                           />
                           <label
                             className="form-check-label"
