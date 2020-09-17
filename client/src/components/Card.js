@@ -35,9 +35,12 @@ export const Cards = (props) => {
 export const NewPetCard = ({ image, petName, petBreed, children }) => {
   return (
     //center content
-    <MDBCol className="mt-3">
-      <MDBCard style={{ width: "100%" }}>
-        <MDBCardImage className="img-fluid" src={image} waves />
+    <MDBCol className="mt-3 col-md-6 col-sm-12">
+      <MDBCard style={{ marginTop: 30, width: "100%" }}>
+        <MDBCardImage src={image} waves style={{
+          maxHeight: "200px",
+          maxWidth: "200px",
+        }} />
         <MDBCardBody style={{ content: "center" }}>
           <MDBCardTitle>{petName}</MDBCardTitle>
           <MDBCardTitle>{petBreed}</MDBCardTitle>
@@ -118,13 +121,6 @@ export const AboutCard = () => {
   return (
     <>
       <Container style={{ paddingTop: "30px" }}>
-        {/* <h1 style={{ fontSize: "85px", textAlign: "center" }}>
-          🐶About Kibblings!🐱
-        </h1>
-        <h5 className="mb-2 text-muted" style={{ textAlign: "center" }}>
-          Created by Mykhas Nallas, Napoleon Vuong, Alvaro Centeno, and Shakila
-          Marando{" "}
-        </h5> */}
         <h3 style={{ paddingTop: "30px" }}>
           With how busy our day to day lives can be, we sometimes need a little
           help with balancing our responsibilities and keeping track of those
