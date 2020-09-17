@@ -22,7 +22,7 @@ export class ModalCenter extends Component {
 
   render() {
     return (
-      <MDBContainer>
+      <>
         <MDBBtn color="primary" onClick={this.toggle(14)}>
           ✎
         </MDBBtn>
@@ -45,7 +45,7 @@ export class ModalCenter extends Component {
             </MDBBtn>
           </MDBModalFooter>
         </MDBModal>
-      </MDBContainer>
+      </>
     );
   }
 }
