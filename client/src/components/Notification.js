@@ -1,7 +1,17 @@
 import React, { Component } from "react";
-import { MDBNotification, MDBContainer } from "mdbreact";
+import {
+  MDBNotification,
+  MDBContainer,
+  MDBBtn,
+  MDBCard,
+  MDBCardBody,
+  MDBCardImage,
+  MDBCardTitle,
+  MDBCardText,
+  MDBCol,
+} from "mdbreact";
 
-class Notification extends Component {
+export class Notification extends Component {
   render() {
     return (
       <MDBNotification
@@ -23,4 +33,19 @@ class Notification extends Component {
   }
 }
 
-export default Notification;
+export const NotifCard = ({ subject, note, time }) => {
+  return (
+    <MDBCol>
+      <MDBCard style={{ marginTop: 3, width: "22rem" }}>
+        <MDBCardBody>
+          <h5>{subject}</h5>
+          <h6>{time}</h6>
+          <p>{note}</p>
+          <MDBBtn color="danger" size="sm">
+            Clear
+          </MDBBtn>
+        </MDBCardBody>
+      </MDBCard>
+    </MDBCol>
+  );
+};
