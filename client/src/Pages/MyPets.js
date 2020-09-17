@@ -9,15 +9,8 @@ import Axios from "axios";
 import { ModalCenter } from "../components/Modal";
 import {
   MDBJumbotron,
-  MDBContainer,
-  MDBRow,
   MDBCol,
-  MDBIcon,
   MDBCardTitle,
-  MDBBtn,
-  MDBCardImage,
-  MDBCardBody,
-  MDBCardText,
 } from "mdbreact";
 import { BannerTron } from "../components/Jumbotron";
 
@@ -34,7 +27,7 @@ const MyPets = () => {
   const [birthday, setBirthday] = useState();
   const [microchip, setMicrochip] = useState();
   const [vaccines, setVaccines] = useState([]);
-  const [allergies, setAllergies] = useState([]);
+  const [diet, setDiet] = useState([]);
   const [rabies, setRabies] = useState();
 
   const vaccineLabels = [
@@ -50,6 +43,31 @@ const MyPets = () => {
     "Giardia",
     "Canine Infuenza H3N8",
   ];
+
+  const allergens = [
+    "Beef",
+    "Dairy",
+    "Wheat",
+    "Eggs",
+    "Chicken",
+    "Lamb",
+    "Soy",
+  ];
+
+  const handleChange = (e) => {
+    const item = e.target.value;
+    const isChecked = e.target.checked;
+    isChecked === true
+      ? setVaccines([...vaccines, item])
+      : setVaccines([vaccines]);
+  };
+
+  const handleChange2 = (e) => {
+    const item = e.target.value;
+    const isChecked = e.target.checked;
+    isChecked === true ? setDiet([...diet, item]) : setDiet([diet]);
+  };
+
   const renderPets = async () => {
     await Axios.get("/users/all", {
       headers: { "x-auth-token": localStorage.getItem("auth-token") },
