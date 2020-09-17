@@ -14,7 +14,7 @@ import {
   MDBCardBody,
   MDBCardText,
 } from "mdbreact";
-// import Jumbotron from "../components/Jumbotron"
+import { BannerTron } from "../components/Jumbotron";
 import {
   Button,
   Modal,
@@ -95,6 +95,7 @@ const Home = () => {
       headers: { "x-auth-token": localStorage.getItem("auth-token") },
     });
     setDisplayName(userRes.data.displayName);
+    console.log(userRes.data.displayName);
   };
 
   useEffect(() => {
@@ -117,21 +118,8 @@ const Home = () => {
   }, []);
   return (
     <>
-      <MDBJumbotron style={{ padding: "0", width: "100%" }}>
-        <MDBCol
-          className="text-white text-center py-1 px-4"
-          style={{
-            backgroundImage: `url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg)`,
-          }}
-        >
-          <MDBCardTitle
-            className="h1-responsive m-5 font-bold"
-            style={{ fontSize: "85px" }}
-          >
-            Welcome to your pet Dashboard
-          </MDBCardTitle>
-        </MDBCol>
-      </MDBJumbotron>
+      <BannerTron Title="Welcome to Your Pet Dashboard" />
+
       <Container fluid style={{ minHeight: "80vh" }}>
         {/* <Jumbotron /> */}
         <Row className="mt-3 ml-5">
@@ -186,17 +174,6 @@ const Home = () => {
             </Card>
           </Col>
         </Row>
-        <Row>
-          {/* <AdoptionCarousel
-            image={
-              pets.primary_photo_cropped === null
-                ? `https://picsum.photos/id/237/200/300`
-                : `${pets.primary_photo_cropped.full}`
-            }
-            petName={pets.name}
-            description={pets.description}
-          /> */}
-        </Row>
         <Row className="mt-3 ml-5">
           <Col>
             <Carousel
@@ -204,7 +181,6 @@ const Home = () => {
               style={{
                 width: "25%",
                 height: "auto",
-                // marginB: 'auto',
                 position: "absolute",
                 left: "5%",
               }}
@@ -320,8 +296,6 @@ const Home = () => {
                     placeholder="eg. Male"
                     onChange={(e) => setGender(e.target.value)}
                   >
-                    {/* <option>Male</option>
-                  <option>Female</option> */}
                   </Form.Control>
                 </Form.Group>
                 <Form.Group controlId="birthday">
@@ -349,10 +323,6 @@ const Home = () => {
                           className="form-check-input"
                           type="checkbox"
                           value={vacc}
-                        // onCheck={(e) => {
-                        //   setVaccines([...vaccines, e.target.value]);
-                        //   console.log(vaccines);
-                        // }}
                         />
                         <label
                           className="form-check-label"
@@ -364,14 +334,7 @@ const Home = () => {
                     );
                   })}
                 </Form.Group>
-                {/* <Form.Group controlId="allergies">
-                <Form.Label>Allergies</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="eg. Penicillin"
-                  onChange={(e) => setAllergies(e.target.value)}
-                />
-              </Form.Group> */}
+
                 <Form.Group controlId="rabies">
                   <Form.Label>Rabies</Form.Label>
                   <Form.Control

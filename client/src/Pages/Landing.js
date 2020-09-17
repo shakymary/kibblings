@@ -1,20 +1,17 @@
 import React from "react";
 import {
   Carousels,
-  CarouselItems,
-  ChildTest,
-  Child,
+  CarouselItems
 } from "../components/Carousel";
 import { Col, Row, Container, Carousel } from "react-bootstrap";
 import { Footer, FooterPage } from "../components/Footer";
 import { AboutCard } from "../components/Card";
 // import "./Pages.css"
-import { MDBJumbotron, MDBContainer } from "mdbreact";
+// import { MDBJumbotron, MDBContainer } from "mdbreact";
 
 const Landing = () => {
   return (
     <>
-
       <Carousels>
         <CarouselItems />
       </Carousels>

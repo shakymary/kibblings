@@ -59,7 +59,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <UserContext.Provider value={{ userData, setUserData }}>
-          <NavBar />
+          <NavBar className="NavBar" />
           {reminders.map((item) => {
             if (currentDate === item.time) {
               return (
