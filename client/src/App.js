@@ -12,7 +12,7 @@ import Contact from "./Pages/Contact";
 import About from "./Pages/About";
 import UserContext from "./Context/UserContext";
 import Landing from "./Pages/Landing";
-import Notification from "./components/Notification";
+import { Notification } from "./components/Notification";
 import { Footer } from "./components/Footer";
 import moment from "moment";
 
