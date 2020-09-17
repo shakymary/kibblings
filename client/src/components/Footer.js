@@ -1,3 +1,4 @@
+// import React, { useState } from "react";
 import React from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
@@ -6,6 +7,14 @@ import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import "./Footer.css";
 
 export const Footer = () => {
+  // const [onMouse, setMouse] = useState(false);
+
+  // function handleMouseOver() {
+  //   setMouse(true);
+  // }
+
+  // function handleMouseOut() {
+  //   setMouse(false);
   return (
     // <div className="footer"
     // style={{ maxHeight: "10vh" }}
@@ -15,6 +24,7 @@ export const Footer = () => {
         <MDBRow>
           <MDBCol className="column" md="4">
             <h5 className="title">ABOUT US</h5>
+
             <ul>
               <li className="list-unstyled">
                 <a href="/about">About Kibblings</a>
@@ -77,7 +87,7 @@ export const Footer = () => {
       <div className="footer-copyright text-center py-3">
         <MDBContainer fluid>
           &copy; {new Date().getFullYear()} Copyright:{" "}
-          <a href=""> Kibblings.com </a>
+          <a href="#!"> Kibblings.com </a>
         </MDBContainer>
       </div>
     </MDBFooter>
