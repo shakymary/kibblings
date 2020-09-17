@@ -5,15 +5,8 @@ import { Footer } from "../components/Footer";
 import { AccordParent, AccordChild } from "../components/Accordion";
 import {
   MDBJumbotron,
-  MDBContainer,
-  MDBRow,
   MDBCol,
-  MDBIcon,
   MDBCardTitle,
-  MDBBtn,
-  MDBCardImage,
-  MDBCardBody,
-  MDBCardText,
 } from "mdbreact";
 import { BannerTron } from "../components/Jumbotron";
 import {
@@ -146,20 +139,12 @@ const Home = () => {
   }, []);
   return (
     <>
-      <BannerTron Title="Welcome to Your Pet Dashboard" />
+      <BannerTron Title={`Welcome ${displayName}!`} />
 
       <Container fluid style={{ minHeight: "80vh" }}>
         {/* <Jumbotron /> */}
         <Row className="mt-3 ml-5">
-          <Col>
-            <Card border="info" style={{ width: "50%" }}>
-              <Card.Body>
-                <Card.Text>
-                  <h2>{`Hello ${displayName}!`}</h2>
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
+
           <Col>
             <Button
               className="float-sm-rightt"
@@ -172,44 +157,46 @@ const Home = () => {
         </Row>
         <Row className="mt-3">
           <Col>
-            <Card bg={"info"}>
-              {/* <Card.Body> */}
-              <Card.Img
-                style={{
-                  width: "100%",
-                  height: "15vw",
-                  objectFit: "cover",
-                }}
-                src="https://etimg.etb2bimg.com/photo/75463378.cms"
-                alt="Card image"
-              />
-              <Card.ImgOverlay>
-                <Card.Text style={{ color: "black" }}>
-                  <h3>Pet Dashboard</h3>
-                  <Row>
-                    <Col>
-                      <p>Pet: </p>
-                      <p>Pet Weight: {weight}</p>
-                      <p>Birthday:</p>
-                      <p>Age:</p>
-                    </Col>
+            <Card>
+              <Card.Body>
+                <Card.Title>Pet Dashboard</Card.Title>
+                <Card.Img
+                  style={{
+                    width: "100%",
+                    height: "15vw",
+                    objectFit: "cover",
+                  }}
+                  src="https://etimg.etb2bimg.com/photo/75463378.cms"
+                  alt="Card image"
+                />
+                {/* <Card.ImgOverlay> */}
+                {/* <Card.Text> */}
+                {/* <Card.Title>Pet Dashboard</Card.Title> */}
+                <Row>
+                  <Col>
+                    <Card.Text>Pet: </Card.Text>
+                    <Card.Text>Pet Weight: {weight}</Card.Text>
+                    <Card.Text>Birthday:</Card.Text>
+                    <Card.Text>Age:</Card.Text>
+                  </Col>
 
-                    <Col>
-                      <p>Last Vet Visit:</p>
-                      <p>Last Grooming:</p>
-                      <p>Vaccines:</p>
-                    </Col>
-                  </Row>
-                </Card.Text>
-                {/* </Card.Body> */}
-              </Card.ImgOverlay>
+                  <Col>
+                    <Card.Text>Last Vet Visit:</Card.Text>
+                    <Card.Text>Last Grooming:</Card.Text>
+                    <Card.Text>Vaccines:</Card.Text>
+                  </Col>
+                </Row>
+                {/* </Card.Text> */}
+                {/* </Card.ImgOverlay> */}
+              </Card.Body>
+
             </Card>
           </Col>
         </Row>
         <Row className="mt-3 ml-5">
           <Col>
             <Carousel
-              className="ml-5"
+              className="ml-5 mt-3"
               style={{
                 width: "25%",
                 height: "auto",
@@ -237,11 +224,11 @@ const Home = () => {
           </Col>
         </Row>
 
-        <Row className="mt-5 ">
+        <Row className="mt-3 ">
           <Col>
-            <Card>
-              <Card.Title>Reminders</Card.Title>
-              <ModalCenter size={"medium"} onClick={addReminder}>
+            <Card border="info" style={{ width: "30%", left: '50%' }}>
+              <Card.Title className="ml-2">Reminders</Card.Title>
+              <ModalCenter size={"small"} onClick={addReminder}>
                 <Form>
                   <Form.Group controlId="date">
                     <Form.Label>Date</Form.Label>
