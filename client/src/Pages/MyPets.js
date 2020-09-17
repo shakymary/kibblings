@@ -11,6 +11,8 @@ import {
   MDBJumbotron,
   MDBCol,
   MDBCardTitle,
+  MDBContainer,
+  MDBRow,
 } from "mdbreact";
 import { BannerTron } from "../components/Jumbotron";
 
