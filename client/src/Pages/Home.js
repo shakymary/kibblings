@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
-import { AdoptionCarousel } from "../components/Carousel";
+import { ModalCenter } from "../components/Modal";
 import { Footer } from "../components/Footer";
 import { AccordParent, AccordChild } from "../components/Accordion";
 import {
@@ -8,7 +8,7 @@ import {
   MDBCol,
   MDBCardTitle,
 } from "mdbreact";
-// import Jumbotron from "../components/Jumbotron"
+import { BannerTron } from "../components/Jumbotron";
 import {
   Button,
   Modal,
@@ -33,6 +33,9 @@ const Home = () => {
   const [vaccines, setVaccines] = useState([]);
   const [allergies, setAllergies] = useState([]);
   const [rabies, setRabies] = useState();
+  const [time, setDate] = useState();
+  const [note, setNote] = useState();
+  const [subject, setSubject] = useState();
 
   const [displayName, setDisplayName] = useState();
   const [petCollection, setPetCollection] = useState([]);
@@ -92,11 +95,27 @@ const Home = () => {
     setLgShow(false);
   };
 
+  const addReminder = async (e) => {
+    e.preventDefault();
+    const newReminder = {
+      subject,
+      note,
+      time,
+    };
+
+    await Axios.post("/users/reminder", newReminder, {
+      headers: { "x-auth-token": localStorage.getItem("auth-token") },
+    });
+    setLgShow(false);
+    renderReminders();
+  };
+
   const getName = async () => {
     const userRes = await Axios.get("/users/", {
       headers: { "x-auth-token": localStorage.getItem("auth-token") },
     });
     setDisplayName(userRes.data.displayName);
+    console.log(userRes.data.displayName);
   };
 
   useEffect(() => {
@@ -120,33 +139,12 @@ const Home = () => {
   }, []);
   return (
     <>
-      <MDBJumbotron style={{ padding: "0", width: "100%" }}>
-        <MDBCol
-          className="text-white text-center py-1 px-4"
-          style={{
-            backgroundImage: `url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg)`,
-          }}
-        >
-          <MDBCardTitle
-            className="h1-responsive m-5 font-bold"
-            style={{ fontSize: "85px" }}
-          >
-            Welcome to your pet Dashboard
-          </MDBCardTitle>
-        </MDBCol>
-      </MDBJumbotron>
+      <BannerTron Title={`Welcome ${displayName}!`} />
+
       <Container fluid style={{ minHeight: "80vh" }}>
         {/* <Jumbotron /> */}
         <Row className="mt-3 ml-5">
-          <Col>
-            <Card border="info" style={{ width: "50%" }}>
-              <Card.Body>
-                <Card.Text>
-                  <h2>{`Hello ${displayName}!`}</h2>
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
+
           <Col>
             <Button
               className="float-sm-rightt"
@@ -159,7 +157,7 @@ const Home = () => {
         </Row>
         <Row className="mt-3">
           <Col>
-            <Card bg={"info"}>
+            <Card>
               {/* <Card.Body> */}
               <Card.Img
                 style={{
@@ -193,25 +191,13 @@ const Home = () => {
             </Card>
           </Col>
         </Row>
-        <Row>
-          {/* <AdoptionCarousel
-            image={
-              pets.primary_photo_cropped === null
-                ? `https://picsum.photos/id/237/200/300`
-                : `${pets.primary_photo_cropped.full}`
-            }
-            petName={pets.name}
-            description={pets.description}
-          /> */}
-        </Row>
-        <Row>
+        <Row className="mt-3 ml-5">
           <Col>
             <Carousel
-              className="ml-5"
+              className="ml-5 mt-3"
               style={{
                 width: "25%",
                 height: "auto",
-                // marginB: 'auto',
                 position: "absolute",
                 left: "5%",
               }}
@@ -236,9 +222,39 @@ const Home = () => {
           </Col>
         </Row>
 
-        <Row className="mt-5 ">
+        <Row className="mt-3 ">
           <Col>
-            <Card>
+            <Card border="info" style={{ width: "30%", left: '50%' }}>
+              <Card.Title className="ml-2">Reminders</Card.Title>
+              <ModalCenter size={"small"} onClick={addReminder}>
+                <Form>
+                  <Form.Group controlId="date">
+                    <Form.Label>Date</Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder={"09/19/2020"}
+                      onChange={(e) => setDate(e.target.value)}
+                    />
+                  </Form.Group>
+
+                  <Form.Group controlId="subject">
+                    <Form.Label>Subject</Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder={"Monthly vet visit"}
+                      onChange={(e) => setSubject(e.target.value)}
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="note">
+                    <Form.Label>Note</Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder={"Check dog vaccines"}
+                      onChange={(e) => setNote(e.target.value)}
+                    />
+                  </Form.Group>
+                </Form>
+              </ModalCenter>
               <AccordParent>
                 {reminders.map((item, index) => {
                   return (
@@ -327,8 +343,6 @@ const Home = () => {
                     placeholder="eg. Male"
                     onChange={(e) => setGender(e.target.value)}
                   >
-                    {/* <option>Male</option>
-                  <option>Female</option> */}
                   </Form.Control>
                 </Form.Group>
                 <Form.Group controlId="birthday">
@@ -356,10 +370,6 @@ const Home = () => {
                           className="form-check-input"
                           type="checkbox"
                           value={vacc}
-                          // onCheck={(e) => {
-                          //   setVaccines([...vaccines, e.target.value]);
-                          //   console.log(vaccines);
-                          // }}
                         />
                         <label
                           className="form-check-label"
@@ -371,14 +381,7 @@ const Home = () => {
                     );
                   })}
                 </Form.Group>
-                {/* <Form.Group controlId="allergies">
-                <Form.Label>Allergies</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="eg. Penicillin"
-                  onChange={(e) => setAllergies(e.target.value)}
-                />
-              </Form.Group> */}
+
                 <Form.Group controlId="rabies">
                   <Form.Label>Rabies</Form.Label>
                   <Form.Control

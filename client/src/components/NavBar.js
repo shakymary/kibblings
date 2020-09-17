@@ -5,7 +5,7 @@ import Login from "../components/Auth/Login";
 import { useHistory } from "react-router-dom";
 import UserContext from "../Context/UserContext";
 import { NotifContainer } from "../components/Modal";
-import Notification from "../components/Notification";
+import { NotifCard } from "../components/Notification";
 import Axios from "axios";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./NavBar.css";
@@ -43,11 +43,11 @@ const NavBar = () => {
     <Navbar className="NavBar" bg="primary" expand="lg">
       <Navbar.Brand
         onClick={landing}
-        style={{ color: "white", fontWeight: "bold" }}
+        style={{ color: "white", fontWeight: "bold", fontSize: "40px" }}
         className="NavBar"
       >
-        {/* <i className="fas fa-paw"></i> */}
-        🐾 Kibblings
+        <i className="fas fa-paw"></i>
+        Kibblings
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
@@ -65,16 +65,16 @@ const NavBar = () => {
               </Nav.Link>
               <Nav.Link>
                 <NotifContainer>
-                  {/* {reminders.map((item, index) => {
+                  {reminders.map((item, index) => {
                     return (
-                      <Notification
+                      <NotifCard
                         key={index}
-                        title={item.subject}
-                        message={item.note}
-                        text={item.time}
+                        subject={item.subject}
+                        note={item.note}
+                        time={item.time}
                       />
                     );
-                  })} */}
+                  })}
                 </NotifContainer>
               </Nav.Link>
               <Nav.Link>
@@ -82,15 +82,15 @@ const NavBar = () => {
               </Nav.Link>
             </>
           ) : (
-            <>
-              <Nav.Link>
-                <Login />
-              </Nav.Link>
-              <Nav.Link>
-                <Register />
-              </Nav.Link>
-            </>
-          )}
+              <>
+                <Nav.Link>
+                  <Login />
+                </Nav.Link>
+                <Nav.Link>
+                  <Register />
+                </Nav.Link>
+              </>
+            )}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
