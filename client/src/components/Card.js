@@ -32,6 +32,7 @@ export const Cards = (props) => {
   );
 };
 
+// Cards for myPets.js Page
 export const NewPetCard = ({ image, petName, petBreed, children }) => {
   return (
     //center content
@@ -42,8 +43,8 @@ export const NewPetCard = ({ image, petName, petBreed, children }) => {
           maxWidth: "200px",
         }} />
         <MDBCardBody style={{ content: "center" }}>
-          <MDBCardTitle>{petName}</MDBCardTitle>
-          <MDBCardTitle>{petBreed}</MDBCardTitle>
+          <MDBCardTitle style={{ paddingLeft: "20px" }}>{petName}</MDBCardTitle>
+          <MDBCardTitle style={{ paddingLeft: "20px" }}>{petBreed}</MDBCardTitle>
           {children}
         </MDBCardBody>
       </MDBCard>

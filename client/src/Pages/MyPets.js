@@ -77,132 +77,134 @@ const MyPets = () => {
                   petName={item.name}
                   petBreed={item.breed}
                 >
-                  <ModalCenter
-                    size={"fluid"}
-                    onClick={async () => {
-                      let editedPet = {
-                        name,
-                        age,
-                        weight,
-                        breed,
-                        color,
-                        gender,
-                        birthday,
-                        microchip,
-                        vaccines,
-                        rabies,
-                      };
-
-                      await Axios.patch(`/users/edit/${item._id}`, editedPet, {
-                        headers: {
-                          "x-auth-token": localStorage.getItem("auth-token"),
-                        },
-                      });
-                      renderPets();
-                    }}
-                  >
-                    <Container>
-                      <Row>
-                        <Col>
-                          <Form>
-                            <Form.Group controlId="name">
-                              <Form.Label>Name</Form.Label>
-                              <Form.Control
-                                type="text"
-                                placeholder={item.name}
-                                onChange={(e) => setName(e.target.value)}
-                              />
-                            </Form.Group>
-
-                            <Form.Group controlId="age">
-                              <Form.Label>Age</Form.Label>
-                              <Form.Control
-                                type="text"
-                                placeholder={item.age}
-                                onChange={(e) => setAge(e.target.value)}
-                              />
-                            </Form.Group>
-                            <Form.Group controlId="weight">
-                              <Form.Label>Weight</Form.Label>
-                              <Form.Control
-                                type="text"
-                                placeholder={item.weight}
-                                onChange={(e) => setWeight(e.target.value)}
-                              />
-                            </Form.Group>
-
-                            <Form.Group controlId="breed">
-                              <Form.Label>Breed</Form.Label>
-                              <Form.Control
-                                type="text"
-                                placeholder={item.breed}
-                                onChange={(e) => setBreed(e.target.value)}
-                              />
-                            </Form.Group>
-                            <Form.Group controlId="color">
-                              <Form.Label>Color</Form.Label>
-                              <Form.Control
-                                type="text"
-                                placeholder={item.color}
-                                onChange={(e) => setColor(e.target.value)}
-                              />
-                            </Form.Group>
-                            <Form.Group controlId="gender">
-                              <Form.Label>Gender</Form.Label>
-                              <Form.Control
-                                type="text"
-                                placeholder={item.gender}
-                                onChange={(e) => setGender(e.target.value)}
-                              >
-                                {/* <option>Male</option>
-                  <option>Female</option> */}
-                              </Form.Control>
-                            </Form.Group>
-                            <Form.Group controlId="birthday">
-                              <Form.Label>Birthday</Form.Label>
-                              <Form.Control
-                                type="text"
-                                placeholder={item.birthday}
-                                onChange={(e) => setBirthday(e.target.value)}
-                              />
-                            </Form.Group>
-                            <Form.Group controlId="microchip">
-                              <Form.Label>Microchip</Form.Label>
-                              <Form.Control
-                                type="text"
-                                placeholder={item.microchip}
-                                onChange={(e) => setMicrochip(e.target.value)}
-                              />
-                            </Form.Group>
-                          </Form>
-                        </Col>
-
-                        <Col>
-                          {vaccineLabels.map((vacc) => {
-                            return (
-                              <div className="form-check">
-                                <br />
-                                <input
-                                  className="form-check-input"
-                                  type="checkbox"
-                                  value={vacc}
-                                />
-                                <label
-                                  className="form-check-label"
-                                  htmlFor="defaultCheck1"
-                                >
-                                  {vacc}
-                                </label>
-                                <br />
-                              </div>
-                            );
-                          })}
-                        </Col>
-                      </Row>
-                    </Container>
-                  </ModalCenter>
 
                   <Container>
+                    <ModalCenter
+                      // size={"fluid"}
+                      onClick={async () => {
+                        let editedPet = {
+                          name,
+                          age,
+                          weight,
+                          breed,
+                          color,
+                          gender,
+                          birthday,
+                          microchip,
+                          vaccines,
+                          rabies,
+                        };
+                        await Axios.patch(`/users/edit/${item._id}`, editedPet, {
+                          headers: {
+                            "x-auth-token": localStorage.getItem("auth-token"),
+                          },
+                        });
+                        renderPets();
+                      }}
+                    >
+
+                      <Container>
+                        <Row>
+                          <Col>
+                            <Form>
+                              <Form.Group controlId="name">
+                                <Form.Label>Name</Form.Label>
+                                <Form.Control
+                                  type="text"
+                                  placeholder={item.name}
+                                  onChange={(e) => setName(e.target.value)}
+                                />
+                              </Form.Group>
+
+                              <Form.Group controlId="age">
+                                <Form.Label>Age</Form.Label>
+                                <Form.Control
+                                  type="text"
+                                  placeholder={item.age}
+                                  onChange={(e) => setAge(e.target.value)}
+                                />
+                              </Form.Group>
+                              <Form.Group controlId="weight">
+                                <Form.Label>Weight</Form.Label>
+                                <Form.Control
+                                  type="text"
+                                  placeholder={item.weight}
+                                  onChange={(e) => setWeight(e.target.value)}
+                                />
+                              </Form.Group>
+
+                              <Form.Group controlId="breed">
+                                <Form.Label>Breed</Form.Label>
+                                <Form.Control
+                                  type="text"
+                                  placeholder={item.breed}
+                                  onChange={(e) => setBreed(e.target.value)}
+                                />
+                              </Form.Group>
+                              <Form.Group controlId="color">
+                                <Form.Label>Color</Form.Label>
+                                <Form.Control
+                                  type="text"
+                                  placeholder={item.color}
+                                  onChange={(e) => setColor(e.target.value)}
+                                />
+                              </Form.Group>
+                              <Form.Group controlId="gender">
+                                <Form.Label>Gender</Form.Label>
+                                <Form.Control
+                                  type="text"
+                                  placeholder={item.gender}
+                                  onChange={(e) => setGender(e.target.value)}
+                                >
+                                  {/* <option>Male</option>
+                  <option>Female</option> */}
+                                </Form.Control>
+                              </Form.Group>
+                              <Form.Group controlId="birthday">
+                                <Form.Label>Birthday</Form.Label>
+                                <Form.Control
+                                  type="text"
+                                  placeholder={item.birthday}
+                                  onChange={(e) => setBirthday(e.target.value)}
+                                />
+                              </Form.Group>
+                              <Form.Group controlId="microchip">
+                                <Form.Label>Microchip</Form.Label>
+                                <Form.Control
+                                  type="text"
+                                  placeholder={item.microchip}
+                                  onChange={(e) => setMicrochip(e.target.value)}
+                                />
+                              </Form.Group>
+                            </Form>
+                          </Col>
+
+                          <Col>
+                            {vaccineLabels.map((vacc) => {
+                              return (
+                                <div className="form-check">
+                                  <br />
+                                  <input
+                                    className="form-check-input"
+                                    type="checkbox"
+                                    value={vacc}
+                                  />
+                                  <label
+                                    className="form-check-label"
+                                    htmlFor="defaultCheck1"
+                                  >
+                                    {vacc}
+                                  </label>
+                                  <br />
+                                </div>
+                              );
+                            })}
+                          </Col>
+                        </Row>
+                      </Container>
+                    </ModalCenter>
+
+
                     <Btn
                       variant="danger"
                       text="🗑"
