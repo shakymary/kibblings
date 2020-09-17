@@ -108,6 +108,7 @@ const MyPets = () => {
             petBreed={item.breed}
           >
             <ModalCenter
+              size={"fluid"}
               onClick={async () => {
                 let editedPet = {
                   name,
@@ -264,7 +265,6 @@ const MyPets = () => {
       })}
       <Footer />
     </div>
-
   );
 };
 

@@ -30,7 +30,7 @@ export class ModalCenter extends Component {
           isOpen={this.state.modal14}
           toggle={this.toggle(14)}
           centered
-          size="fluid"
+          size={this.props.size}
         >
           <MDBModalHeader toggle={this.toggle(14)}>
             Update Information
