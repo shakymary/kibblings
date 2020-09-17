@@ -27,31 +27,46 @@ export const Footer = () => {
 
             <ul>
               <li className="list-unstyled">
-                <a href="/about">About Kibblings</a>
+                <a className="footer-link" href="/about">
+                  About Kibblings
+                </a>
               </li>
               <li className="list-unstyled">
-                <a href="#!">FAQs</a>
+                <a className="footer-link" href="#!">
+                  FAQs
+                </a>
               </li>
               <li className="list-unstyled">
-                <a href="/contact">Contact Us</a>
+                <a className="footer-link" href="/contact">
+                  Contact Us
+                </a>
               </li>
             </ul>
           </MDBCol>
           <MDBCol className="column" md="3">
             <h5 className="title">PET CARE TOPICS</h5>
             <ul>
-              <li className="list-unstyled ">
-                <a href="https://www.youtube.com/watch?v=Tn3lZE0rRBs&t=1s">
+              <li className="list-unstyled">
+                <a
+                  className="footer-link"
+                  href="https://www.youtube.com/watch?v=Tn3lZE0rRBs&t=1s"
+                >
                   Dog Care
                 </a>
               </li>
               <li className="list-unstyled">
-                <a href="https://www.youtube.com/watch?v=IKR6FPerXes">
+                <a
+                  className="footer-link"
+                  href="https://www.youtube.com/watch?v=IKR6FPerXes"
+                >
                   Cat Care
                 </a>
               </li>
               <li className="list-unstyled">
-                <a href="https://www.youtube.com/watch?v=Yzv0gXqoCkc&t=1s">
+                <a
+                  className="footer-link"
+                  href="https://www.youtube.com/watch?v=Yzv0gXqoCkc&t=1s"
+                >
                   All Pets Care
                 </a>
               </li>
@@ -60,23 +75,35 @@ export const Footer = () => {
           <MDBCol className="column" md="3">
             <h5 className="title">CONTACT DEVELOPERS</h5>
             <ul>
-              <li className="list-unstyled ">
-                <a href="https://www.linkedin.com/in/shakila-marando-33432515/">
+              <li className="list-unstyled">
+                <a
+                  className="footer-link"
+                  href="https://www.linkedin.com/in/shakila-marando-33432515/"
+                >
                   Shakila Marando
                 </a>
               </li>
               <li className="list-unstyled">
-                <a href="https://www.linkedin.com/in/napoleon-vuong-08b189192/">
+                <a
+                  className="footer-link"
+                  href="https://www.linkedin.com/in/napoleon-vuong-08b189192/"
+                >
                   Napoleon Simmaly
                 </a>
               </li>
               <li className="list-unstyled">
-                <a href="https://www.linkedin.com/in/myhkas-nallas-15980416a/">
+                <a
+                  className="footer-link"
+                  href="https://www.linkedin.com/in/myhkas-nallas-15980416a/"
+                >
                   Myhkas Nallas
                 </a>
               </li>
               <li className="list-unstyled">
-                <a href="https://www.linkedin.com/in/alvaro-centeno/">
+                <a
+                  className="footer-link"
+                  href="https://www.linkedin.com/in/alvaro-centeno/"
+                >
                   Alvaro Centeno
                 </a>
               </li>
