@@ -4,14 +4,13 @@ import {
   MDBContainer,
   MDBRow,
   MDBCol,
-  // MDBIcon,
   MDBCardTitle,
   MDBCardImage,
   MDBCardBody,
   MDBCardText,
 } from "mdbreact";
 
-const Jumbotron = (props) => {
+export const Jumbotron = (props) => {
   return (
     <MDBContainer className="mt-5 text-center" fluid>
       <MDBRow>
@@ -45,4 +44,24 @@ const Jumbotron = (props) => {
   );
 };
 
-export default Jumbotron;
+export const BannerTron = (props) => {
+  return (
+    <MDBJumbotron style={{ padding: "0", width: "100%" }}>
+      <MDBCol
+        className="text-white text-center py-1 px-4"
+        style={{
+          backgroundImage: `url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg)`,
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+        }}
+      >
+        <MDBCardTitle
+          className="h1-responsive m-5 font-bold"
+          style={{ fontSize: "85px" }}
+        >
+          {props.Title}
+        </MDBCardTitle>
+      </MDBCol>
+    </MDBJumbotron>
+  )
+}

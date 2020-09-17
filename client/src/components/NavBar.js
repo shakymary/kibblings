@@ -43,11 +43,11 @@ const NavBar = () => {
     <Navbar className="NavBar" bg="primary" expand="lg">
       <Navbar.Brand
         onClick={landing}
-        style={{ color: "white", fontWeight: "bold" }}
+        style={{ color: "white", fontWeight: "bold", fontSize: "40px" }}
         className="NavBar"
       >
-        {/* <i className="fas fa-paw"></i> */}
-        🐾 Kibblings
+        <i className="fas fa-paw"></i>
+        Kibblings
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
@@ -82,15 +82,15 @@ const NavBar = () => {
               </Nav.Link>
             </>
           ) : (
-            <>
-              <Nav.Link>
-                <Login />
-              </Nav.Link>
-              <Nav.Link>
-                <Register />
-              </Nav.Link>
-            </>
-          )}
+              <>
+                <Nav.Link>
+                  <Login />
+                </Nav.Link>
+                <Nav.Link>
+                  <Register />
+                </Nav.Link>
+              </>
+            )}
         </Nav>
       </Navbar.Collapse>
     </Navbar>

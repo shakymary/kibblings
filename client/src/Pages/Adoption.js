@@ -11,7 +11,7 @@ import {
   MDBCardBody,
   MDBCardText,
 } from "mdbreact";
-import Jumbotron from "../components/Jumbotron";
+import { BannerTron } from "../components/Jumbotron";
 import { Forms } from "../components/Form";
 import { Footer } from "../components/Footer";
 import { PetCard } from "../components/Card";
@@ -50,31 +50,11 @@ const Adoption = (e) => {
         });
       });
   };
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
 
   return (
     <>
-      {/* <MDBContainer fluid> */}
-      {/* <MDBRow> */}
-      {/* <MDBCol> */}
-      <MDBJumbotron style={{ padding: "0", width: "100%" }}>
-        <MDBCol
-          className="text-white text-center py-1 px-4"
-          style={{
-            backgroundImage: `url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg)`,
-          }}
-        >
-          <MDBCardTitle
-            className="h1-responsive m-5 font-bold"
-            style={{ fontSize: "85px" }}
-          >
-            Adoption Page
-          </MDBCardTitle>
-        </MDBCol>
-      </MDBJumbotron>
-      {/* </MDBCol> */}
-      {/* </MDBRow> */}
-      {/* </MDBContainer> */}
+      <BannerTron Title="Adoption Center" />
 
       <MDBContainer>
         <MDBRow>
