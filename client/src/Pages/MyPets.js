@@ -7,13 +7,7 @@ import { Footer } from "../components/Footer";
 import { TabsDefault } from "../components/Tabs";
 import Axios from "axios";
 import { ModalCenter } from "../components/Modal";
-import {
-  MDBJumbotron,
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBCardTitle,
-} from "mdbreact";
+import { MDBContainer, MDBRow } from "mdbreact";
 import { BannerTron } from "../components/Jumbotron";
 
 const MyPets = () => {
@@ -97,7 +91,6 @@ const MyPets = () => {
                   petName={item.name}
                   petBreed={item.breed}
                 >
-
                   <Container>
                     <ModalCenter
                       // size={"fluid"}
@@ -113,16 +106,22 @@ const MyPets = () => {
                           microchip,
                           vaccines,
                           rabies,
+                          diet,
                         };
-                        await Axios.patch(`/users/edit/${item._id}`, editedPet, {
-                          headers: {
-                            "x-auth-token": localStorage.getItem("auth-token"),
-                          },
-                        });
+                        await Axios.patch(
+                          `/users/edit/${item._id}`,
+                          editedPet,
+                          {
+                            headers: {
+                              "x-auth-token": localStorage.getItem(
+                                "auth-token"
+                              ),
+                            },
+                          }
+                        );
                         renderPets();
                       }}
                     >
-
                       <Container>
                         <Row>
                           <Col>
@@ -200,30 +199,58 @@ const MyPets = () => {
                           </Col>
 
                           <Col>
-                            {vaccineLabels.map((vacc) => {
-                              return (
-                                <div className="form-check">
-                                  <br />
-                                  <input
-                                    className="form-check-input"
-                                    type="checkbox"
-                                    value={vacc}
-                                  />
-                                  <label
-                                    className="form-check-label"
-                                    htmlFor="defaultCheck1"
-                                  >
-                                    {vacc}
-                                  </label>
-                                  <br />
-                                </div>
-                              );
-                            })}
+                            <Form>
+                              <Form.Label>Vaccines</Form.Label>
+                              {vaccineLabels.map((vacc) => {
+                                return (
+                                  <div className="form-check">
+                                    <br />
+                                    <input
+                                      className="form-check-input"
+                                      type="checkbox"
+                                      value={vacc}
+                                      onChange={handleChange}
+                                    />
+                                    <label
+                                      className="form-check-label"
+                                      htmlFor="defaultCheck1"
+                                    >
+                                      {vacc}
+                                    </label>
+                                    <br />
+                                  </div>
+                                );
+                              })}
+                            </Form>
+                          </Col>
+                          <Col>
+                            <Form>
+                              <Form.Label>Allergies</Form.Label>
+                              {allergens.map((allerg) => {
+                                return (
+                                  <div className="form-check">
+                                    <br />
+                                    <input
+                                      className="form-check-input"
+                                      type="checkbox"
+                                      value={allerg}
+                                      onChange={handleChange2}
+                                    />
+                                    <label
+                                      className="form-check-label"
+                                      htmlFor="defaultCheck1"
+                                    >
+                                      {allerg}
+                                    </label>
+                                    <br />
+                                  </div>
+                                );
+                              })}
+                            </Form>
                           </Col>
                         </Row>
                       </Container>
                     </ModalCenter>
-
 
                     <Btn
                       variant="danger"
@@ -235,11 +262,10 @@ const MyPets = () => {
                           },
                         });
                         // reloads the page to update list(find way to improve)
-                        window.location.reload(true);
+                        renderPets();
                       }}
                     />
                   </Container>
-
 
                   <TabsDefault
                     age={"Age: " + item.age}
@@ -259,7 +285,6 @@ const MyPets = () => {
                   />
                 </NewPetCard>
               </>
-
             );
           })}
         </MDBRow>
