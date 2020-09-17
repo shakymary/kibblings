@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import { AdoptionCarousel } from "../components/Carousel";
 import { Footer } from "../components/Footer";
+import { AccordParent, AccordChild } from "../components/Accordion";
 import {
   MDBJumbotron,
   MDBCol,
@@ -20,7 +21,6 @@ import {
 } from "react-bootstrap";
 
 const Home = () => {
-
   const [lgShow, setLgShow] = useState(false);
   const [name, setName] = useState();
   const [age, setAge] = useState();
@@ -37,6 +37,7 @@ const Home = () => {
   const [displayName, setDisplayName] = useState();
   const [petCollection, setPetCollection] = useState([]);
   const [pets, setPet] = useState();
+  const [reminders, setReminders] = useState([]);
 
   const vaccineLabels = [
     "Rabies",
@@ -57,6 +58,14 @@ const Home = () => {
       headers: { "x-auth-token": localStorage.getItem("auth-token") },
     }).then((res) => {
       setPetCollection(res.data);
+    });
+  };
+
+  const renderReminders = async () => {
+    await Axios.get("/users/viewReminder", {
+      headers: { "x-auth-token": localStorage.getItem("auth-token") },
+    }).then((res) => {
+      setReminders(res.data.reminders);
     });
   };
 
@@ -93,6 +102,7 @@ const Home = () => {
   useEffect(() => {
     getName();
     renderPets();
+    renderReminders();
     Axios.get("/users/apiToken")
       .then((response) => {
         token = response.data;
@@ -129,9 +139,11 @@ const Home = () => {
         {/* <Jumbotron /> */}
         <Row className="mt-3 ml-5">
           <Col>
-            <Card border="info" style={{ width: '50%' }}>
+            <Card border="info" style={{ width: "50%" }}>
               <Card.Body>
-                <Card.Text><h2>{`Hello ${displayName}!`}</h2></Card.Text>
+                <Card.Text>
+                  <h2>{`Hello ${displayName}!`}</h2>
+                </Card.Text>
               </Card.Body>
             </Card>
           </Col>
@@ -148,15 +160,17 @@ const Home = () => {
         <Row className="mt-3">
           <Col>
             <Card bg={"info"}>
-
               {/* <Card.Body> */}
-              <Card.Img style={{
-                width: '100%',
-                height: '15vw',
-                objectFit: 'cover'
-              }} src="https://etimg.etb2bimg.com/photo/75463378.cms" alt="Card image" />
+              <Card.Img
+                style={{
+                  width: "100%",
+                  height: "15vw",
+                  objectFit: "cover",
+                }}
+                src="https://etimg.etb2bimg.com/photo/75463378.cms"
+                alt="Card image"
+              />
               <Card.ImgOverlay>
-
                 <Card.Text style={{ color: "black" }}>
                   <h3>Pet Dashboard</h3>
                   <Row>
@@ -190,7 +204,7 @@ const Home = () => {
             description={pets.description}
           /> */}
         </Row>
-        <Row className="mt-3 ml-5">
+        <Row>
           <Col>
             <Carousel
               className="ml-5"
@@ -222,32 +236,32 @@ const Home = () => {
           </Col>
         </Row>
 
-        <Row>
+        <Row className="mt-5 ">
           <Col>
-            <Card
-              bg={"dark"}
-              className="mr-5"
-              style={{
-                width: "30%",
-                height: "auto",
-                position: "absolute",
-                right: "5%",
-              }}
-            >
-              <Card.Body>
-
-                <Card.Text style={{ color: "white" }}>
-                  <h3>Reminders</h3>
-                  <p>Medication:</p>
-                  <p>Vet Appointment:</p>
-                  <p>Dog Food:</p>
-                  <p>Grooming:</p>
-                  <p>Treats:</p>
-                </Card.Text>
-              </Card.Body>
+            <Card>
+              <AccordParent>
+                {reminders.map((item, index) => {
+                  return (
+                    <AccordChild
+                      eventKey={`${index}`}
+                      subject={item.subject}
+                      content={item.note}
+                      time={item.time}
+                      onClick={() => {
+                        Axios.delete(`/users/deleteReminder/${item._id}`, {
+                          headers: {
+                            "x-auth-token": localStorage.getItem("auth-token"),
+                          },
+                        });
+                        // reloads the page to update list(find way to improve)
+                        renderReminders();
+                      }}
+                    />
+                  );
+                })}
+              </AccordParent>
             </Card>
           </Col>
-
         </Row>
 
         <Modal
@@ -342,10 +356,10 @@ const Home = () => {
                           className="form-check-input"
                           type="checkbox"
                           value={vacc}
-                        // onCheck={(e) => {
-                        //   setVaccines([...vaccines, e.target.value]);
-                        //   console.log(vaccines);
-                        // }}
+                          // onCheck={(e) => {
+                          //   setVaccines([...vaccines, e.target.value]);
+                          //   console.log(vaccines);
+                          // }}
                         />
                         <label
                           className="form-check-label"
