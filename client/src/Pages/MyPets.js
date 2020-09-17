@@ -34,7 +34,7 @@ const MyPets = () => {
   const [birthday, setBirthday] = useState();
   const [microchip, setMicrochip] = useState();
   const [vaccines, setVaccines] = useState([]);
-  const [allergies, setAllergies] = useState([]);
+  const [diet, setDiet] = useState([]);
   const [rabies, setRabies] = useState();
 
   const vaccineLabels = [
@@ -67,6 +67,12 @@ const MyPets = () => {
     isChecked === true
       ? setVaccines([...vaccines, item])
       : setVaccines([vaccines]);
+  };
+
+  const handleChange2 = (e) => {
+    const item = e.target.value;
+    const isChecked = e.target.checked;
+    isChecked === true ? setDiet([...diet, item]) : setDiet([diet]);
   };
 
   const renderPets = async () => {
@@ -107,6 +113,7 @@ const MyPets = () => {
                   microchip,
                   vaccines,
                   rabies,
+                  diet,
                 };
 
                 await Axios.patch(`/users/edit/${item._id}`, editedPet, {
@@ -121,6 +128,8 @@ const MyPets = () => {
                 <Row>
                   <Col>
                     <Form>
+                      <Form.Label>Description</Form.Label>
+
                       <Form.Group controlId="name">
                         <Form.Label>Name</Form.Label>
                         <Form.Control
@@ -193,28 +202,55 @@ const MyPets = () => {
                     </Form>
                   </Col>
                   <Col>
-                    {vaccineLabels.map((vacc) => {
-                      return (
-                        <div className="form-check">
-                          <br />
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            value={vacc}
-                            onChange={handleChange}
-                          />
-                          <label
-                            className="form-check-label"
-                            htmlFor="defaultCheck1"
-                          >
-                            {vacc}
-                          </label>
-                          <br />
-                        </div>
-                      );
-                    })}
+                    <Form>
+                      <Form.Label>Vaccines</Form.Label>
+                      {vaccineLabels.map((vacc) => {
+                        return (
+                          <div className="form-check">
+                            <br />
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value={vacc}
+                              onChange={handleChange}
+                            />
+                            <label
+                              className="form-check-label"
+                              htmlFor="defaultCheck1"
+                            >
+                              {vacc}
+                            </label>
+                            <br />
+                          </div>
+                        );
+                      })}
+                    </Form>
                   </Col>
-                  <Col></Col>
+                  <Col>
+                    <Form>
+                      <Form.Label>Allergies</Form.Label>
+                      {allergens.map((allerg) => {
+                        return (
+                          <div className="form-check">
+                            <br />
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value={allerg}
+                              onChange={handleChange2}
+                            />
+                            <label
+                              className="form-check-label"
+                              htmlFor="defaultCheck1"
+                            >
+                              {allerg}
+                            </label>
+                            <br />
+                          </div>
+                        );
+                      })}
+                    </Form>
+                  </Col>
                 </Row>
               </Container>
             </ModalCenter>
@@ -244,7 +280,7 @@ const MyPets = () => {
                 return <ul>{"💉     " + item}</ul>;
               })}
               diet={item.diet.map((item) => {
-                return <ul>{"💉     " + item}</ul>;
+                return <ul>{item}</ul>;
               })}
             />
           </NewPetCard>
