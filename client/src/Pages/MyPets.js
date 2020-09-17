@@ -51,6 +51,16 @@ const MyPets = () => {
     "Canine Infuenza H3N8",
   ];
 
+  const allergens = [
+    "Beef",
+    "Dairy",
+    "Wheat",
+    "Eggs",
+    "Chicken",
+    "Lamb",
+    "Soy",
+  ];
+
   const handleChange = (e) => {
     const item = e.target.value;
     const isChecked = e.target.checked;
