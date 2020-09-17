@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
-import { AdoptionCarousel } from "../components/Carousel";
+import { ModalCenter } from "../components/Modal";
 import { Footer } from "../components/Footer";
 import { AccordParent, AccordChild } from "../components/Accordion";
 import {
@@ -40,6 +40,9 @@ const Home = () => {
   const [vaccines, setVaccines] = useState([]);
   const [allergies, setAllergies] = useState([]);
   const [rabies, setRabies] = useState();
+  const [time, setDate] = useState();
+  const [note, setNote] = useState();
+  const [subject, setSubject] = useState();
 
   const [displayName, setDisplayName] = useState();
   const [petCollection, setPetCollection] = useState([]);
@@ -97,6 +100,21 @@ const Home = () => {
       headers: { "x-auth-token": localStorage.getItem("auth-token") },
     });
     setLgShow(false);
+  };
+
+  const addReminder = async (e) => {
+    e.preventDefault();
+    const newReminder = {
+      subject,
+      note,
+      time,
+    };
+
+    await Axios.post("/users/reminder", newReminder, {
+      headers: { "x-auth-token": localStorage.getItem("auth-token") },
+    });
+    setLgShow(false);
+    renderReminders();
   };
 
   const getName = async () => {
@@ -246,6 +264,36 @@ const Home = () => {
         <Row className="mt-5 ">
           <Col>
             <Card>
+              <Card.Title>Reminders</Card.Title>
+              <ModalCenter size={"medium"} onClick={addReminder}>
+                <Form>
+                  <Form.Group controlId="date">
+                    <Form.Label>Date</Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder={"09/19/2020"}
+                      onChange={(e) => setDate(e.target.value)}
+                    />
+                  </Form.Group>
+
+                  <Form.Group controlId="subject">
+                    <Form.Label>Subject</Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder={"Monthly vet visit"}
+                      onChange={(e) => setSubject(e.target.value)}
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="note">
+                    <Form.Label>Note</Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder={"Check dog vaccines"}
+                      onChange={(e) => setNote(e.target.value)}
+                    />
+                  </Form.Group>
+                </Form>
+              </ModalCenter>
               <AccordParent>
                 {reminders.map((item, index) => {
                   return (
