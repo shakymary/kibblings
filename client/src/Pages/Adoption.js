@@ -18,17 +18,13 @@ import { PetCard } from "../components/Card";
 import Btn from "../components/Button";
 import "../components/Footer.css";
 import Axios from "axios";
-import { Container, Row, Col } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import AdoptionImage from "../components/Images/LandingAdoption2.mp4";
 
 const Adoption = (e) => {
-  const [searchPet, setSearchPet] = useState();
+  const [searchPet, setSearchPet] = useState("type=");
   const [pets, setPet] = useState([]);
 
-  const inputChange = (e) => {
-    const { value } = e.target;
-    setSearchPet(value);
-  };
   let token = {};
   const getPets = (e) => {
     e.preventDefault();
@@ -38,7 +34,7 @@ const Adoption = (e) => {
       })
       .then((res) => {
         Axios.get(
-          `https://api.petfinder.com/v2/animals?type=${searchPet}&page=2`,
+          `https://api.petfinder.com/v2/animals?${searchPet}&size=small&breed=pug&age=baby&page=1`,
           {
             headers: {
               Authorization: token.tokenType + " " + token.accessToken,
@@ -50,7 +46,7 @@ const Adoption = (e) => {
         });
       });
   };
-  useEffect(() => { }, []);
+  useEffect(() => {}, []);
 
   return (
     <>
@@ -82,7 +78,7 @@ const Adoption = (e) => {
                     placeholder="Search animals"
                     className="mr-sm-2 secondary"
                     btnSubmitText="Search"
-                    onChange={inputChange}
+                    onChange={(e) => setSearchPet(e.target.value)}
                     onClick={getPets}
                   />
                 </MDBCol>
