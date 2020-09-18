@@ -159,6 +159,7 @@ const Home = () => {
           <Col>
             <Card>
               <Card.Body>
+                <Card.Title>Pet Dashboard</Card.Title>
                 <Card.Img
                   style={{
                     width: "100%",
@@ -168,25 +169,25 @@ const Home = () => {
                   src="https://etimg.etb2bimg.com/photo/75463378.cms"
                   alt="Card image"
                 />
-                <Card.ImgOverlay>
-                  <Card.Text style={{ color: "black" }}>
-                    <h3>Pet Dashboard</h3>
-                    <Row>
-                      <Col>
-                        <p>Pet: </p>
-                        <p>Pet Weight: {weight}</p>
-                        <p>Birthday:</p>
-                        <p>Age:</p>
-                      </Col>
+                {/* <Card.ImgOverlay> */}
+                {/* <Card.Text> */}
+                {/* <Card.Title>Pet Dashboard</Card.Title> */}
+                <Row>
+                  <Col>
+                    <Card.Text>Pet: </Card.Text>
+                    <Card.Text>Pet Weight: {weight}</Card.Text>
+                    <Card.Text>Birthday:</Card.Text>
+                    <Card.Text>Age:</Card.Text>
+                  </Col>
 
-                      <Col>
-                        <p>Last Vet Visit:</p>
-                        <p>Last Grooming:</p>
-                        <p>Vaccines:</p>
-                      </Col>
-                    </Row>
-                  </Card.Text>
-                </Card.ImgOverlay>
+                  <Col>
+                    <Card.Text>Last Vet Visit:</Card.Text>
+                    <Card.Text>Last Grooming:</Card.Text>
+                    <Card.Text>Vaccines:</Card.Text>
+                  </Col>
+                </Row>
+                {/* </Card.Text> */}
+                {/* </Card.ImgOverlay> */}
               </Card.Body>
 
             </Card>
