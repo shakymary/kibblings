@@ -32,6 +32,8 @@ const Home = () => {
   const [time, setDate] = useState();
   const [note, setNote] = useState();
   const [subject, setSubject] = useState();
+  const [vetVisit, setVetVisit] = useState();
+  const [grooming, setGrooming] = useState();
 
   const [displayName, setDisplayName] = useState();
   const [petCollection, setPetCollection] = useState([]);
@@ -150,50 +152,113 @@ const Home = () => {
             </Button>
           </Col>
         </Row>
+
         <Row className="mt-3">
           <Col>
-            <Card>
-              <Card.Body>
-                <Card.Img
-                  style={{
-                    width: "100%",
-                    height: "15vw",
-                    objectFit: "cover",
-                  }}
-                  src="https://etimg.etb2bimg.com/photo/75463378.cms"
-                  alt="Card image"
-                />
-                <Card.ImgOverlay>
-                  <Card.Text style={{ color: "black" }}>
-                    <h3>Pet Dashboard</h3>
-                    <Row>
-                      <Col>
-                        <p>Pet: </p>
-                        <p>Pet Weight: {weight}</p>
-                        <p>Birthday:</p>
-                        <p>Age:</p>
-                      </Col>
+            <Carousel
+              style={{
+                width: "100%",
+                height: "auto",
+                // position: "absolute",
+                // left: "5%",
+              }}
+            >
+              {petCollection.map((item) => {
+                return (
+                  <Carousel.Item>
+                    <Card>
+                      <Card.Body>
+                        <Card.Title>Pet Dashboard</Card.Title>
+                        <img
+                          style={{
+                            width: "100%",
+                            height: "15vw",
+                            objectFit: "cover",
+                          }}
+                          src="https://etimg.etb2bimg.com/photo/75463378.cms"
+                          alt="Card image"
+                        />
+                        {/* <Carousel.Caption> */}
+                        <Row>
+                          <Col>
+                            <Card.Text>Pet:{item.name}</Card.Text>
+                            <Card.Text>Pet Weight: {item.weight}</Card.Text>
+                            <Card.Text>Birthday: {item.birthday}</Card.Text>
+                            <Card.Text>Age: {item.age}</Card.Text>
+                          </Col>
 
-                      <Col>
-                        <p>Last Vet Visit:</p>
-                        <p>Last Grooming:</p>
-                        <p>Vaccines:</p>
-                      </Col>
-                    </Row>
-                  </Card.Text>
-                </Card.ImgOverlay>
-              </Card.Body>
-            </Card>
+                          <Col>
+                            <Card.Text>
+                              Last Vet Visit: {item.vetVisit}
+                            </Card.Text>
+                            <Card.Text>
+                              Last Grooming: {item.grooming}
+                            </Card.Text>
+                            <Card.Text>Vaccines: {item.vaccines}</Card.Text>
+                          </Col>
+                        </Row>
+                        {/* <h3>{item.name}</h3>
+                      <p>{item.breed}</p> */}
+                        {/* </Carousel.Caption> */}
+                      </Card.Body>
+                    </Card>
+                  </Carousel.Item>
+                );
+              })}
+            </Carousel>
+            {/* {petCollection.map((item) => {
+              return (
+                <Card>
+                  <Card.Body>
+                    <Card.Title>Pet Dashboard</Card.Title>
+                    <Card.Img
+                      style={{
+                        width: "100%",
+                        height: "15vw",
+                        objectFit: "cover",
+                      }}
+                      src="https://etimg.etb2bimg.com/photo/75463378.cms"
+                      alt="Card image"
+                    />
+                    {/* <Card.ImgOverlay> */}
+            {/* <Card.Text> */}
+            {/* <Card.Title>Pet Dashboard</Card.Title> */}
+
+            {/* <Row>
+
+              <Col>
+                <Card.Text>Pet:{item.name}</Card.Text>
+                <Card.Text>Pet Weight: {item.weight}</Card.Text>
+                <Card.Text>Birthday: {item.birthday}</Card.Text>
+                <Card.Text>Age: {item.age}</Card.Text>
+              </Col>
+
+
+              <Col>
+                <Card.Text>Last Vet Visit: {item.vetVisit}</Card.Text>
+                <Card.Text>Last Grooming: {item.grooming}</Card.Text>
+                <Card.Text>Vaccines: {item.vaccines}</Card.Text>
+              </Col>
+
+            </Row> */}
+            {/* </Card.Text> */}
+            {/* </Card.ImgOverlay> */}
+            {/* </Card.Body>
+
+                </Card>
+        )
+      })} */}
           </Col>
         </Row>
+
         <Row className="mt-3 ml-5">
           <Col>
             <Carousel
               className="ml-5 mt-3"
               style={{
-                width: "25%",
+                width: "50%",
                 height: "auto",
-                position: "absolute",
+                // position: "absolute",
                 left: "5%",
               }}
             >
@@ -215,11 +280,9 @@ const Home = () => {
               })}
             </Carousel>
           </Col>
-        </Row>
 
-        <Row className="mt-3 ">
           <Col>
-            <Card border="info" style={{ width: "30%", left: "50%" }}>
+            <Card border="info" style={{ width: "50%" }}>
               <Card.Title className="ml-2">Reminders</Card.Title>
               <ModalCenter size={"small"} onClick={addReminder}>
                 <Form>
