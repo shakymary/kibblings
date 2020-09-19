@@ -1,5 +1,5 @@
 {
-  "name": "kibblings-1",
+  "name": "kibblings",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -14,15 +14,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/shakymary/kibblings-1.git"
+    "url": "https://github.com/shakymary/kibblings"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/shakymary/kibblings-1/issues"
+    "url": "https://github.com/shakymary/kibblings/issues"
   },
-  "homepage": "https://github.com/shakymary/kibblings-1#readme",
+  "homepage": "http://shakymary.github.io/kibblings",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.14.0",
     "axios": "^0.20.0",
