@@ -178,10 +178,9 @@ const Home = () => {
                           src="https://etimg.etb2bimg.com/photo/75463378.cms"
                           alt="Card image"
                         />
-                        {/* <Carousel.Caption> */}
                         <Row>
                           <Col>
-                            <Card.Text>Pet:{item.name}</Card.Text>
+                            <Card.Text>Pet: {item.name}</Card.Text>
                             <Card.Text>Pet Weight: {item.weight}</Card.Text>
                             <Card.Text>Birthday: {item.birthday}</Card.Text>
                             <Card.Text>Age: {item.age}</Card.Text>
@@ -197,57 +196,12 @@ const Home = () => {
                             <Card.Text>Vaccines: {item.vaccines}</Card.Text>
                           </Col>
                         </Row>
-                        {/* <h3>{item.name}</h3>
-                      <p>{item.breed}</p> */}
-                        {/* </Carousel.Caption> */}
                       </Card.Body>
                     </Card>
                   </Carousel.Item>
                 );
               })}
             </Carousel>
-            {/* {petCollection.map((item) => {
-              return (
-                <Card>
-                  <Card.Body>
-                    <Card.Title>Pet Dashboard</Card.Title>
-                    <Card.Img
-                      style={{
-                        width: "100%",
-                        height: "15vw",
-                        objectFit: "cover",
-                      }}
-                      src="https://etimg.etb2bimg.com/photo/75463378.cms"
-                      alt="Card image"
-                    />
-                    {/* <Card.ImgOverlay> */}
-            {/* <Card.Text> */}
-            {/* <Card.Title>Pet Dashboard</Card.Title> */}
-
-            {/* <Row>
-
-              <Col>
-                <Card.Text>Pet:{item.name}</Card.Text>
-                <Card.Text>Pet Weight: {item.weight}</Card.Text>
-                <Card.Text>Birthday: {item.birthday}</Card.Text>
-                <Card.Text>Age: {item.age}</Card.Text>
-              </Col>
-
-
-              <Col>
-                <Card.Text>Last Vet Visit: {item.vetVisit}</Card.Text>
-                <Card.Text>Last Grooming: {item.grooming}</Card.Text>
-                <Card.Text>Vaccines: {item.vaccines}</Card.Text>
-              </Col>
-
-            </Row> */}
-            {/* </Card.Text> */}
-            {/* </Card.ImgOverlay> */}
-            {/* </Card.Body>
-
-                </Card>
-        )
-      })} */}
           </Col>
         </Row>
 
