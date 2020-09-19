@@ -18,9 +18,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/shakymary/kibblings/issues"
+    "url": "https://github.com/shakymary/kibblings.git/issues"
   },
-  "homepage": "https://github.com/shakymary/kibblings#readme",
+  "homepage": "https://github.com/shakymary/kibblings.git#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.14.0",
     "axios": "^0.20.0",
