@@ -50,6 +50,7 @@ const Adoption = (e) => {
           console.log(res.data.animals);
         });
       });
+    document.getElementById("inlineForm").reset();
   };
   useEffect(() => {}, []);
 
@@ -80,7 +81,7 @@ const Adoption = (e) => {
                     below and find a pet thats right for you!
                   </p>
 
-                  <Form inline>
+                  <Form id="inlineForm" inline>
                     <Form.Label htmlFor="inlineFormInputName2" srOnly>
                       Pet Type
                     </Form.Label>
