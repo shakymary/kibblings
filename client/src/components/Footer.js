@@ -1,20 +1,16 @@
-// import React, { useState } from "react";
 import React from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
+import { useHistory } from "react-router-dom";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./Footer.css";
 
 export const Footer = () => {
-  // const [onMouse, setMouse] = useState(false);
-
-  // function handleMouseOver() {
-  //   setMouse(true);
-  // }
-
-  // function handleMouseOut() {
-  //   setMouse(false);
+  const about = () => history.push("/about");
+  const contact = () => history.push("/contact");
+  const history = useHistory();
   return (
     // <div className="footer"
     // style={{ maxHeight: "10vh" }}
@@ -24,49 +20,32 @@ export const Footer = () => {
         <MDBRow>
           <MDBCol className="column" md="4">
             <h5 className="title">ABOUT US</h5>
-
             <ul>
               <li className="list-unstyled">
-                <a className="footer-link" href="/about">
-                  About Kibblings
-                </a>
+                <p onClick={about}>About</p>
               </li>
+              <li className="list-unstyled"></li>
               <li className="list-unstyled">
-                <a className="footer-link" href="#!">
-                  FAQs
-                </a>
-              </li>
-              <li className="list-unstyled">
-                <a className="footer-link" href="/contact">
-                  Contact Us
-                </a>
+                <p onClick={contact}>Contact Us</p>
               </li>
             </ul>
           </MDBCol>
+
           <MDBCol className="column" md="3">
             <h5 className="title">PET CARE TOPICS</h5>
             <ul>
-              <li className="list-unstyled">
-                <a
-                  className="footer-link"
-                  href="https://www.youtube.com/watch?v=Tn3lZE0rRBs&t=1s"
-                >
+              <li className="list-unstyled ">
+                <a href="https://www.youtube.com/watch?v=Tn3lZE0rRBs&t=1s">
                   Dog Care
                 </a>
               </li>
               <li className="list-unstyled">
-                <a
-                  className="footer-link"
-                  href="https://www.youtube.com/watch?v=IKR6FPerXes"
-                >
+                <a href="https://www.youtube.com/watch?v=IKR6FPerXes">
                   Cat Care
                 </a>
               </li>
               <li className="list-unstyled">
-                <a
-                  className="footer-link"
-                  href="https://www.youtube.com/watch?v=Yzv0gXqoCkc&t=1s"
-                >
+                <a href="https://www.youtube.com/watch?v=Yzv0gXqoCkc&t=1s">
                   All Pets Care
                 </a>
               </li>
@@ -75,35 +54,23 @@ export const Footer = () => {
           <MDBCol className="column" md="3">
             <h5 className="title">CONTACT DEVELOPERS</h5>
             <ul>
-              <li className="list-unstyled">
-                <a
-                  className="footer-link"
-                  href="https://www.linkedin.com/in/shakila-marando-33432515/"
-                >
+              <li className="list-unstyled ">
+                <a href="https://www.linkedin.com/in/shakila-marando-33432515/">
                   Shakila Marando
                 </a>
               </li>
               <li className="list-unstyled">
-                <a
-                  className="footer-link"
-                  href="https://www.linkedin.com/in/napoleon-vuong-08b189192/"
-                >
+                <a href="https://www.linkedin.com/in/napoleon-vuong-08b189192/">
                   Napoleon Simmaly
                 </a>
               </li>
               <li className="list-unstyled">
-                <a
-                  className="footer-link"
-                  href="https://www.linkedin.com/in/myhkas-nallas-15980416a/"
-                >
+                <a href="https://www.linkedin.com/in/myhkas-nallas-15980416a/">
                   Myhkas Nallas
                 </a>
               </li>
               <li className="list-unstyled">
-                <a
-                  className="footer-link"
-                  href="https://www.linkedin.com/in/alvaro-centeno/"
-                >
+                <a href="https://www.linkedin.com/in/alvaro-centeno/">
                   Alvaro Centeno
                 </a>
               </li>
@@ -114,7 +81,7 @@ export const Footer = () => {
       <div className="footer-copyright text-center py-3">
         <MDBContainer fluid>
           &copy; {new Date().getFullYear()} Copyright:{" "}
-          <a href="#!"> Kibblings.com </a>
+          <a href=""> Kibblings.com </a>
         </MDBContainer>
       </div>
     </MDBFooter>

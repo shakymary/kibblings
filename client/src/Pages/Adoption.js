@@ -18,17 +18,17 @@ import { PetCard } from "../components/Card";
 import Btn from "../components/Button";
 import "../components/Footer.css";
 import Axios from "axios";
-import { Container, Row, Col } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import AdoptionImage from "../components/Images/LandingAdoption2.mp4";
 
 const Adoption = (e) => {
-  const [searchPet, setSearchPet] = useState();
+  const [petType, setPetType] = useState("type=");
+  const [petSize, setPetSize] = useState("&size=");
+  const [petAge, setPetAge] = useState("&age=");
+  const [petGender, setPetGender] = useState("&gender=");
+  const [petLocation, setPetLocation] = useState("&location=");
   const [pets, setPet] = useState([]);
 
-  const inputChange = (e) => {
-    const { value } = e.target;
-    setSearchPet(value);
-  };
   let token = {};
   const getPets = (e) => {
     e.preventDefault();
@@ -38,7 +38,7 @@ const Adoption = (e) => {
       })
       .then((res) => {
         Axios.get(
-          `https://api.petfinder.com/v2/animals?type=${searchPet}&page=2`,
+          `https://api.petfinder.com/v2/animals?${petType}${petSize}${petAge}${petGender}${petLocation}&page=1`,
           {
             headers: {
               Authorization: token.tokenType + " " + token.accessToken,
@@ -50,7 +50,7 @@ const Adoption = (e) => {
         });
       });
   };
-  useEffect(() => { }, []);
+  useEffect(() => {}, []);
 
   return (
     <>
@@ -61,7 +61,7 @@ const Adoption = (e) => {
           <MDBCol>
             <MDBJumbotron style={{ padding: 0, width: "100%" }}>
               <MDBCol
-                className="text-white text-center py-1 px-4 my-5"
+                className="text-white text-center py-1 my-5"
                 style={{
                   backgroundImage: `url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg)`,
                 }}
@@ -80,10 +80,11 @@ const Adoption = (e) => {
                   </p>
                   <Forms
                     placeholder="Search animals"
-                    className="mr-sm-2 secondary"
+                    className=" secondary form-control-lg col-md-8"
                     btnSubmitText="Search"
-                    onChange={inputChange}
+                    onChange={(e) => setPetType(e.target.value)}
                     onClick={getPets}
+                    style={{ marginLeft: "20px" }}
                   />
                 </MDBCol>
               </MDBCol>

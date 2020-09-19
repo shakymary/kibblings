@@ -102,7 +102,3 @@ i {
 .footer-content {
   justify-content: center;
 }
-
-.footer-link:hover {
-  color: yellow !important;
-}
