@@ -61,7 +61,7 @@ const Adoption = (e) => {
           <MDBCol>
             <MDBJumbotron style={{ padding: 0, width: "100%" }}>
               <MDBCol
-                className="text-white text-center py-1 px-4 my-5"
+                className="text-white text-center py-1 my-5"
                 style={{
                   backgroundImage: `url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg)`,
                 }}
@@ -80,10 +80,11 @@ const Adoption = (e) => {
                   </p>
                   <Forms
                     placeholder="Search animals"
-                    className="mr-sm-2 secondary"
+                    className=" secondary form-control-lg col-md-8"
                     btnSubmitText="Search"
                     onChange={inputChange}
                     onClick={getPets}
+                    style={{ marginLeft: "20px" }}
                   />
                 </MDBCol>
               </MDBCol>
