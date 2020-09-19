@@ -36,14 +36,11 @@ export class Notification extends Component {
 export const NotifCard = ({ subject, note, time }) => {
   return (
     <MDBCol>
-      <MDBCard style={{ marginTop: 3, width: "22rem" }}>
+      <MDBCard style={{ marginTop: 3, width: "22rem", color: "black" }}>
         <MDBCardBody>
-          <h5>{subject}</h5>
+          <h4>{subject}</h4>
           <h6>{time}</h6>
           <p>{note}</p>
-          <MDBBtn color="danger" size="sm">
-            Clear
-          </MDBBtn>
         </MDBCardBody>
       </MDBCard>
     </MDBCol>
