@@ -22,7 +22,11 @@ import { Form } from "react-bootstrap";
 import AdoptionImage from "../components/Images/LandingAdoption2.mp4";
 
 const Adoption = (e) => {
-  const [searchPet, setSearchPet] = useState("type=");
+  const [petType, setPetType] = useState("type=");
+  const [petSize, setPetSize] = useState("&size=");
+  const [petAge, setPetAge] = useState("&age=");
+  const [petGender, setPetGender] = useState("&gender=");
+  const [petLocation, setPetLocation] = useState("&location=");
   const [pets, setPet] = useState([]);
 
   let token = {};
@@ -34,7 +38,7 @@ const Adoption = (e) => {
       })
       .then((res) => {
         Axios.get(
-          `https://api.petfinder.com/v2/animals?${searchPet}&size=small&breed=pug&age=baby&page=1`,
+          `https://api.petfinder.com/v2/animals?${petType}${petSize}${petAge}${petGender}${petLocation}&page=1`,
           {
             headers: {
               Authorization: token.tokenType + " " + token.accessToken,
@@ -78,7 +82,7 @@ const Adoption = (e) => {
                     placeholder="Search animals"
                     className="mr-sm-2 secondary"
                     btnSubmitText="Search"
-                    onChange={(e) => setSearchPet(e.target.value)}
+                    onChange={(e) => setPetType(e.target.value)}
                     onClick={getPets}
                   />
                 </MDBCol>

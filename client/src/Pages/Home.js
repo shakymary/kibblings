@@ -3,11 +3,7 @@ import Axios from "axios";
 import { ModalCenter } from "../components/Modal";
 import { Footer } from "../components/Footer";
 import { AccordParent, AccordChild } from "../components/Accordion";
-import {
-  MDBJumbotron,
-  MDBCol,
-  MDBCardTitle,
-} from "mdbreact";
+import { MDBJumbotron, MDBCol, MDBCardTitle } from "mdbreact";
 import { BannerTron } from "../components/Jumbotron";
 import {
   Button,
@@ -144,7 +140,6 @@ const Home = () => {
       <Container fluid style={{ minHeight: "80vh" }}>
         {/* <Jumbotron /> */}
         <Row className="mt-3 ml-5">
-
           <Col>
             <Button
               className="float-sm-rightt"
@@ -188,7 +183,6 @@ const Home = () => {
                   </Card.Text>
                 </Card.ImgOverlay>
               </Card.Body>
-
             </Card>
           </Col>
         </Row>
@@ -225,7 +219,7 @@ const Home = () => {
 
         <Row className="mt-3 ">
           <Col>
-            <Card border="info" style={{ width: "30%", left: '50%' }}>
+            <Card border="info" style={{ width: "30%", left: "50%" }}>
               <Card.Title className="ml-2">Reminders</Card.Title>
               <ModalCenter size={"small"} onClick={addReminder}>
                 <Form>
@@ -264,13 +258,17 @@ const Home = () => {
                       subject={item.subject}
                       content={item.note}
                       time={item.time}
-                      onClick={() => {
-                        Axios.delete(`/users/deleteReminder/${item._id}`, {
-                          headers: {
-                            "x-auth-token": localStorage.getItem("auth-token"),
-                          },
-                        });
-                        // reloads the page to update list(find way to improve)
+                      onClick={async () => {
+                        await Axios.delete(
+                          `/users/deleteReminder/${item._id}`,
+                          {
+                            headers: {
+                              "x-auth-token": localStorage.getItem(
+                                "auth-token"
+                              ),
+                            },
+                          }
+                        );
                         renderReminders();
                       }}
                     />
@@ -343,8 +341,7 @@ const Home = () => {
                     type="text"
                     placeholder="eg. Male"
                     onChange={(e) => setGender(e.target.value)}
-                  >
-                  </Form.Control>
+                  ></Form.Control>
                 </Form.Group>
                 <Form.Group controlId="birthday">
                   <Form.Label>Birthday</Form.Label>
